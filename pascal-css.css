@@ -1,0 +1,615 @@
+# PascalCSS
+
+PascalCSS is a small, static, utility-first CSS library written using
+PascalCase class names.
+
+Each class represents a single CSS rule and is designed to be readable,
+predictable, and composable.
+
+Example:
+
+```html
+<div class="DisplayFlex JustifyContentCenter Padding10 MarginTop15">
+  Hello PascalCSS
+</div>
+
+
+
+/* =========================================
+   PascalCSS v0.2 - Responsive Edition
+   Naming: PascalCase (Mobile-first)
+   Breakpoints: Sm: 640px, Md: 768px, Lg: 1024px, Xl: 1280px
+========================================= */
+
+/* =========================================
+   PascalCSS
+   Utility-first CSS Library
+   Author: You
+   Naming: PascalCase
+   Values scale:
+   01 = 0.1rem
+   02 = 0.2rem
+   05 = 0.5rem
+   10 = 1rem
+   15 = 1.5rem
+   20 = 2rem
+   25 = 2.5rem
+========================================= */
+
+
+/* =========================================
+   RESET (minimal)
+========================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+
+/* =========================================
+   DISPLAY
+========================================= */
+
+.DisplayBlock { display: block; }
+.DisplayInline { display: inline; }
+.DisplayInlineBlock { display: inline-block; }
+.DisplayFlex { display: flex; }
+.DisplayGrid { display: grid; }
+.DisplayNone { display: none; }
+
+
+/* =========================================
+   FLEX
+========================================= */
+
+.FlexDirectionRow { flex-direction: row; }
+.FlexDirectionColumn { flex-direction: column; }
+
+.FlexWrap { flex-wrap: wrap; }
+.FlexNoWrap { flex-wrap: nowrap; }
+
+.JustifyContentStart { justify-content: flex-start; }
+.JustifyContentCenter { justify-content: center; }
+.JustifyContentEnd { justify-content: flex-end; }
+.JustifyContentSpaceBetween { justify-content: space-between; }
+.JustifyContentSpaceAround { justify-content: space-around; }
+
+.AlignItemsStart { align-items: flex-start; }
+.AlignItemsCenter { align-items: center; }
+.AlignItemsEnd { align-items: flex-end; }
+.AlignItemsStretch { align-items: stretch; }
+
+
+/* =========================================
+   TEXT
+========================================= */
+
+.TextAlignLeft { text-align: left; }
+.TextAlignCenter { text-align: center; }
+.TextAlignRight { text-align: right; }
+
+.FontWeight300 { font-weight: 300; }
+.FontWeight400 { font-weight: 400; }
+.FontWeight500 { font-weight: 500; }
+.FontWeight600 { font-weight: 600; }
+.FontWeight700 { font-weight: 700; }
+
+.TextTransformUppercase { text-transform: uppercase; }
+.TextTransformLowercase { text-transform: lowercase; }
+.TextTransformCapitalize { text-transform: capitalize; }
+
+
+/* =========================================
+   SPACING SCALE
+========================================= */
+/*
+01 = 0.1rem
+02 = 0.2rem
+05 = 0.5rem
+10 = 1rem
+15 = 1.5rem
+20 = 2rem
+25 = 2.5rem
+*/
+
+
+/* =========================================
+   PADDING
+========================================= */
+
+.Padding01 { padding: .1rem; }
+.Padding02 { padding: .2rem; }
+.Padding05 { padding: .5rem; }
+.Padding10 { padding: 1rem; }
+.Padding15 { padding: 1.5rem; }
+.Padding20 { padding: 2rem; }
+.Padding25 { padding: 2.5rem; }
+
+.PaddingX10 { padding-left: 1rem; padding-right: 1rem; }
+.PaddingY10 { padding-top: 1rem; padding-bottom: 1rem; }
+
+.PaddingL10 { padding-left: 1rem; }
+.PaddingR10 { padding-right: 1rem; }
+.PaddingTop10 { padding-top: 1rem; }
+.PaddingBottom10 { padding-bottom: 1rem; }
+
+
+/* =========================================
+   MARGIN
+========================================= */
+
+.Margin01 { margin: .1rem; }
+.Margin02 { margin: .2rem; }
+.Margin05 { margin: .5rem; }
+.Margin10 { margin: 1rem; }
+.Margin15 { margin: 1.5rem; }
+.Margin20 { margin: 2rem; }
+.Margin25 { margin: 2.5rem; }
+
+.MarginX10 { margin-left: 1rem; margin-right: 1rem; }
+.MarginY10 { margin-top: 1rem; margin-bottom: 1rem; }
+
+.MarginL10 { margin-left: 1rem; }
+.MarginR10 { margin-right: 1rem; }
+.MarginTop10 { margin-top: 1rem; }
+.MarginBottom10 { margin-bottom: 1rem; }
+
+
+/* =========================================
+   SIZE
+========================================= */
+
+.Width100 { width: 100%; }
+.Height100 { height: 100%; }
+
+.MaxWidth100 { max-width: 100%; }
+
+
+/* =========================================
+   BORDER
+========================================= */
+
+.BorderNone { border: none; }
+.BorderRadius05 { border-radius: .5rem; }
+.BorderRadius10 { border-radius: 1rem; }
+
+
+/* =========================================
+   POSITION
+========================================= */
+
+.PositionRelative { position: relative; }
+.PositionAbsolute { position: absolute; }
+.PositionFixed { position: fixed; }
+
+.Top0 { top: 0; }
+.Left0 { left: 0; }
+.Right0 { right: 0; }
+.Bottom0 { bottom: 0; }
+
+
+/* =========================================
+   GAP (Flex / Grid)
+========================================= */
+
+.Gap01 { gap: .1rem; }
+.Gap02 { gap: .2rem; }
+.Gap05 { gap: .5rem; }
+.Gap10 { gap: 1rem; }
+.Gap15 { gap: 1.5rem; }
+.Gap20 { gap: 2rem; }
+.Gap25 { gap: 2.5rem; }
+
+
+/* =========================================
+   GRID
+========================================= */
+
+.GridTemplateColumns1 { grid-template-columns: repeat(1, 1fr); }
+.GridTemplateColumns2 { grid-template-columns: repeat(2, 1fr); }
+.GridTemplateColumns3 { grid-template-columns: repeat(3, 1fr); }
+.GridTemplateColumns4 { grid-template-columns: repeat(4, 1fr); }
+
+.GridTemplateRows1 { grid-template-rows: repeat(1, 1fr); }
+.GridTemplateRows2 { grid-template-rows: repeat(2, 1fr); }
+.GridTemplateRows3 { grid-template-rows: repeat(3, 1fr); }
+
+
+/* =========================================
+   FONT SIZE
+========================================= */
+
+.FontSize10 { font-size: 1rem; }
+.FontSize15 { font-size: 1.5rem; }
+.FontSize20 { font-size: 2rem; }
+.FontSize25 { font-size: 2.5rem; }
+
+
+/* =========================================
+   LINE HEIGHT
+========================================= */
+
+.LineHeight10 { line-height: 1rem; }
+.LineHeight15 { line-height: 1.5rem; }
+.LineHeight20 { line-height: 2rem; }
+.LineHeight25 { line-height: 2.5rem; }
+
+
+/* =========================================
+   COLORS
+========================================= */
+
+.ColorWhite { color: #ffffff; }
+.ColorBlack { color: #000000; }
+.ColorGray { color: #666666; }
+.ColorRed { color: #e53935; }
+.ColorBlue { color: #1e88e5; }
+.ColorGreen { color: #43a047; }
+
+
+/* =========================================
+   BACKGROUND
+========================================= */
+
+.BackgroundColorWhite { background-color: #ffffff; }
+.BackgroundColorBlack { background-color: #000000; }
+.BackgroundColorGray { background-color: #f2f2f2; }
+.BackgroundColorRed { background-color: #e53935; }
+.BackgroundColorBlue { background-color: #1e88e5; }
+.BackgroundColorGreen { background-color: #43a047; }
+
+
+/* =========================================
+   OPACITY
+========================================= */
+
+.Opacity01 { opacity: .1; }
+.Opacity02 { opacity: .2; }
+.Opacity05 { opacity: .5; }
+.Opacity10 { opacity: 1; }
+
+
+/* =========================================
+   OVERFLOW
+========================================= */
+
+.OverflowHidden { overflow: hidden; }
+.OverflowAuto { overflow: auto; }
+.OverflowScroll { overflow: scroll; }
+
+
+/* =========================================
+   CURSOR
+========================================= */
+
+.CursorPointer { cursor: pointer; }
+.CursorDefault { cursor: default; }
+.CursorMove { cursor: move; }
+
+
+/* =========================================
+   USER SELECT
+========================================= */
+
+.UserSelectNone { user-select: none; }
+.UserSelectText { user-select: text; }
+
+
+/* =========================================
+   SHADOW
+========================================= */
+
+.BoxShadowSmall {
+  box-shadow: 0 2px 6px rgba(0,0,0,.15);
+}
+
+.BoxShadowMedium {
+  box-shadow: 0 4px 12px rgba(0,0,0,.2);
+}
+
+.BoxShadowLarge {
+  box-shadow: 0 8px 20px rgba(0,0,0,.25);
+}
+
+
+/* =========================================
+   TRANSITION
+========================================= */
+
+.TransitionFast { transition: all .15s ease; }
+.TransitionMedium { transition: all .3s ease; }
+.TransitionSlow { transition: all .6s ease; }
+
+
+/* =========================================
+   Z INDEX
+========================================= */
+
+.ZIndex0 { z-index: 0; }
+.ZIndex10 { z-index: 10; }
+.ZIndex50 { z-index: 50; }
+.ZIndex100 { z-index: 100; }
+
+
+
+/* =========================================
+   BORDER WIDTH
+========================================= */
+
+.BorderWidth01 { border-width: .1rem; }
+.BorderWidth02 { border-width: .2rem; }
+.BorderWidth05 { border-width: .5rem; }
+.BorderWidth10 { border-width: 1rem; }
+
+.BorderStyleSolid { border-style: solid; }
+.BorderStyleDashed { border-style: dashed; }
+.BorderStyleDotted { border-style: dotted; }
+
+
+/* =========================================
+   BORDER COLOR
+========================================= */
+
+.BorderColorBlack { border-color: #000000; }
+.BorderColorGray { border-color: #cccccc; }
+.BorderColorRed { border-color: #e53935; }
+.BorderColorBlue { border-color: #1e88e5; }
+.BorderColorGreen { border-color: #43a047; }
+
+
+/* =========================================
+   OUTLINE
+========================================= */
+
+.OutlineNone { outline: none; }
+.OutlineWidth02 { outline-width: .2rem; }
+.OutlineStyleSolid { outline-style: solid; }
+.OutlineColorBlue { outline-color: #1e88e5; }
+
+
+/* =========================================
+   BACKGROUND SIZE & POSITION
+========================================= */
+
+.BackgroundSizeCover { background-size: cover; }
+.BackgroundSizeContain { background-size: contain; }
+
+.BackgroundPositionCenter { background-position: center; }
+.BackgroundPositionTop { background-position: top; }
+.BackgroundPositionBottom { background-position: bottom; }
+
+.BackgroundRepeatNoRepeat { background-repeat: no-repeat; }
+.BackgroundRepeatRepeat { background-repeat: repeat; }
+
+
+/* =========================================
+   OBJECT FIT
+========================================= */
+
+.ObjectFitCover { object-fit: cover; }
+.ObjectFitContain { object-fit: contain; }
+.ObjectFitFill { object-fit: fill; }
+
+
+/* =========================================
+   ASPECT RATIO
+========================================= */
+
+.AspectRatio1_1 { aspect-ratio: 1 / 1; }
+.AspectRatio16_9 { aspect-ratio: 16 / 9; }
+.AspectRatio4_3 { aspect-ratio: 4 / 3; }
+
+
+/* =========================================
+   TRANSFORM
+========================================= */
+
+.TransformScale90 { transform: scale(.9); }
+.TransformScale100 { transform: scale(1); }
+.TransformScale110 { transform: scale(1.1); }
+
+.TransformRotate5 { transform: rotate(5deg); }
+.TransformRotate10 { transform: rotate(10deg); }
+
+
+/* =========================================
+   POINTER EVENTS
+========================================= */
+
+.PointerEventsNone { pointer-events: none; }
+.PointerEventsAuto { pointer-events: auto; }
+
+
+/* =========================================
+   VISIBILITY
+========================================= */
+
+.VisibilityHidden { visibility: hidden; }
+.VisibilityVisible { visibility: visible; }
+
+
+/* =========================================
+   WHITE SPACE
+========================================= */
+
+.WhiteSpaceNormal { white-space: normal; }
+.WhiteSpaceNoWrap { white-space: nowrap; }
+.WhiteSpacePre { white-space: pre; }
+
+
+/* =========================================
+   TEXT OVERFLOW
+========================================= */
+
+.TextOverflowEllipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+
+/* =========================================
+   LIST
+========================================= */
+
+.ListStyleNone { list-style: none; }
+.ListStyleDisc { list-style: disc; }
+.ListStyleDecimal { list-style: decimal; }
+
+
+/* =========================================
+   IMAGE
+========================================= */
+
+.ImageResponsive {
+  max-width: 100%;
+  height: auto;
+}
+
+
+/* =========================================
+   RESPONSIVE LAYOUT ENGINE
+========================================= */
+
+/* --- SMALL (Sm: 640px) --- */
+@media (min-width: 640px) {
+  .Sm\:DisplayBlock { display: block; }
+  .Sm\:DisplayFlex { display: flex; }
+  .Sm\:DisplayGrid { display: grid; }
+  .Sm\:DisplayNone { display: none; }
+  
+  .Sm\:FlexDirectionRow { flex-direction: row; }
+  .Sm\:FlexDirectionColumn { flex-direction: column; }
+  .Sm\:FlexWrap { flex-wrap: wrap; }
+  
+  .Sm\:GridTemplateColumns1 { grid-template-columns: repeat(1, 1fr); }
+  .Sm\:GridTemplateColumns2 { grid-template-columns: repeat(2, 1fr); }
+
+  .Sm\:TextAlignCenter { text-align: center; }
+  .Sm\:TextAlignLeft { text-align: left; }
+
+  .Sm\:Padding10 { padding: 1rem; }
+  .Sm\:Padding20 { padding: 2rem; }
+  .Sm\:Margin10 { margin: 1rem; }
+  .Sm\:Margin20 { margin: 2rem; }
+  
+  .Sm\:Width100 { width: 100%; }
+  .Sm\:FontSize15 { font-size: 1.5rem; }
+}
+
+/* --- MEDIUM (Md: 768px) --- */
+@media (min-width: 768px) {
+  .Md\:DisplayBlock { display: block; }
+  .Md\:DisplayFlex { display: flex; }
+  .Md\:DisplayGrid { display: grid; }
+  .Md\:DisplayNone { display: none; }
+  
+  .Md\:FlexDirectionRow { flex-direction: row; }
+  .Md\:FlexDirectionColumn { flex-direction: column; }
+  
+  .Md\:JustifyContentCenter { justify-content: center; }
+  .Md\:JustifyContentSpaceBetween { justify-content: space-between; }
+  
+  .Md\:GridTemplateColumns2 { grid-template-columns: repeat(2, 1fr); }
+  .Md\:GridTemplateColumns3 { grid-template-columns: repeat(3, 1fr); }
+
+  .Md\:TextAlignCenter { text-align: center; }
+  .Md\:TextAlignLeft { text-align: left; }
+
+  .Md\:Padding15 { padding: 1.5rem; }
+  .Md\:Padding25 { padding: 2.5rem; }
+  .Md\:MarginTop20 { margin-top: 2rem; }
+  
+  .Md\:Width50 { width: 50%; }
+  .Md\:FontSize20 { font-size: 2rem; }
+  .Md\:Gap15 { gap: 1.5rem; }
+}
+
+/* --- LARGE (Lg: 1024px) --- */
+@media (min-width: 1024px) {
+  .Lg\:DisplayFlex { display: flex; }
+  .Lg\:DisplayGrid { display: grid; }
+  
+  .Lg\:GridTemplateColumns3 { grid-template-columns: repeat(3, 1fr); }
+  .Lg\:GridTemplateColumns4 { grid-template-columns: repeat(4, 1fr); }
+  
+  .Lg\:JustifyContentEnd { justify-content: flex-end; }
+  
+  .Lg\:Padding25 { padding: 2.5rem; }
+  .Lg\:Margin25 { margin: 2.5rem; }
+  
+  .Lg\:Width33 { width: 33.33%; }
+  .Lg\:FontSize25 { font-size: 2.5rem; }
+  .Lg\:Gap20 { gap: 2rem; }
+}
+
+/* --- EXTRA LARGE (Xl: 1280px) --- */
+@media (min-width: 1280px) {
+  .Xl\:DisplayGrid { display: grid; }
+  .Xl\:GridTemplateColumns4 { grid-template-columns: repeat(4, 1fr); }
+  .Xl\:GridTemplateColumns6 { grid-template-columns: repeat(6, 1fr); }
+  
+  .Xl\:MaxWidth1200 { max-width: 1200px; margin-left: auto; margin-right: auto; }
+  .Xl\:Padding25 { padding: 2.5rem; }
+  
+  .Xl\:Width25 { width: 25%; }
+}
+
+
+
+V3?
+
+
+Assolutamente sì! Il CSS tra il 2024 e il 2026 ha fatto passi da gigante. Se vuoi che PascalCSS sia davvero una libreria "del futuro", possiamo sfruttare tre nuove specifiche che rendono inutile l'uso di SASS e migliorano drasticamente la gestione del responsive.
+Ecco le novità "bomba" che dovresti integrare:
+1. CSS Custom Media Queries (Media Queries con Variabili)
+Invece di ripetere 768px in tutto il file, oggi puoi definire i breakpoint una volta sola. Questo rende la tua libreria ultra-manutenibile.
+@custom-media --md-viewport (min-width: 768px);
+
+@media (--md-viewport) {
+  .Md\:DisplayFlex { display: flex; }
+}
+
+2. Modern CSS Reset (lightweight)
+Dato che PascalCSS è "small", non usare reset pesanti. Sfrutta la nuova proprietà text-wrap: balance per i titoli e scrollbar-gutter: stable per evitare che la pagina "salti" quando appare la scrollbar.
+h1, h2, h3 {
+  text-wrap: balance; /* Evita che una sola parola rimanga da sola nell'ultima riga */
+}
+
+3. Container Queries (La vera rivoluzione)
+Questa è la funzione che ucciderà definitivamente Tailwind tradizionale. Invece di basarsi sulla larghezza dello schermo, le classi rispondono alla larghezza del loro contenitore.
+Se un componente è dentro una colonna stretta, si comporta come "mobile" anche se lo schermo è "desktop".
+/* Definiamo un contenitore */
+.ContainerParent {
+  container-type: inline-size;
+}
+
+/* Classe che cambia solo se il contenitore è largo */
+@container (min-width: 400px) {
+  .Co\:FlexDirectionRow { flex-direction: row; }
+}
+
+Naming suggestion: Potresti usare il prefisso Co: (Container) per queste classi speciali.
+4. CSS Nesting Nativo
+Dimentica SASS. Ora puoi annidare le classi direttamente nel CSS. Questo è utile se vuoi che PascalCSS gestisca anche stati complessi (come il GroupHover di Tailwind) in modo leggibile.
+.Card {
+  transition: all 0.3s;
+  
+  &:hover {
+    transform: scale(1.05);
+    
+    .Hover\:ColorBlue { color: var(--blue); }
+  }
+}
+
+5. LCH e OKLCH Colors
+Invece dei codici HEX (#ff0000), usa i colori OKLCH. Sono colori percepiti dall'occhio umano in modo più uniforme e permettono di creare palette "generate" matematicamente che sono perfette in Dark Mode.
+:root {
+  --BrandColor: oklch(60% 0.15 250); /* Un blu vibrante che non sgrana mai */
+}
+
+Prossimo Step: Aggiornare il Core
+Vuoi che riscriva una sezione del file PascalCSS includendo queste Container Queries o preferisci concentrarti prima sull'implementazione dei colori OKLCH per avere una palette moderna e accessibile?
+
+
+
