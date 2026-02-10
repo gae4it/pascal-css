@@ -1,0 +1,754 @@
+
+/* ################################################ CONTAINER ################################################ */
+
+/* CONTAINER */
+*{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;}
+
+/* SECTION FONT FAMILY */
+body.FontFamily, body .FontFamily, .FontFamily input {font-family: ABCFavorit, Arial, sans-serif; font-style: normal; letter-spacing: normal;}
+
+/* SECTION FONT COLOR */
+.FontColor {color: #001344;}
+
+/* SECTION CONTENT WRAPPER */
+.ContentWrapper {max-width: 1260px; margin:0 auto; padding: 0 10px;}
+@media (min-width:480px){.ContentWrapper{padding:0 30px}}
+
+/* PDS CONTENT WRAPPER */
+.ContentWrapperPDS {max-width: 1450px; margin:0 auto; padding: 0 10px;}
+@media (min-width:480px){.ContentWrapperPDS{padding:0 30px}}
+
+/* SECTION HERO PADDING */
+.PaddingSectionHero {padding-top: 12%; padding-bottom: 8%;}
+@media (min-width: 950px){.PaddingSectionHero {padding-top: 5%; padding-bottom: 3%;}}
+
+/* SECTION HERO PADDING FIX (WhiteBarFix Integrated!) */
+.PaddingSectionHeroFix {padding-top: 7%; padding-bottom: 8%;}
+@media (min-width: 481px){.PaddingSectionHeroFix {padding-top: 1%; padding-bottom: 3%;}}
+
+/* SECTION PADDING */
+.PaddingSection {padding-top: 8%; padding-bottom: 8%;}
+@media (min-width: 481px){.PaddingSection {padding-top: 3%; padding-bottom: 3%;}}
+
+.PaddingSection2 {padding-top: 6%; padding-bottom: 6%;}
+@media (min-width: 481px){.PaddingSection2 {padding-top: 2%; padding-bottom: 2%;}}
+
+.PaddingSection1 {padding-top: 6%; padding-bottom: 6%;}
+@media (min-width: 481px){.PaddingSection1 {padding-top: 1%; padding-bottom: 1%;}}
+
+.PaddingSectionTop1 {padding-top: 6%;}
+@media (min-width: 481px){.PaddingSectionTop1 {padding-top: 1%;}}
+
+.PaddingSectionTop2 {padding-top: 6%;}
+@media (min-width: 481px){.PaddingSectionTop2 {padding-top: 2%;}}
+
+.PaddingSectionTop3 {padding-top: 8%;}
+@media (min-width: 481px){.PaddingSectionTop3 {padding-top: 3%;}}
+
+.PaddingSectionTop10 {padding-top: 15%;}
+@media (min-width: 481px){.PaddingSectionTop10 {padding-top: 10%;}}
+
+.PaddingSectionBottom1 {padding-bottom: 6%;}
+@media (min-width: 481px){.PaddingSectionBottom1 {padding-bottom: 1%;}}
+
+.PaddingSectionBottom2 {padding-bottom: 6%;}
+@media (min-width: 481px){.PaddingSectionBottom2 {padding-bottom: 2%;}}
+
+.PaddingSectionBottom3 {padding-bottom: 8%;}
+@media (min-width: 481px){.PaddingSectionBottom3 {padding-bottom: 3%;}}
+
+
+
+
+/* SECTION FORM PADDING */
+.PaddingSectionForm {padding-top: 7%; padding-bottom: 8%;}
+@media (min-width: 481px){.PaddingSectionForm {padding-top: 1%; padding-bottom: 3%;}}
+
+/* SECTION FLEX CONTAINER */
+.FlexCenter {display: flex; align-items: center;}
+
+
+/* ################################################ FONTS & ICONS ################################################ */
+/* @font-face{font-family:'ABCFavorit';src:url('https://haufe.static.esales.haufe.io/fonts/ABCFavorit/ABCFavorit-Regular.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'ABCFavorit';src:url('https://haufe.static.esales.haufe.io/fonts/ABCFavorit/ABCFavorit-Bold.woff2') format('woff2');font-weight:700;font-style:normal;font-display:swap} */
+@font-face{font-family:'haufeshop_iconfont-lighthouse';src:url('https://haufe.static.esales.haufe.io/wcsstore/HaufeLHStorefrontAssetStore/V_release-9118-ES-25-10537_V/fonts/haufeshop_iconfont-lighthouse.woff') format('woff');font-weight:400;font-style:normal;font-display:swap;}
+
+.FontIcon{font-family:'Material Symbols Sharp';font-weight:normal;font-style:normal;font-size:3rem;line-height:1;letter-spacing:normal;text-transform:none;display:inline-block;white-space:nowrap;word-wrap:normal;direction:ltr;-moz-font-feature-settings:'liga';font-feature-settings:'liga';-moz-osx-font-smoothing:grayscale;font-display: swap;}
+
+
+
+/* ################################################ FONT ################################################ */
+
+/* UNIVERSAL PARAMETERS */
+/* body, .TextWrapper,.TitleWrapper,p,h1,h2,h3,h4,h5,h6,li{word-break:break-word;overflow-wrap:break-word} */
+
+/* FONT SETUP MOBILE */
+*{font-size: 1rem !important;} /* 16px */
+    h1 {font-size: 2.4em; line-height: 1.3; font-weight: 400; margin-bottom: 0!important;}
+    h2 {font-size: 2.0em; line-height: 1.3; font-weight: 400; margin-bottom: 0!important;}
+    h3 {font-size: 1.8em; line-height: 1.3; font-weight: 400; margin-bottom: 0!important;}
+    h4 {font-size: 1.4em; line-height: 1.3; font-weight: 400; margin-bottom: 0!important;}
+    h5 {font-size: 1.3em; line-height: 1.3; font-weight: 400; margin-bottom: 0!important;}
+    li {font-size: 1.1em; line-height: 1.4; font-weight: 400; margin-bottom: 0;}
+    a {font-size: 1em; line-height: 1.3; font-weight: 400;}
+    p {font-size: 1.1em; line-height: 1.3; font-weight: 400;}
+    .Fs07 {font-size: 0.6em; line-height: 1.4; font-weight: 400;}
+    .Fs08 {font-size: 0.7em; line-height: 1.4; font-weight: 400;}
+    .Fs09 {font-size: 0.8em; line-height: 1.4; font-weight: 400;}
+    .Fs10 {font-size: 1.0em; line-height: 1.4; font-weight: 400;}
+    .Fs11 {font-size: 1.1em; line-height: 1.4; font-weight: 400;}
+    .Fs12 {font-size: 1.1em; line-height: 1.4; font-weight: 400;}
+    .Fs13 {font-size: 1.1em; line-height: 1.3; font-weight: 400;}
+    .Fs14 {font-size: 1.2em; line-height: 1.3; font-weight: 400;}
+    .Fs15 {font-size: 1.3em; line-height: 1.3; font-weight: 400;}
+    .Fs16 {font-size: 1.4em; line-height: 1.3; font-weight: 400;}
+    .Fs17 {font-size: 1.5em; line-height: 1.3; font-weight: 400;}
+    .Fs18 {font-size: 1.6em; line-height: 1.3; font-weight: 400;}
+    .Fs19 {font-size: 1.7em; line-height: 1.3; font-weight: 400;}
+    .Fs20 {font-size: 1.75em; line-height: 1.2; font-weight: 400;}
+    .Fs21 {font-size: 1.80em; line-height: 1.2; font-weight: 400;}
+    .Fs22 {font-size: 1.85em; line-height: 1.2; font-weight: 400;}
+    .Fs23 {font-size: 1.90em; line-height: 1.2; font-weight: 400;}
+    .Fs24 {font-size: 1.93em; line-height: 1.2; font-weight: 400;}
+    .Fs25 {font-size: 1.95em; line-height: 1.2; font-weight: 400;}
+    .Fs26 {font-size: 1.97em; line-height: 1.2; font-weight: 400;}
+    .Fs27 {font-size: 1.98em; line-height: 1.2; font-weight: 400;}
+    .Fs28 {font-size: 2.0em; line-height: 1.2; font-weight: 400;}
+    .Fs29 {font-size: 2.05em; line-height: 1.2; font-weight: 400;}
+    .Fs30 {font-size: 2.1em; line-height: 1.2; font-weight: 400;}
+    .Fs33 {font-size: 2.2em; line-height: 1.2; font-weight: 400;}
+    .Fs35 {font-size: 2.3em; line-height: 1.2; font-weight: 400;}
+    .Fs40 {font-size: 2.5em; line-height: 1.2; font-weight: 400;}
+    .Fs50 {font-size: 3.0em; line-height: 1.2; font-weight: 400;}
+    h1.TitleHero {font-size: 2.1em; line-height: 1.3; font-weight: 400; margin-top: 0; margin-bottom: 0;}
+    h1.TitleForm {font-size: 2.1em; line-height: 1.2; font-weight: 400; margin-top: 0; margin-bottom: 0;}
+    .TitleFormFields {font-size: 1.3em; line-height: 1.3; font-weight: 400; margin-top: 0; margin-bottom: 0;}
+
+/* FONT SETUP TABLET */
+@media (min-width: 769px) {
+    h1 {font-size: 3em; line-height: 1.4;}
+    h2 {font-size: 2.3em; line-height: 1.3;}
+    h3 {font-size: 1.9em; line-height: 1.3;}
+    h4 {font-size: 1.5em; line-height: 1.3;}
+    h5 {font-size: 1.2em; line-height: 1.3;}
+    li {font-size: 1.1em; line-height: 1.5;}
+    a {font-size: 1em; line-height: 1.3;}
+    p {font-size: 1.1em; line-height: 1.3;}
+    .Fs07 {font-size: 0.6em;}
+    .Fs08 {font-size: 0.7em;}
+    .Fs09 {font-size: 0.8em;}
+    .Fs10 {font-size: 1.0em;}
+    .Fs11 {font-size: 1.1em;}
+    .Fs12 {font-size: 1.1em;}
+    .Fs13 {font-size: 1.2em;}
+    .Fs14 {font-size: 1.3em;}
+    .Fs15 {font-size: 1.4em;}
+    .Fs16 {font-size: 1.5em;}
+    .Fs17 {font-size: 1.6em;}
+    .Fs18 {font-size: 1.7em;}
+    .Fs19 {font-size: 1.8em;}
+    .Fs20 {font-size: 1.9em;}
+    .Fs21 {font-size: 2.0em;}
+    .Fs22 {font-size: 2.1em;}
+    .Fs23 {font-size: 2.15em;}
+    .Fs24 {font-size: 2.20em;}
+    .Fs25 {font-size: 2.23em;}
+    .Fs26 {font-size: 2.26em;}
+    .Fs27 {font-size: 2.28em;}
+    .Fs28 {font-size: 2.3em;}
+    .Fs29 {font-size: 2.35em;}
+    .Fs30 {font-size: 2.4em;}
+    .Fs33 {font-size: 2.6em;}
+    .Fs35 {font-size: 2.8em;}
+    .Fs40 {font-size: 3.0em;}
+    .Fs50 {font-size: 4.0em;}
+    h1.TitleHero {font-size: 3em;}
+    h1.TitleForm {font-size: 3em;}
+    .TitleFormFields {font-size: 1.6em;}}
+
+/* FONT SETUP DESKTOP */
+@media (min-width: 1024px) {
+    h1 {font-size: 3.75em; line-height: 1.2; font-weight: 400;}
+    h2 {font-size: 2.875em; line-height: 1.2; font-weight: 400;}
+    h3 {font-size: 2.1em; line-height: 1.4; font-weight: 400;}
+    h4 {font-size: 1.6em; line-height: 1.3; font-weight: 400;}
+    h5 {font-size: 1.3em; line-height: 1.3; font-weight: 400;}
+    li {font-size: 1.1em; line-height: 1.5; font-weight: 400;}
+    a {font-size: 1em; line-height: 1.3; font-weight: 400;}
+    p {font-size: 1.1em; line-height: 1.3; font-weight: 400;}
+    .Fs07 {font-size: 0.7em;}
+    .Fs08 {font-size: 0.8em;}
+    .Fs09 {font-size: 0.9em;}
+    .Fs10 {font-size: 1.0em;}
+    .Fs11 {font-size: 1.1em;}
+    .Fs12 {font-size: 1.2em;}
+    .Fs13 {font-size: 1.3em;}
+    .Fs14 {font-size: 1.4em;}
+    .Fs15 {font-size: 1.5em;}
+    .Fs16 {font-size: 1.6em;}
+    .Fs17 {font-size: 1.7em;}
+    .Fs18 {font-size: 1.8em;}
+    .Fs19 {font-size: 1.9em;}
+    .Fs20 {font-size: 2.0em;}
+    .Fs21 {font-size: 2.1em;}
+    .Fs22 {font-size: 2.2em;}
+    .Fs23 {font-size: 2.3em;}
+    .Fs24 {font-size: 2.4em;}
+    .Fs25 {font-size: 2.5em;}
+    .Fs26 {font-size: 2.6em;}
+    .Fs27 {font-size: 2.7em;}
+    .Fs28 {font-size: 2.875em;}
+    .Fs29 {font-size: 2.9em;}
+    .Fs30 {font-size: 3.0em;}
+    .Fs33 {font-size: 3.3em;}
+    .Fs35 {font-size: 3.5em;}
+    .Fs40 {font-size: 4.0em;}
+    .Fs50 {font-size: 5.0em;}
+    h1.TitleHero {font-size: 3.75em;}
+    h1.TitleForm {font-size: 3.3em;}
+    .TitleFormFields {font-size: 1.8em;}}
+    
+
+
+/* ######## FONT UTILITY CLASSES ######## */
+
+/* FONT WEIGHT */
+.FwBold {font-weight: 500;}
+.Fw300 {font-weight: 300;}
+.Fw400 {font-weight: 400;}
+.Fw500 {font-weight: 500;}
+.Fw600 {font-weight: 600;}
+.Fw700 {font-weight: 700;}
+.Fw800 {font-weight: 800;}
+
+/* TEXT TRANSFORM */
+.TextUppercase {text-transform: uppercase;}
+.TextLowercase {text-transform: lowercase;}
+.TextCapitalize {text-transform: capitalize;}
+.TextUnderline {text-decoration: underline;}
+.TextLineThrough {text-decoration: line-through;}
+.LineThrough {text-decoration: line-through;}
+.TextDecorationNone {text-decoration: none;}
+.TextNoWrap {white-space: nowrap;}
+.TextNoBreak {word-break: keep-all; overflow-wrap: normal; hyphens: manual; white-space: normal;}
+
+/* TEXT ALIGN */
+.TextAlignCenter {text-align: center;}
+.TextAlignLeft {text-align: left;}
+.TextAlignRight {text-align: right;}
+
+/* MARGINS */
+.MarginTop0 {margin-top: 0;}
+.MarginTop01 {margin-top: 0.1rem;}
+.MarginTop02 {margin-top: 0.2rem;}
+.MarginTop05 {margin-top: 0.5rem;}
+.MarginTop10 {margin-top: 1.0rem;}
+.MarginTop20 {margin-top: 2.0rem;}
+.MarginTop35 {margin-top: 3.5rem;}
+.MarginTop40 {margin-top: 4.0rem;}
+.MarginTopAuto {margin-top: auto;}
+
+.MarginBot0 {margin-bottom: 0!important;}
+.MarginBot01 {margin-bottom: 0.1rem!important;}
+.MarginBot02 {margin-bottom: 0.2rem!important;}
+.MarginBot05 {margin-bottom: 0.5rem!important;}
+.MarginBot10 {margin-bottom: 1.0rem!important;}
+.MarginBot12 {margin-bottom: 1.2rem!important;}
+.MarginBot15 {margin-bottom: 1.5rem!important;}
+.MarginBot20 {margin-bottom: 2.0rem!important;}
+.MarginBot25 {margin-bottom: 2.5rem!important;}
+.MarginBot30 {margin-bottom: 3.0rem!important;}
+.MarginBot40 {margin-bottom: 4.0rem!important;}
+.MarginBot50 {margin-bottom: 5.0rem!important;}
+
+.MarginLeft08 {margin-left: 0.8rem;}
+.MarginLeft10 {margin-left: 1.0rem;}
+.MarginLeft20 {margin-left: 2.0rem;}
+
+.MarginTop0Bot0 {margin-top: 0; margin-bottom: 0!important;}
+.MarginLeftRightAuto {margin-left: auto!important; margin-right: auto!important;}
+
+/* POSITIONING */
+.PositionRelative {position: relative;}
+.PositionAbsolute {position: absolute;}
+.PositionFixed {position: fixed;}
+
+/* Z-INDEX */
+.ZIndex-2{z-index:-2;}
+.ZIndex-1{z-index:-1;}
+.ZIndex0{z-index:0;}
+.ZIndex1{z-index:1;}
+.ZIndex2{z-index:2;}
+.ZIndex10{z-index:10;}
+
+/* BORDER */
+.BorderRound {border-radius: 12px;}
+.BorderRound100 {border-radius: 50%;}
+.BorderRoundTop {border-radius: 12px 12px 0 0;}
+.BorderRoundBottom {border-radius: 0 0 12px 12px;}
+.BorderNone {border: none;}
+
+/* WIDTH */
+
+/* Max Width Mobile + Desktop */
+@media (min-width: 350px) and (max-width: 767px) {
+.MaxWidth100Mobile { max-width: 100%; }
+.MaxWidth95Mobile  { max-width: 95%; }
+.MaxWidth90Mobile  { max-width: 90%; }
+.MaxWidth85Mobile  { max-width: 85%; }
+.MaxWidth80Mobile  { max-width: 80%; }
+.MaxWidth75Mobile  { max-width: 75%; }
+.MaxWidth70Mobile  { max-width: 70%; }
+.MaxWidth65Mobile  { max-width: 65%; }
+.MaxWidth60Mobile  { max-width: 60%; }
+.MaxWidth55Mobile  { max-width: 55%; }
+.MaxWidth50Mobile  { max-width: 50%; }
+.MaxWidth45Mobile  { max-width: 45%; }
+.MaxWidth40Mobile  { max-width: 40%; }
+.MaxWidth35Mobile  { max-width: 35%; }
+.MaxWidth30Mobile  { max-width: 30%; }
+.MaxWidth25Mobile  { max-width: 25%; }
+.MaxWidth20Mobile  { max-width: 20%; }
+.MaxWidth15Mobile  { max-width: 15%; }
+.MaxWidth10Mobile  { max-width: 10%; }}
+
+/* Max Width Desktop */
+@media (min-width: 768px) {
+    .MaxWidth100 { max-width: 100%; }
+    .MaxWidth95  { max-width: 95%; }
+    .MaxWidth90  { max-width: 90%; }
+    .MaxWidth85  { max-width: 85%; }
+    .MaxWidth80  { max-width: 80%; }
+    .MaxWidth75  { max-width: 75%; }
+    .MaxWidth70  { max-width: 70%; }
+    .MaxWidth65  { max-width: 65%; }
+    .MaxWidth60  { max-width: 60%; }
+    .MaxWidth55  { max-width: 55%; }
+    .MaxWidth50  { max-width: 50%; }
+    .MaxWidth45  { max-width: 45%; }
+    .MaxWidth40  { max-width: 40%; }
+    .MaxWidth35  { max-width: 35%; }
+    .MaxWidth30  { max-width: 30%; }
+    .MaxWidth25  { max-width: 25%; }
+    .MaxWidth20  { max-width: 20%; }
+    .MaxWidth15  { max-width: 15%; }
+    .MaxWidth10  { max-width: 10%; }}
+
+/* Height & Width 100% */
+.MinHeight100vh  { min-height: 100vh; }
+.MinHeight50vh  { min-height: 50vh; }
+.Height100 { height: 100%; }
+.Width100 { width: 100%; }
+.WidthAuto { width: auto; }
+.HeightAuto { height: auto; }
+
+/* ##### DISPLAY UTILITY CLASSES ##### */
+.DisplayNone {display: none;}
+/* Hide on mobile only */
+.HiddenMobile{display:none;}
+@media (min-width:768px){.HiddenMobile{display:block;}}
+/* Hide on mobile and tablet */
+.HiddenMobileTablet{display:none;}
+@media (min-width:1024px){.HiddenMobileTablet{display:block;}}
+/* Hide on desktop only */
+.HiddenDesktop{display:block;}
+@media (min-width:1024px){.HiddenDesktop{display:none;}}
+
+.DisplayBlock {display: block;}
+.DisplayInline {display: inline;}
+.VisibilityHidden {visibility: hidden;}
+
+/* ##### FLEX UTILITY CLASSES ##### */
+.DisplayFlex {display: flex;}
+
+.FlexDirectionRow {flex-direction: row;}
+.FlexDirectionColumn {flex-direction: column;}
+@media (min-width: 768px) {
+    .FlexDirectionRowMinWidth768 {flex-direction: row;}
+    .FlexDirectionColumnMinWidth768 {flex-direction: column;}}
+@media (min-width: 1024px) {
+    .FlexDirectionRowMinWidth1024 {flex-direction: row;}
+    .FlexDirectionColumnMinWidth1024 {flex-direction: column;}}
+
+.FlexRow {flex-direction: row;}
+.FlexCol {flex-direction: column;}
+@media (min-width: 768px) {
+    .FlexRowM {flex-direction: row;}
+    .FlexColM {flex-direction: column;}}
+@media (min-width: 1024px) {
+    .FlexRowL {flex-direction: row;}
+    .FlexColL {flex-direction: column;}}
+
+.FlexWrap {flex-wrap: wrap;}
+.FlexNoWrap {flex-wrap: nowrap;}
+.FlexAuto {flex:1 1 0;}
+.FlexGrow1 {flex-grow:1;}
+.FlexGrow0 {flex-grow:0;}
+.FlexShrink1 {flex-shrink:1;}
+.FlexShrink0 {flex-shrink:0;}
+.FlexBasis0 {flex-basis:0;}
+.FlexBasisAuto {flex-basis:auto;}
+
+/* ##### GRID UTILITY CLASSES ##### */
+/* Enables grid layout */
+.DisplayGrid {display: grid; gap: 1.5rem;}
+/* One column grid */
+.GridCols1 {grid-template-columns: 1fr;}
+/* Two columns grid, responsive: 1 column on mobile, 2 from 768px */
+.GridCols2 {grid-template-columns: 1fr;}
+@media (min-width: 768px) {.GridCols2 {grid-template-columns: 1fr 1fr;}}
+/* Three columns grid, responsive: 1 column on mobile, 2 from 768px, 3 from 1024px */
+.GridCols3 {grid-template-columns: 1fr;}
+@media (min-width: 768px) {.GridCols3 {grid-template-columns: 1fr 1fr;}}
+@media (min-width: 1024px) {.GridCols3 {grid-template-columns: 1fr 1fr 1fr;}}
+/* Four columns grid, responsive: 1 column on mobile, 2 from 768px, 3 from 1024px, 4 from 1280px */
+.GridCols4 {grid-template-columns: 1fr;}
+@media (min-width: 768px) {.GridCols4 {grid-template-columns: 1fr 1fr;}}
+@media (min-width: 1024px) {.GridCols4 {grid-template-columns: 1fr 1fr 1fr;}}
+@media (min-width: 1280px) {.GridCols4 {grid-template-columns: 1fr 1fr 1fr 1fr;}}
+
+/* ##### ALIGN UTILITY CLASSES ##### */
+
+/* Justify content */
+.JustifyContentStart {justify-content: flex-start;}
+.JustifyContentCenter {justify-content: center;}
+.JustifyContentEnd {justify-content: flex-end;}
+.JustifyContentBetween {justify-content: space-between;}
+.JustifyContentAround {justify-content: space-around;}
+.JustifyContentEvenly {justify-content: space-evenly;}
+/* Align content */
+.AlignContentStart {align-content: flex-start;}
+.AlignContentCenter {align-content: center;}
+.AlignContentEnd {align-content: flex-end;}
+.AlignContentStretch {align-content: stretch;}
+.AlignContentBetween {align-content: space-between;}
+.AlignContentAround {align-content: space-around;}
+.AlignContentEvenly {align-content: space-evenly;}
+/* Align items */
+.AlignItemsStart {align-items: flex-start;}
+.AlignItemsCenter {align-items: center;}
+.AlignItemsEnd {align-items: flex-end;}
+.AlignItemsStretch {align-items: stretch;}
+.AlignItemsBaseline {align-items: baseline;}
+/* Align self */
+.AlignSelfAuto {align-self: auto;}
+.AlignSelfStart {align-self: flex-start;}
+.AlignSelfCenter {align-self: center;}
+.AlignSelfEnd {align-self: flex-end;}
+.AlignSelfStretch {align-self: stretch;}
+.AlignSelfBaseline {align-self: baseline;}
+/* Justify self */
+.JustifySelfAuto {justify-self: auto;}
+.JustifySelfStart {justify-self: start;}
+.JustifySelfCenter {justify-self: center;}
+.JustifySelfEnd {justify-self: end;}
+.JustifySelfStretch {justify-self: stretch;}
+
+/* GAP */
+.Gap0 {gap: 0;}
+.Gap05 {gap: 0.5rem;}
+.Gap10 {gap: 1rem;}
+.Gap15 {gap: 1.5rem;}
+.Gap20 {gap: 2rem;}
+.Gap30 {gap: 3rem;}
+.Gap40 {gap: 4rem;}
+.Gap50 {gap: 5rem;}
+
+/* PADDING MOBILE */
+.PaddingY05Mobile{padding-top:.5rem;padding-bottom:.5rem;}
+.PaddingY10Mobile{padding-top:1rem;padding-bottom:1rem;}
+.PaddingY15Mobile{padding-top:1.5rem;padding-bottom:1.5rem;}
+.PaddingY20Mobile{padding-top:2rem;padding-bottom:2rem;}
+.PaddingY25Mobile{padding-top:2.5rem;padding-bottom:2.5rem;}
+.PaddingY40Mobile{padding-top:4rem;padding-bottom:4rem;}
+.PaddingY50Mobile{padding-top:5rem;padding-bottom:5rem;}
+.PaddingY60Mobile{padding-top:6rem;padding-bottom:6rem;}
+.PaddingY70Mobile{padding-top:7rem;padding-bottom:7rem;}
+.PaddingY80Mobile{padding-top:8rem;padding-bottom:8rem;}
+
+.PaddingX05Mobile{padding-left:.5rem;padding-right:.5rem;}
+.PaddingX10Mobile{padding-left:1rem;padding-right:1rem;}
+.PaddingX15Mobile{padding-left:1.5rem;padding-right:1.5rem;}
+.PaddingX20Mobile{padding-left:2rem;padding-right:2rem;}
+.PaddingX25Mobile{padding-left:2.5rem;padding-right:2.5rem;}
+.PaddingX30Mobile{padding-left:3rem;padding-right:3rem;}
+.PaddingX40Mobile{padding-left:4rem;padding-right:4rem;}
+.PaddingX50Mobile{padding-left:5rem;padding-right:5rem;}
+.PaddingX60Mobile{padding-left:6rem;padding-right:6rem;}
+.PaddingX70Mobile{padding-left:7rem;padding-right:7rem;}
+.PaddingX80Mobile{padding-left:8rem;padding-right:8rem;}
+
+/* PADDING DESKTOP */
+@media (min-width: 768px) {
+.PaddingY05 {padding-top: 0.5rem; padding-bottom: 0.5rem;}
+.PaddingY10 {padding-top: 1rem; padding-bottom: 1rem;}
+.PaddingY15 {padding-top: 1.5rem; padding-bottom: 1.5rem;}
+.PaddingY20 {padding-top: 2rem; padding-bottom: 2rem;}
+.PaddingY25 {padding-top: 2.5rem; padding-bottom: 2.5rem;}
+.PaddingY40 {padding-top: 4rem; padding-bottom: 4rem;}
+.PaddingY50 {padding-top: 5rem; padding-bottom: 5rem;}
+.PaddingY60 {padding-top: 6rem; padding-bottom: 6rem;}
+.PaddingY70 {padding-top: 7rem; padding-bottom: 7rem;}
+.PaddingY80 {padding-top: 8rem; padding-bottom: 8rem;}
+
+.PaddingX05 {padding-left: 0.5rem; padding-right: 0.5rem;}
+.PaddingX10 {padding-left: 1rem; padding-right: 1rem;}
+.PaddingX15 {padding-left: 1.5rem; padding-right: 1.5rem;}
+.PaddingX20 {padding-left: 2rem; padding-right: 2rem;}
+.PaddingX25 {padding-left: 2.5rem; padding-right: 2.5rem;}
+.PaddingX30 {padding-left: 3rem; padding-right: 3rem;}
+.PaddingX40 {padding-left: 4rem; padding-right: 4rem;}
+.PaddingX50 {padding-left: 5rem; padding-right: 5rem;}
+.PaddingX60 {padding-left: 6rem; padding-right: 6rem;}
+.PaddingX70 {padding-left: 7rem; padding-right: 7rem;}
+.PaddingX80 {padding-left: 8rem; padding-right: 8rem;}}
+
+/* INDIVIDUAL PADDING */
+.PaddingR10 {padding-right: 1rem;}
+.PaddingR20 {padding-right: 1rem;}
+
+/* MARGIN */
+.MarginXAuto {margin-left: auto; margin-right: auto;}
+.MarginYAuto {margin-top: auto; margin-bottom: auto;}
+.MarginX10 {margin-left: 1rem; margin-right: 1rem;}
+.MarginY10 {margin-top: 1rem; margin-bottom: 1rem;}
+
+.MarginR05 {margin-right: 0.5rem;}
+.MarginL05 {margin-left: 0.5rem;}
+.MarginR10 {margin-right: 1rem;}
+.MarginL10 {margin-left: 1rem;}
+
+
+/* ######## IMAGE/OBJECT UTILITY CLASSES ######## */
+
+/* Fit */
+.ObjectFitCover img {object-fit: cover;}
+
+/* Object Position */
+.ObjectPositionTop { object-position: top !important; }
+.ObjectPositionTopLeft { object-position: top left !important; }
+.ObjectPositionTopRight { object-position: top right !important; }
+.ObjectPositionLeft { object-position: left !important; }
+.ObjectPositionCenter { object-position: center !important; }
+.ObjectPositionRight { object-position: right !important; }
+.ObjectPositionBottomLeft { object-position: bottom left !important; }
+.ObjectPositionBottom { object-position: bottom !important; }
+.ObjectPositionBottomRight { object-position: bottom right !important; }
+
+/* ######## COLOR UTILITY CLASSES ######## */
+
+/* FONT COLOR */
+.FcWhite{color: #fff}
+.FcBlack{color:#000}
+.FcGrey{color:#91949b}
+.FcBlueGrey{color:#6e727d}
+.FcElectricBlue{color:#0500ff}
+.FcNavyBlue{color:#001344}
+.FcMidBlue{color:#8a9eff}
+.FcLightBlue{color:#dbe5ff}
+.FcLighterBlue{color:#f2f6ff}
+.FcPink{color:#fe73b2}
+.FcPink2{color:#ff8ec1}
+.FcPink3{color:#ed1e79}
+.FcOrange{color:#ff7b0f}
+.FcRed{color:#D62828}
+.FcRed2{color:#70191a}
+.FcGreen{color:#20bf55}
+.FcGreen2{color:#18863d}
+.FcYellow{color:#ffd200}
+
+/* BACKGROUND COLOR */
+.BgWhite{background-color:#fff}
+.BgBlack{background-color:#000}
+.BgTransparent{background-color:#ffffff00}
+.BgGrey{background-color:#f4f4f5}
+.BgBlueGrey{background-color:#6e727d}
+.BgElectricBlue{background-color:#0500ff}
+.BgNavyBlue{background-color:#001344}
+.BgMidBlue{background-color:#8a9eff}
+.BgLightBlue{background-color:#dbe5ff}
+.BgLighterBlue{background-color:#f2f6ff}
+.BgBlue1{background-color:#c2d1ff}
+.BgPink{background-color:#fe73b2}
+.BgPink2{background-color:#ff8ec1}
+.BgOrange{background-color:#ff7b0f}
+.BgOrange2{background-color:#ffdbbd}
+.BgGreen{background-color:#20bf55}
+.BgGreen2{background-color:#d5f6df}
+.BgLightRed{background-color:#ffdbdb}
+
+/* BORDER COLOR */
+.BcWhite{border: 2px solid #fff}
+.BcBlack{border: 2px solid #000}
+.BcTransparent{border: 2px solid #ffffff00}
+.BcGrey{border: 2px solid #f4f4f5}
+.BcBlueGrey{border: 2px solid #6e727d}
+.BcElectricBlue{border: 2px solid #0500ff}
+.BcNavyBlue{border: 2px solid #001344}
+.BcMidBlue{border: 2px solid #8a9eff}
+.BcLightBlue{border: 2px solid #dbe5ff}
+.BcLighterBlue{border: 2px solid #f2f6ff}
+.BcBlue1{border: 2px solid #c2d1ff}
+.BcPink{border: 2px solid #fe73b2}
+.BcPink2{border: 2px solid #ff8ec1}
+.BcOrange{border: 2px solid #ff7b0f}
+.BcOrange2{border: 2px solid #ffdbbd}
+.BcGreen{border: 2px solid #20bf55}
+.BcGreen2{border: 2px solid #d5f6df}
+.BcLightRed{border: 2px solid #ffdbdb}
+
+:root {
+    --ColorBlack: #000;
+    --ColorWhite: #FFF;
+    --ColorTransparent: #ffffff00;
+    --ColorGrey: #F4F4F5;
+    --ColorGrey2: #D7D8DB;
+    --ColorGrey3: #C7C8CC;
+    --ColorBlueGrey: #6E727D;
+    --ColorElectricBlue: #0500FF;
+    --ColorNavyBlue: #001344;
+    --ColorMidBlue: #8A9EFF;
+    --ColorLightBlue: #DBE5FF;
+    --ColorLighterBlue: #F2F6FF;
+    --ColorPink: #FE73B2;
+    --ColorPink2: #FF8EC1;
+    --ColorPink3: #ed1e79;
+    --ColorYellow: #FFD200;
+    --ColorOrange: #FF7B0F;
+    --ColorOrange2: #FFDBBD;
+    --ColorGreen: #20BF55;
+    --ColorGreen2: #18863D;
+    --ColorGreenBg: #D5F6DF;
+    --ColorRed: #D62828;
+    --ColorRed2: #70191A;
+    --ColorLightRed: #FFDBDB;
+    --ColorBlue1: #C2D1FF;
+}
+
+
+/* HD SCREENS READABILITY FIX */
+div[id^="pgl_container_"]{ -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;}
+
+/* LETTER SPACING FIX */
+h1 { letter-spacing: -0.02em; }
+h2 { letter-spacing: -0.01em; }
+
+/* CONTRAST FIX */
+div[id^="pgl_container_"]{ -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;}
+
+/* ################################################ BUTTONS ################################################ */
+
+/* ######## BUTTON WRAPPER ######## */
+
+/* ######## ONE BUTTON ######## */
+
+/* BUTTON WRAPPER - ONE BUTTON (WRAPPER CLASS) */
+.ButtonWrapper{display: flex; flex-direction: column; justify-content: flex-start; align-items: flex-start; width: 100%; gap: 1rem; margin: 2rem 0;}
+    @media (min-width: 769px){.ButtonWrapper{flex-direction: row;}}
+
+/* BUTTON MAIN COMPONENT (BUTTON CLASS) */
+.MyButton{font-size: clamp(0.9rem, 1vw + 0.5rem, 1rem); font-weight: 500; font-style: normal; padding: 0.75rem 2.25rem; border-radius: 32px; cursor: pointer; text-align: center; text-decoration: none; transition: all 0.3s ease; position: relative;}
+
+/* BUTTON MAIN COMPONENT SMALL (BUTTON CLASS) */
+.MyButton.ButtonSmall{font-size:0.85em;padding:0.5rem 1.2rem;}
+
+/* BUTTON MAIN COMPONENT Medium (BUTTON CLASS) */
+.MyButton.ButtonMedium{font-size:0.90em;padding:0.6rem 1.3rem;}
+
+/* BUTTON CENTER ON DESKTOP AND MOBILE (BUTTON CLASS) */
+.ButtonCenter {justify-content: center; align-items: center; margin-left: auto!important; margin-right: auto!important;}
+
+/* BUTTON CENTER DESKTOP AND MOBILE (BUTTON CLASS) */
+.ButtonWrapper:has(.ButtonCenter) {justify-content: center; align-items: center; margin-left: auto!important; margin-right: auto!important;}
+
+/* BUTTON CENTER ONLY ON MOBILE (BUTTON CLASS) */
+.ButtonCenterMobile {justify-content: center; align-items: center; margin-left: auto; margin-right: auto;}
+@media (min-width: 690px){.ButtonCenterMobile {justify-content: flex-start; align-items: flex-start; margin-left: 0;}}
+
+/* BUTTON FULL WIDTH ON MOBILE (BUTTON CLASS) */
+.ButtonFullMobile {width: 100%;}
+    @media (min-width: 580px){.ButtonFullMobile {width: fit-content;}}
+
+/* BUTTON WRAPPER MARGIN TOP AUTO - IN PRODUKTVERGLEICH (BUTTON CLASS) */
+.ButtonWrapper:has(.ButtonMarginTopAuto) {text-align: center; margin-top:auto;}
+
+/* BUTTON WRAPPER MARGIN TOP 0 ON DESKTOP (BUTTON CLASS) */
+.ButtonWrapper:has(.ButtonMarginTop0) {margin-top: 2rem;}
+@media (min-width: 766px){.ButtonWrapper:has(.ButtonMarginTop0) {margin-top: 0rem!important;}}
+
+/* BUTTON WRAPPER NO MARGIN (BUTTON CLASS) */
+.ButtonWrapper:has(.ButtonNoMargin) {margin-top: 2rem;}
+@media (min-width: 766px){.ButtonWrapper:has(.ButtonNoMargin) {margin-top: 0rem!important;}}
+
+/* BUTTON JUSTIFY START (BUTTON CLASS) */
+.ButtonWrapper:has(.ButtonJustifyStart) {justify-content: flex-start!important; justify-self: flex-start!important;}
+
+/* BUTTON JUSTIFY END (BUTTON CLASS) */
+.ButtonWrapper:has(.ButtonJustifyEnd) {justify-content: flex-end!important; justify-self: flex-end!important;}
+
+/* BUTTON FULL WIDTH ON MOBILE (BUTTON CLASS) (OLD VERSION DON´t USE IT ANYMORE!) */
+.ButtonFull {width: 100%;}
+    @media (min-width: 580px){.ButtonFull {width: fit-content;}}
+
+/* ######## TWO BUTTONS ######## */
+
+/* BUTTONS WRAPPER VERTICAL - TWO BUTTONS (WRAPPER CLASS) */
+.ButtonsWrapperVertical {display:flex;flex-direction:column;justify-content:flex-start;align-items:center;width:100%;gap:1rem;margin:2rem 0;margin-top:auto}
+.ButtonsWrapperVertical .MyButton{text-align:center;align-items:center;justify-content:center; width: calc(100% - 2rem); box-sizing: border-box;}
+@media (min-width:580px){
+.ButtonsWrapperVertical .MyButton{max-width:none; justify-content: center; align-items: center; margin-left: auto; margin-right: auto;}}
+.ButtonsWrapperVertical .MyButton+.MyButton{margin-top:auto;}
+
+/* BUTTONS WRAPPER HORIZONTAL CENTER - TWO BUTTONS (WRAPPER CLASS) */
+.ButtonsWrapperHorizontalCenter{display: flex; flex-direction: column; justify-content: center; align-items: center; width: 100%; gap: 1rem; margin: 2rem 0;}
+    @media (min-width: 769px){.ButtonsWrapperHorizontalCenter{flex-direction: row;}}
+
+/* BUTTON WRAPPER - ADVISOR */
+.ButtonWrapperAdvisor{display:flex;flex-direction:column;width:100%;margin:2rem 0;gap:1rem}
+.ButtonWrapperAdvisor button:nth-child(1){align-self:flex-start;order:2;}
+.ButtonWrapperAdvisor button:nth-child(2){align-self:flex-end;order:1;}
+    @media (min-width:769px){.ButtonWrapperAdvisor{flex-direction:row;justify-content:space-between;gap:0}
+    .ButtonWrapperAdvisor button:nth-child(1){order:1;}
+    .ButtonWrapperAdvisor button:nth-child(2){order:2;}}
+
+
+/* ######## BUTTON STYLE ######## */
+.MyButton.Primary{background-color: #FE73B2; color: #001344; border: none;} 
+.MyButton.Primary:hover{background-color: #fa85ba;}
+.MyButton.Primary:disabled{ background-color: #cccccc; cursor: not-allowed; box-shadow: none;}
+.MyButton.Primary:disabled:hover{ background-color: #cccccc; box-shadow: none;}
+.MyButton.Secondary{background-color: #0500FF; color: #FFF; border: none;} 
+.MyButton.Secondary:hover{background-color: #3b38f8;}
+.MyButton.Secondary:disabled{background-color: #cccccc; cursor: not-allowed; box-shadow: none;}
+.MyButton.Secondary:disabled:hover{background-color: #cccccc; box-shadow: none;}
+.MyButton.Tertiary{background-color: #001344; color: #FFF; border: none;}
+.MyButton.Tertiary:hover{background-color: #061b4e;}
+.MyButton.Quaternary{background-color: transparent; color: #001344; border: 1px solid #001344; border-radius: 100px;}
+.MyButton.Quaternary:hover{background-color: #001344; color: #FFF;}
+.MyButton.Quaternary.Selected{background-color: #001344; color: #FFF;}
+.MyButton.Quinary{background-color: transparent; color: #001344; border: 1px solid #001344; border-radius: 100px;}
+.MyButton.Quinary:hover{background-color: transparent;}
+.MyButton.Senary{background-color: #FFF; color: #001344; border: 1px solid transparent;}
+.MyButton.Senary:hover{background-color: #eeeaea;}
+.MyButton.Septenary{background-color: #FFF; color: #0500FF; border: 1px solid #0500FF; border-radius: 100px;}
+.MyButton.Septenary:hover{background-color: #FFF; color: #0500FF;}
+.MyButton.Octonary{background-color: #FFF; color: #0500FF; border: 1px solid #0500FF; border-radius: 100px;}
+.MyButton.Octonary:hover{background-color: #FFF; color: #0500FF; border: 1px solid #0500FF; border-radius: 100px;}
+.MyButton.Nonary{background-color: transparent; color: #FFF; border: 1px solid #FFF; border-radius: 100px;}
+.MyButton.Nonary:hover{background-color: transparent; color: #FFF; border: 1px solid #FFF; border-radius: 100px;}
+.MyButton.Nonary.Selected{background-color:#fff;color:#001344;}
+
+/* ################################################ COMPONENTS STYLING ################################################ */
+
+/* ################################################ SECTION DIVIDER ################################################ */
+.SECTION-DIVIDER {background-color: #001344; padding:20px;} 
+.SECTION-DIVIDER p{font-size: 1rem;line-height: 1.4em; font-weight:800; color: white; text-align:left; margin: 0px;}
+
+/* ################################################ HR ################################################ */
+hr{display:block; height:1px; border:0; border-top:1px solid #001344; margin:1em auto; padding:0}
+
+/* ################################################ IMAGES ################################################ */
+img.aspect-ratio {height:auto; width:100%; margin:0 auto}
+img.ImageAspectRatio {height:auto; width:100%; margin:0 auto}
+img.ImageStyle {border-radius: 12px;}
+img.ImageStyleWhitepaperMockup {border-radius: 12px; border: 0.5rem solid #001344;}

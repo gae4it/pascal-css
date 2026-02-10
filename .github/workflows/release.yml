@@ -1,0 +1,87 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+
+jobs:
+  build-and-release:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      
+      - name: Install dependencies
+        run: npm install
+      
+      - name: Build CSS
+        run: npm run build
+      
+      - name: Get version from tag
+        id: get_version
+        run: echo "VERSION=${GITHUB_REF#refs/tags/v}" >> $GITHUB_OUTPUT
+      
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: PascalCSS v${{ steps.get_version.outputs.VERSION }}
+          body: |
+            ## 🎉 PascalCSS v${{ steps.get_version.outputs.VERSION }}
+            
+            ### CDN Usage
+            ```html
+            <!-- Minified (production) -->
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/gae4it/pascal-css@${{ github.ref_name }}/dist/pascal-css.min.css">
+            
+            <!-- Unminified (development) -->
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/gae4it/pascal-css@${{ github.ref_name }}/dist/pascal-css.css">
+            ```
+            
+            ### What's Changed
+            See [CHANGELOG.md](https://github.com/gae4it/pascal-css/blob/main/CHANGELOG.md) for full release notes.
+            
+            ### Documentation
+            Visit [pascalcss.netlify.app](https://pascalcss.netlify.app/) for interactive documentation and examples.
+          draft: false
+          prerelease: false
+      
+      - name: Upload Unminified CSS
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./dist/pascal-css.css
+          asset_name: pascal-css.css
+          asset_content_type: text/css
+      
+      - name: Upload Minified CSS
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./dist/pascal-css.min.css
+          asset_name: pascal-css.min.css
+          asset_content_type: text/css
+      
+      - name: Upload Source Map
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./dist/pascal-css.css.map
+          asset_name: pascal-css.css.map
+          asset_content_type: application/json
