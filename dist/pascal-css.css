@@ -1,0 +1,740 @@
+/* =========================================
+   PascalCSS v3.0 - Modern CSS Edition  
+   Utility-first CSS Library
+   
+   Documentation: https://pascalcss.netlify.app/
+   Repository: https://github.com/gae4it/pascal-css
+   License: MIT
+   
+   Features:
+   - PascalCase naming for readability
+   - Container Queries (Co: prefix)
+   - OKLCH color system with fallbacks
+   - Custom media queries  
+   - Mobile-first responsive (Sm/Md/Lg/Xl)
+   - Zero build required for usage
+   
+   Breakpoints:
+   - Sm: 640px  (Large phones, small tablets)
+   - Md: 768px  (Tablets, small laptops)
+   - Lg: 1024px (Laptops, desktops)
+   - Xl: 1280px (Large desktops, 4K)
+   
+   Spacing Scale:
+   - 01 = 0.1rem
+   - 02 = 0.2rem
+   - 05 = 0.5rem
+   - 10 = 1.0rem
+   - 15 = 1.5rem
+   - 20 = 2.0rem
+   - 25 = 2.5rem
+   - 30 = 3.0rem
+   - 40 = 4.0rem
+   - 50 = 5.0rem
+========================================= */
+
+
+/* =========================================
+   CUSTOM MEDIA QUERIES (Modern CSS)
+========================================= */
+
+@custom-media --sm (min-width: 640px);
+@custom-media --md (min-width: 768px);
+@custom-media --lg (min-width: 1024px);
+@custom-media --xl (min-width: 1280px);
+
+
+/* =========================================
+   CSS VARIABLES & OKLCH COLORS
+========================================= */
+
+:root {
+  /* OKLCH Colors (perceptually uniform) */
+  --color-white: oklch(100% 0 0);
+  --color-black: oklch(0% 0 0);
+  --color-gray: oklch(50% 0 0);
+  --color-red: oklch(55% 0.22 25);
+  --color-blue: oklch(60% 0.15 250);
+  --color-green: oklch(60% 0.17 145);
+}
+
+/* Fallback for browsers without OKLCH support */
+@supports not (color: oklch(0% 0 0)) {
+  :root {
+    --color-white: #ffffff;
+    --color-black: #000000;
+    --color-gray: #666666;
+    --color-red: #e53935;
+    --color-blue: #1e88e5;
+    --color-green: #43a047;
+  }
+}
+
+
+/* =========================================
+   RESET & MODERN ENHANCEMENTS
+========================================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scrollbar-gutter: stable; /* Prevent layout shift when scrollbar appears */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance; /* Better headline wrapping - avoid orphaned words */
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+
+/* =========================================
+   DISPLAY
+========================================= */
+
+.DisplayBlock { display: block; }
+.DisplayInline { display: inline; }
+.DisplayInlineBlock { display: inline-block; }
+.DisplayFlex { display: flex; }
+.DisplayGrid { display: grid; }
+.DisplayNone { display: none; }
+
+
+/* =========================================
+   FLEX
+========================================= */
+
+.FlexDirectionRow { flex-direction: row; }
+.FlexDirectionColumn { flex-direction: column; }
+
+.FlexWrap { flex-wrap: wrap; }
+.FlexNoWrap { flex-wrap: nowrap; }
+
+.FlexGrow0 { flex-grow: 0; }
+.FlexGrow1 { flex-grow: 1; }
+
+.FlexShrink0 { flex-shrink: 0; }
+.FlexShrink1 { flex-shrink: 1; }
+
+.FlexBasisAuto { flex-basis: auto; }
+.FlexBasis0 { flex-basis: 0; }
+
+.JustifyContentStart { justify-content: flex-start; }
+.JustifyContentCenter { justify-content: center; }
+.JustifyContentEnd { justify-content: flex-end; }
+.JustifyContentSpaceBetween { justify-content: space-between; }
+.JustifyContentSpaceAround { justify-content: space-around; }
+.JustifyContentSpaceEvenly { justify-content: space-evenly; }
+
+.AlignItemsStart { align-items: flex-start; }
+.AlignItemsCenter { align-items: center; }
+.AlignItemsEnd { align-items: flex-end; }
+.AlignItemsStretch { align-items: stretch; }
+.AlignItemsBaseline { align-items: baseline; }
+
+.AlignSelfAuto { align-self: auto; }
+.AlignSelfStart { align-self: flex-start; }
+.AlignSelfCenter { align-self: center; }
+.AlignSelfEnd { align-self: flex-end; }
+.AlignSelfStretch { align-self: stretch; }
+
+
+/* =========================================
+   TEXT
+========================================= */
+
+.TextAlignLeft { text-align: left; }
+.TextAlignCenter { text-align: center; }
+.TextAlignRight { text-align: right; }
+
+.FontWeight300 { font-weight: 300; }
+.FontWeight400 { font-weight: 400; }
+.FontWeight500 { font-weight: 500; }
+.FontWeight600 { font-weight: 600; }
+.FontWeight700 { font-weight: 700; }
+
+.TextTransformUppercase { text-transform: uppercase; }
+.TextTransformLowercase { text-transform: lowercase; }
+.TextTransformCapitalize { text-transform: capitalize; }
+
+
+/* =========================================
+   SPACING SCALE
+========================================= */
+/*
+01 = 0.1rem
+02 = 0.2rem
+05 = 0.5rem
+10 = 1rem
+15 = 1.5rem
+20 = 2rem
+25 = 2.5rem
+*/
+
+
+/* =========================================
+   PADDING
+========================================= */
+
+.Padding01 { padding: .1rem; }
+.Padding02 { padding: .2rem; }
+.Padding05 { padding: .5rem; }
+.Padding10 { padding: 1rem; }
+.Padding15 { padding: 1.5rem; }
+.Padding20 { padding: 2rem; }
+.Padding25 { padding: 2.5rem; }
+.Padding30 { padding: 3rem; }
+.Padding40 { padding: 4rem; }
+.Padding50 { padding: 5rem; }
+
+.PaddingX10 { padding-left: 1rem; padding-right: 1rem; }
+.PaddingX20 { padding-left: 2rem; padding-right: 2rem; }
+.PaddingX30 { padding-left: 3rem; padding-right: 3rem; }
+
+.PaddingY10 { padding-top: 1rem; padding-bottom: 1rem; }
+.PaddingY20 { padding-top: 2rem; padding-bottom: 2rem; }
+.PaddingY30 { padding-top: 3rem; padding-bottom: 3rem; }
+
+.PaddingLeft10 { padding-left: 1rem; }
+.PaddingRight10 { padding-right: 1rem; }
+.PaddingTop10 { padding-top: 1rem; }
+.PaddingBottom10 { padding-bottom: 1rem; }
+
+
+/* =========================================
+   MARGIN
+========================================= */
+
+.Margin01 { margin: .1rem; }
+.Margin02 { margin: .2rem; }
+.Margin05 { margin: .5rem; }
+.Margin10 { margin: 1rem; }
+.Margin15 { margin: 1.5rem; }
+.Margin20 { margin: 2rem; }
+.Margin25 { margin: 2.5rem; }
+.Margin30 { margin: 3rem; }
+.Margin40 { margin: 4rem; }
+.Margin50 { margin: 5rem; }
+
+.MarginX10 { margin-left: 1rem; margin-right: 1rem; }
+.MarginX20 { margin-left: 2rem; margin-right: 2rem; }
+.MarginXAuto { margin-left: auto; margin-right: auto; }
+
+.MarginY10 { margin-top: 1rem; margin-bottom: 1rem; }
+.MarginY20 { margin-top: 2rem; margin-bottom: 2rem; }
+.MarginYAuto { margin-top: auto; margin-bottom: auto; }
+
+.MarginLeft10 { margin-left: 1rem; }
+.MarginRight10 { margin-right: 1rem; }
+.MarginTop10 { margin-top: 1rem; }
+.MarginBottom10 { margin-bottom: 1rem; }
+
+.MarginLeftAuto { margin-left: auto; }
+.MarginRightAuto { margin-right: auto; }
+.MarginTopAuto { margin-top: auto; }
+.MarginBottomAuto { margin-bottom: auto; }
+
+
+/* =========================================
+   SIZE
+========================================= */
+
+.Width25 { width: 25%; }
+.Width33 { width: 33.333%; }
+.Width50 { width: 50%; }
+.Width66 { width: 66.666%; }
+.Width75 { width: 75%; }
+.Width100 { width: 100%; }
+.WidthAuto { width: auto; }
+
+.Height100 { height: 100%; }
+.HeightAuto { height: auto; }
+
+.MinHeightScreen { min-height: 100vh; }
+
+.MaxWidth100 { max-width: 100%; }
+.MaxWidth400 { max-width: 400px; }
+.MaxWidth600 { max-width: 600px; }
+.MaxWidth800 { max-width: 800px; }
+.MaxWidth1200 { max-width: 1200px; }
+
+
+/* =========================================
+   BORDER
+========================================= */
+
+.BorderNone { border: none; }
+.BorderRadius05 { border-radius: .5rem; }
+.BorderRadius10 { border-radius: 1rem; }
+.BorderRadius20 { border-radius: 2rem; }
+.BorderRadiusFull { border-radius: 9999px; }
+
+
+/* =========================================
+   POSITION
+========================================= */
+
+.PositionRelative { position: relative; }
+.PositionAbsolute { position: absolute; }
+.PositionFixed { position: fixed; }
+
+.Top0 { top: 0; }
+.Left0 { left: 0; }
+.Right0 { right: 0; }
+.Bottom0 { bottom: 0; }
+
+
+/* =========================================
+   GAP (Flex / Grid)
+========================================= */
+
+.Gap01 { gap: .1rem; }
+.Gap02 { gap: .2rem; }
+.Gap05 { gap: .5rem; }
+.Gap10 { gap: 1rem; }
+.Gap15 { gap: 1.5rem; }
+.Gap20 { gap: 2rem; }
+.Gap25 { gap: 2.5rem; }
+.Gap30 { gap: 3rem; }
+.Gap40 { gap: 4rem; }
+.Gap50 { gap: 5rem; }
+
+
+/* =========================================
+   GRID
+========================================= */
+
+.GridTemplateColumns1 { grid-template-columns: repeat(1, 1fr); }
+.GridTemplateColumns2 { grid-template-columns: repeat(2, 1fr); }
+.GridTemplateColumns3 { grid-template-columns: repeat(3, 1fr); }
+.GridTemplateColumns4 { grid-template-columns: repeat(4, 1fr); }
+
+.GridTemplateRows1 { grid-template-rows: repeat(1, 1fr); }
+.GridTemplateRows2 { grid-template-rows: repeat(2, 1fr); }
+.GridTemplateRows3 { grid-template-rows: repeat(3, 1fr); }
+
+
+/* =========================================
+   FONT SIZE
+========================================= */
+
+.FontSize10 { font-size: 1rem; }
+.FontSize12 { font-size: 1.2rem; }
+.FontSize14 { font-size: 1.4rem; }
+.FontSize15 { font-size: 1.5rem; }
+.FontSize16 { font-size: 1.6rem; }
+.FontSize18 { font-size: 1.8rem; }
+.FontSize20 { font-size: 2rem; }
+.FontSize24 { font-size: 2.4rem; }
+.FontSize25 { font-size: 2.5rem; }
+.FontSize30 { font-size: 3rem; }
+.FontSize36 { font-size: 3.6rem; }
+.FontSize48 { font-size: 4.8rem; }
+
+
+/* =========================================
+   LINE HEIGHT
+========================================= */
+
+.LineHeight10 { line-height: 1rem; }
+.LineHeight15 { line-height: 1.5rem; }
+.LineHeight20 { line-height: 2rem; }
+.LineHeight25 { line-height: 2.5rem; }
+
+
+/* =========================================
+   COLORS
+========================================= */
+
+.ColorWhite { color: var(--color-white); }
+.ColorBlack { color: var(--color-black); }
+.ColorGray { color: var(--color-gray); }
+.ColorRed { color: var(--color-red); }
+.ColorBlue { color: var(--color-blue); }
+.ColorGreen { color: var(--color-green); }
+
+
+/* =========================================
+   BACKGROUND
+========================================= */
+
+.BackgroundColorWhite { background-color: var(--color-white); }
+.BackgroundColorBlack { background-color: var(--color-black); }
+.BackgroundColorGray { background-color: #f2f2f2; }
+.BackgroundColorRed { background-color: var(--color-red); }
+.BackgroundColorBlue { background-color: var(--color-blue); }
+.BackgroundColorGreen { background-color: var(--color-green); }
+
+
+/* =========================================
+   OPACITY
+========================================= */
+
+.Opacity00 { opacity: 0; }
+.Opacity01 { opacity: .1; }
+.Opacity02 { opacity: .2; }
+.Opacity05 { opacity: .5; }
+.Opacity75 { opacity: .75; }
+.Opacity10 { opacity: 1; }
+
+
+/* =========================================
+   OVERFLOW
+========================================= */
+
+.OverflowHidden { overflow: hidden; }
+.OverflowAuto { overflow: auto; }
+.OverflowScroll { overflow: scroll; }
+
+
+/* =========================================
+   CURSOR
+========================================= */
+
+.CursorPointer { cursor: pointer; }
+.CursorDefault { cursor: default; }
+.CursorMove { cursor: move; }
+
+
+/* =========================================
+   USER SELECT
+========================================= */
+
+.UserSelectNone { -webkit-user-select: none; -moz-user-select: none; user-select: none; }
+.UserSelectText { -webkit-user-select: text; -moz-user-select: text; user-select: text; }
+
+
+/* =========================================
+   SHADOW
+========================================= */
+
+.BoxShadowSmall {
+  box-shadow: 0 2px 6px rgba(0,0,0,.15);
+}
+
+.BoxShadowMedium {
+  box-shadow: 0 4px 12px rgba(0,0,0,.2);
+}
+
+.BoxShadowLarge {
+  box-shadow: 0 8px 20px rgba(0,0,0,.25);
+}
+
+
+/* =========================================
+   TRANSITION
+========================================= */
+
+.TransitionFast { transition: all .15s ease; }
+.TransitionMedium { transition: all .3s ease; }
+.TransitionSlow { transition: all .6s ease; }
+
+
+/* =========================================
+   Z INDEX
+========================================= */
+
+.ZIndex0 { z-index: 0; }
+.ZIndex10 { z-index: 10; }
+.ZIndex50 { z-index: 50; }
+.ZIndex100 { z-index: 100; }
+
+
+
+/* =========================================
+   BORDER WIDTH
+========================================= */
+
+.BorderWidth01 { border-width: .1rem; }
+.BorderWidth02 { border-width: .2rem; }
+.BorderWidth05 { border-width: .5rem; }
+.BorderWidth10 { border-width: 1rem; }
+
+.BorderStyleSolid { border-style: solid; }
+.BorderStyleDashed { border-style: dashed; }
+.BorderStyleDotted { border-style: dotted; }
+
+
+/* =========================================
+   BORDER COLOR
+========================================= */
+
+.BorderColorBlack { border-color: #000000; }
+.BorderColorGray { border-color: #cccccc; }
+.BorderColorRed { border-color: #e53935; }
+.BorderColorBlue { border-color: #1e88e5; }
+.BorderColorGreen { border-color: #43a047; }
+
+
+/* =========================================
+   OUTLINE
+========================================= */
+
+.OutlineNone { outline: none; }
+.OutlineWidth02 { outline-width: .2rem; }
+.OutlineStyleSolid { outline-style: solid; }
+.OutlineColorBlue { outline-color: #1e88e5; }
+
+
+/* =========================================
+   BACKGROUND SIZE & POSITION
+========================================= */
+
+.BackgroundSizeCover { background-size: cover; }
+.BackgroundSizeContain { background-size: contain; }
+
+.BackgroundPositionCenter { background-position: center; }
+.BackgroundPositionTop { background-position: top; }
+.BackgroundPositionBottom { background-position: bottom; }
+
+.BackgroundRepeatNoRepeat { background-repeat: no-repeat; }
+.BackgroundRepeatRepeat { background-repeat: repeat; }
+
+
+/* =========================================
+   OBJECT FIT
+========================================= */
+
+.ObjectFitCover { -o-object-fit: cover; object-fit: cover; }
+.ObjectFitContain { -o-object-fit: contain; object-fit: contain; }
+.ObjectFitFill { -o-object-fit: fill; object-fit: fill; }
+
+
+/* =========================================
+   ASPECT RATIO
+========================================= */
+
+.AspectRatio1_1 { aspect-ratio: 1 / 1; }
+.AspectRatio16_9 { aspect-ratio: 16 / 9; }
+.AspectRatio4_3 { aspect-ratio: 4 / 3; }
+
+
+/* =========================================
+   TRANSFORM
+========================================= */
+
+.TransformScale90 { transform: scale(.9); }
+.TransformScale100 { transform: scale(1); }
+.TransformScale110 { transform: scale(1.1); }
+
+.TransformRotate5 { transform: rotate(5deg); }
+.TransformRotate10 { transform: rotate(10deg); }
+
+
+/* =========================================
+   POINTER EVENTS
+========================================= */
+
+.PointerEventsNone { pointer-events: none; }
+.PointerEventsAuto { pointer-events: auto; }
+
+
+/* =========================================
+   VISIBILITY
+========================================= */
+
+.VisibilityHidden { visibility: hidden; }
+.VisibilityVisible { visibility: visible; }
+
+
+/* =========================================
+   WHITE SPACE
+========================================= */
+
+.WhiteSpaceNormal { white-space: normal; }
+.WhiteSpaceNoWrap { white-space: nowrap; }
+.WhiteSpacePre { white-space: pre; }
+
+
+/* =========================================
+   TEXT OVERFLOW
+========================================= */
+
+.TextOverflowEllipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+
+/* =========================================
+   LIST
+========================================= */
+
+.ListStyleNone { list-style: none; }
+.ListStyleDisc { list-style: disc; }
+.ListStyleDecimal { list-style: decimal; }
+
+
+/* =========================================
+   IMAGE
+========================================= */
+
+.ImageResponsive {
+  max-width: 100%;
+  height: auto;
+}
+
+
+/* =========================================
+   RESPONSIVE VISIBILITY
+========================================= */
+
+/* Hidden at breakpoint and above */
+.HiddenSm { display: block; }
+@media (min-width: 640px) { .HiddenSm { display: none; } }
+
+.HiddenMd { display: block; }
+@media (min-width: 768px) { .HiddenMd { display: none; } }
+
+.HiddenLg { display: block; }
+@media (min-width: 1024px) { .HiddenLg { display: none; } }
+
+.HiddenXl { display: block; }
+@media (min-width: 1280px) { .HiddenXl { display: none; } }
+
+/* Visible only at breakpoint and above */
+.VisibleSm { display: none; }
+@media (min-width: 640px) { .VisibleSm { display: block; } }
+
+.VisibleMd { display: none; }
+@media (min-width: 768px) { .VisibleMd { display: block; } }
+
+.VisibleLg { display: none; }
+@media (min-width: 1024px) { .VisibleLg { display: block; } }
+
+.VisibleXl { display: none; }
+@media (min-width: 1280px) { .VisibleXl { display: block; } }
+
+
+/* =========================================
+   CONTAINER QUERIES (Modern CSS - v3.0)
+========================================= */
+
+/* Container parent - enable container queries on this element */
+.ContainerParent {
+  container-type: inline-size;
+}
+
+/* Container-responsive utilities (Co: prefix) */
+/* These respond to container width, not viewport width */
+
+@container (min-width: 400px) {
+  .Co\:DisplayBlock { display: block; }
+  .Co\:DisplayFlex { display: flex; }
+  .Co\:DisplayGrid { display: grid; }
+  
+  .Co\:FlexDirectionRow { flex-direction: row; }
+  .Co\:FlexDirectionColumn { flex-direction: column; }
+  
+  .Co\:GridTemplateColumns1 { grid-template-columns: repeat(1, 1fr); }
+  .Co\:GridTemplateColumns2 { grid-template-columns: repeat(2, 1fr); }
+  .Co\:GridTemplateColumns3 { grid-template-columns: repeat(3, 1fr); }
+  
+  .Co\:Gap10 { gap: 1rem; }
+  .Co\:Gap15 { gap: 1.5rem; }
+  .Co\:Gap20 { gap: 2rem; }
+  
+  .Co\:Padding10 { padding: 1rem; }
+  .Co\:Padding15 { padding: 1.5rem; }
+  .Co\:Padding20 { padding: 2rem; }
+}
+
+
+/* =========================================
+   RESPONSIVE LAYOUT ENGINE
+========================================= */
+
+/* --- SMALL (Sm: 640px) --- */
+@media (min-width: 640px) {
+  .Sm\:DisplayBlock { display: block; }
+  .Sm\:DisplayFlex { display: flex; }
+  .Sm\:DisplayGrid { display: grid; }
+  .Sm\:DisplayNone { display: none; }
+  
+  .Sm\:FlexDirectionRow { flex-direction: row; }
+  .Sm\:FlexDirectionColumn { flex-direction: column; }
+  .Sm\:FlexWrap { flex-wrap: wrap; }
+  
+  .Sm\:GridTemplateColumns1 { grid-template-columns: repeat(1, 1fr); }
+  .Sm\:GridTemplateColumns2 { grid-template-columns: repeat(2, 1fr); }
+
+  .Sm\:TextAlignCenter { text-align: center; }
+  .Sm\:TextAlignLeft { text-align: left; }
+
+  .Sm\:Padding10 { padding: 1rem; }
+  .Sm\:Padding20 { padding: 2rem; }
+  .Sm\:Margin10 { margin: 1rem; }
+  .Sm\:Margin20 { margin: 2rem; }
+  
+  .Sm\:Width100 { width: 100%; }
+  .Sm\:FontSize15 { font-size: 1.5rem; }
+}
+
+/* --- MEDIUM (Md: 768px) --- */
+@media (min-width: 768px) {
+  .Md\:DisplayBlock { display: block; }
+  .Md\:DisplayFlex { display: flex; }
+  .Md\:DisplayGrid { display: grid; }
+  .Md\:DisplayNone { display: none; }
+  
+  .Md\:FlexDirectionRow { flex-direction: row; }
+  .Md\:FlexDirectionColumn { flex-direction: column; }
+  
+  .Md\:JustifyContentCenter { justify-content: center; }
+  .Md\:JustifyContentSpaceBetween { justify-content: space-between; }
+  
+  .Md\:GridTemplateColumns2 { grid-template-columns: repeat(2, 1fr); }
+  .Md\:GridTemplateColumns3 { grid-template-columns: repeat(3, 1fr); }
+
+  .Md\:TextAlignCenter { text-align: center; }
+  .Md\:TextAlignLeft { text-align: left; }
+
+  .Md\:Padding15 { padding: 1.5rem; }
+  .Md\:Padding25 { padding: 2.5rem; }
+  .Md\:MarginTop20 { margin-top: 2rem; }
+  
+  .Md\:Width50 { width: 50%; }
+  .Md\:FontSize20 { font-size: 2rem; }
+  .Md\:Gap15 { gap: 1.5rem; }
+}
+
+/* --- LARGE (Lg: 1024px) --- */
+@media (min-width: 1024px) {
+  .Lg\:DisplayFlex { display: flex; }
+  .Lg\:DisplayGrid { display: grid; }
+  
+  .Lg\:GridTemplateColumns3 { grid-template-columns: repeat(3, 1fr); }
+  .Lg\:GridTemplateColumns4 { grid-template-columns: repeat(4, 1fr); }
+  
+  .Lg\:JustifyContentEnd { justify-content: flex-end; }
+  
+  .Lg\:Padding25 { padding: 2.5rem; }
+  .Lg\:Margin25 { margin: 2.5rem; }
+  
+  .Lg\:Width33 { width: 33.33%; }
+  .Lg\:FontSize25 { font-size: 2.5rem; }
+  .Lg\:Gap20 { gap: 2rem; }
+}
+
+/* --- EXTRA LARGE (Xl: 1280px) --- */
+@media (min-width: 1280px) {
+  .Xl\:DisplayGrid { display: grid; }
+  .Xl\:GridTemplateColumns4 { grid-template-columns: repeat(4, 1fr); }
+  .Xl\:GridTemplateColumns6 { grid-template-columns: repeat(6, 1fr); }
+  
+  .Xl\:MaxWidth1200 { max-width: 1200px; margin-left: auto; margin-right: auto; }
+  .Xl\:Padding25 { padding: 2.5rem; }
+  
+  .Xl\:Width25 { width: 25%; }
+}
+
+
+/*# sourceMappingURL=pascal-css.css.map */
