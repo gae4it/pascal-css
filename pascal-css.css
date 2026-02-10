@@ -1,48 +1,97 @@
-# PascalCSS
-
-PascalCSS is a small, static, utility-first CSS library written using
-PascalCase class names.
-
-Each class represents a single CSS rule and is designed to be readable,
-predictable, and composable.
-
-Example:
-
-```html
-<div class="DisplayFlex JustifyContentCenter Padding10 MarginTop15">
-  Hello PascalCSS
-</div>
-
-
-
 /* =========================================
-   PascalCSS v0.2 - Responsive Edition
-   Naming: PascalCase (Mobile-first)
-   Breakpoints: Sm: 640px, Md: 768px, Lg: 1024px, Xl: 1280px
-========================================= */
-
-/* =========================================
-   PascalCSS
+   PascalCSS v3.0 - Modern CSS Edition  
    Utility-first CSS Library
-   Author: You
-   Naming: PascalCase
-   Values scale:
-   01 = 0.1rem
-   02 = 0.2rem
-   05 = 0.5rem
-   10 = 1rem
-   15 = 1.5rem
-   20 = 2rem
-   25 = 2.5rem
+   
+   Documentation: https://pascalcss.netlify.app/
+   Repository: https://github.com/gae4it/pascal-css
+   License: MIT
+   
+   Features:
+   - PascalCase naming for readability
+   - Container Queries (Co: prefix)
+   - OKLCH color system with fallbacks
+   - Custom media queries  
+   - Mobile-first responsive (Sm/Md/Lg/Xl)
+   - Zero build required for usage
+   
+   Breakpoints:
+   - Sm: 640px  (Large phones, small tablets)
+   - Md: 768px  (Tablets, small laptops)
+   - Lg: 1024px (Laptops, desktops)
+   - Xl: 1280px (Large desktops, 4K)
+   
+   Spacing Scale:
+   - 01 = 0.1rem
+   - 02 = 0.2rem
+   - 05 = 0.5rem
+   - 10 = 1.0rem
+   - 15 = 1.5rem
+   - 20 = 2.0rem
+   - 25 = 2.5rem
+   - 30 = 3.0rem
+   - 40 = 4.0rem
+   - 50 = 5.0rem
 ========================================= */
 
 
 /* =========================================
-   RESET (minimal)
+   CUSTOM MEDIA QUERIES (Modern CSS)
 ========================================= */
 
-* {
+@custom-media --sm (min-width: 640px);
+@custom-media --md (min-width: 768px);
+@custom-media --lg (min-width: 1024px);
+@custom-media --xl (min-width: 1280px);
+
+
+/* =========================================
+   CSS VARIABLES & OKLCH COLORS
+========================================= */
+
+:root {
+  /* OKLCH Colors (perceptually uniform) */
+  --color-white: oklch(100% 0 0);
+  --color-black: oklch(0% 0 0);
+  --color-gray: oklch(50% 0 0);
+  --color-red: oklch(55% 0.22 25);
+  --color-blue: oklch(60% 0.15 250);
+  --color-green: oklch(60% 0.17 145);
+}
+
+/* Fallback for browsers without OKLCH support */
+@supports not (color: oklch(0% 0 0)) {
+  :root {
+    --color-white: #ffffff;
+    --color-black: #000000;
+    --color-gray: #666666;
+    --color-red: #e53935;
+    --color-blue: #1e88e5;
+    --color-green: #43a047;
+  }
+}
+
+
+/* =========================================
+   RESET & MODERN ENHANCEMENTS
+========================================= */
+
+*,
+*::before,
+*::after {
   box-sizing: border-box;
+}
+
+html {
+  scrollbar-gutter: stable; /* Prevent layout shift when scrollbar appears */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance; /* Better headline wrapping - avoid orphaned words */
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
 }
 
 
@@ -68,16 +117,33 @@ Example:
 .FlexWrap { flex-wrap: wrap; }
 .FlexNoWrap { flex-wrap: nowrap; }
 
+.FlexGrow0 { flex-grow: 0; }
+.FlexGrow1 { flex-grow: 1; }
+
+.FlexShrink0 { flex-shrink: 0; }
+.FlexShrink1 { flex-shrink: 1; }
+
+.FlexBasisAuto { flex-basis: auto; }
+.FlexBasis0 { flex-basis: 0; }
+
 .JustifyContentStart { justify-content: flex-start; }
 .JustifyContentCenter { justify-content: center; }
 .JustifyContentEnd { justify-content: flex-end; }
 .JustifyContentSpaceBetween { justify-content: space-between; }
 .JustifyContentSpaceAround { justify-content: space-around; }
+.JustifyContentSpaceEvenly { justify-content: space-evenly; }
 
 .AlignItemsStart { align-items: flex-start; }
 .AlignItemsCenter { align-items: center; }
 .AlignItemsEnd { align-items: flex-end; }
 .AlignItemsStretch { align-items: stretch; }
+.AlignItemsBaseline { align-items: baseline; }
+
+.AlignSelfAuto { align-self: auto; }
+.AlignSelfStart { align-self: flex-start; }
+.AlignSelfCenter { align-self: center; }
+.AlignSelfEnd { align-self: flex-end; }
+.AlignSelfStretch { align-self: stretch; }
 
 
 /* =========================================
@@ -124,12 +190,20 @@ Example:
 .Padding15 { padding: 1.5rem; }
 .Padding20 { padding: 2rem; }
 .Padding25 { padding: 2.5rem; }
+.Padding30 { padding: 3rem; }
+.Padding40 { padding: 4rem; }
+.Padding50 { padding: 5rem; }
 
 .PaddingX10 { padding-left: 1rem; padding-right: 1rem; }
-.PaddingY10 { padding-top: 1rem; padding-bottom: 1rem; }
+.PaddingX20 { padding-left: 2rem; padding-right: 2rem; }
+.PaddingX30 { padding-left: 3rem; padding-right: 3rem; }
 
-.PaddingL10 { padding-left: 1rem; }
-.PaddingR10 { padding-right: 1rem; }
+.PaddingY10 { padding-top: 1rem; padding-bottom: 1rem; }
+.PaddingY20 { padding-top: 2rem; padding-bottom: 2rem; }
+.PaddingY30 { padding-top: 3rem; padding-bottom: 3rem; }
+
+.PaddingLeft10 { padding-left: 1rem; }
+.PaddingRight10 { padding-right: 1rem; }
 .PaddingTop10 { padding-top: 1rem; }
 .PaddingBottom10 { padding-bottom: 1rem; }
 
@@ -145,24 +219,51 @@ Example:
 .Margin15 { margin: 1.5rem; }
 .Margin20 { margin: 2rem; }
 .Margin25 { margin: 2.5rem; }
+.Margin30 { margin: 3rem; }
+.Margin40 { margin: 4rem; }
+.Margin50 { margin: 5rem; }
 
 .MarginX10 { margin-left: 1rem; margin-right: 1rem; }
-.MarginY10 { margin-top: 1rem; margin-bottom: 1rem; }
+.MarginX20 { margin-left: 2rem; margin-right: 2rem; }
+.MarginXAuto { margin-left: auto; margin-right: auto; }
 
-.MarginL10 { margin-left: 1rem; }
-.MarginR10 { margin-right: 1rem; }
+.MarginY10 { margin-top: 1rem; margin-bottom: 1rem; }
+.MarginY20 { margin-top: 2rem; margin-bottom: 2rem; }
+.MarginYAuto { margin-top: auto; margin-bottom: auto; }
+
+.MarginLeft10 { margin-left: 1rem; }
+.MarginRight10 { margin-right: 1rem; }
 .MarginTop10 { margin-top: 1rem; }
 .MarginBottom10 { margin-bottom: 1rem; }
+
+.MarginLeftAuto { margin-left: auto; }
+.MarginRightAuto { margin-right: auto; }
+.MarginTopAuto { margin-top: auto; }
+.MarginBottomAuto { margin-bottom: auto; }
 
 
 /* =========================================
    SIZE
 ========================================= */
 
+.Width25 { width: 25%; }
+.Width33 { width: 33.333%; }
+.Width50 { width: 50%; }
+.Width66 { width: 66.666%; }
+.Width75 { width: 75%; }
 .Width100 { width: 100%; }
+.WidthAuto { width: auto; }
+
 .Height100 { height: 100%; }
+.HeightAuto { height: auto; }
+
+.MinHeightScreen { min-height: 100vh; }
 
 .MaxWidth100 { max-width: 100%; }
+.MaxWidth400 { max-width: 400px; }
+.MaxWidth600 { max-width: 600px; }
+.MaxWidth800 { max-width: 800px; }
+.MaxWidth1200 { max-width: 1200px; }
 
 
 /* =========================================
@@ -172,6 +273,8 @@ Example:
 .BorderNone { border: none; }
 .BorderRadius05 { border-radius: .5rem; }
 .BorderRadius10 { border-radius: 1rem; }
+.BorderRadius20 { border-radius: 2rem; }
+.BorderRadiusFull { border-radius: 9999px; }
 
 
 /* =========================================
@@ -199,6 +302,9 @@ Example:
 .Gap15 { gap: 1.5rem; }
 .Gap20 { gap: 2rem; }
 .Gap25 { gap: 2.5rem; }
+.Gap30 { gap: 3rem; }
+.Gap40 { gap: 4rem; }
+.Gap50 { gap: 5rem; }
 
 
 /* =========================================
@@ -220,9 +326,17 @@ Example:
 ========================================= */
 
 .FontSize10 { font-size: 1rem; }
+.FontSize12 { font-size: 1.2rem; }
+.FontSize14 { font-size: 1.4rem; }
 .FontSize15 { font-size: 1.5rem; }
+.FontSize16 { font-size: 1.6rem; }
+.FontSize18 { font-size: 1.8rem; }
 .FontSize20 { font-size: 2rem; }
+.FontSize24 { font-size: 2.4rem; }
 .FontSize25 { font-size: 2.5rem; }
+.FontSize30 { font-size: 3rem; }
+.FontSize36 { font-size: 3.6rem; }
+.FontSize48 { font-size: 4.8rem; }
 
 
 /* =========================================
@@ -239,33 +353,35 @@ Example:
    COLORS
 ========================================= */
 
-.ColorWhite { color: #ffffff; }
-.ColorBlack { color: #000000; }
-.ColorGray { color: #666666; }
-.ColorRed { color: #e53935; }
-.ColorBlue { color: #1e88e5; }
-.ColorGreen { color: #43a047; }
+.ColorWhite { color: var(--color-white); }
+.ColorBlack { color: var(--color-black); }
+.ColorGray { color: var(--color-gray); }
+.ColorRed { color: var(--color-red); }
+.ColorBlue { color: var(--color-blue); }
+.ColorGreen { color: var(--color-green); }
 
 
 /* =========================================
    BACKGROUND
 ========================================= */
 
-.BackgroundColorWhite { background-color: #ffffff; }
-.BackgroundColorBlack { background-color: #000000; }
+.BackgroundColorWhite { background-color: var(--color-white); }
+.BackgroundColorBlack { background-color: var(--color-black); }
 .BackgroundColorGray { background-color: #f2f2f2; }
-.BackgroundColorRed { background-color: #e53935; }
-.BackgroundColorBlue { background-color: #1e88e5; }
-.BackgroundColorGreen { background-color: #43a047; }
+.BackgroundColorRed { background-color: var(--color-red); }
+.BackgroundColorBlue { background-color: var(--color-blue); }
+.BackgroundColorGreen { background-color: var(--color-green); }
 
 
 /* =========================================
    OPACITY
 ========================================= */
 
+.Opacity00 { opacity: 0; }
 .Opacity01 { opacity: .1; }
 .Opacity02 { opacity: .2; }
 .Opacity05 { opacity: .5; }
+.Opacity75 { opacity: .75; }
 .Opacity10 { opacity: 1; }
 
 
@@ -468,6 +584,71 @@ Example:
 
 
 /* =========================================
+   RESPONSIVE VISIBILITY
+========================================= */
+
+/* Hidden at breakpoint and above */
+.HiddenSm { display: block; }
+@media (min-width: 640px) { .HiddenSm { display: none; } }
+
+.HiddenMd { display: block; }
+@media (min-width: 768px) { .HiddenMd { display: none; } }
+
+.HiddenLg { display: block; }
+@media (min-width: 1024px) { .HiddenLg { display: none; } }
+
+.HiddenXl { display: block; }
+@media (min-width: 1280px) { .HiddenXl { display: none; } }
+
+/* Visible only at breakpoint and above */
+.VisibleSm { display: none; }
+@media (min-width: 640px) { .VisibleSm { display: block; } }
+
+.VisibleMd { display: none; }
+@media (min-width: 768px) { .VisibleMd { display: block; } }
+
+.VisibleLg { display: none; }
+@media (min-width: 1024px) { .VisibleLg { display: block; } }
+
+.VisibleXl { display: none; }
+@media (min-width: 1280px) { .VisibleXl { display: block; } }
+
+
+/* =========================================
+   CONTAINER QUERIES (Modern CSS - v3.0)
+========================================= */
+
+/* Container parent - enable container queries on this element */
+.ContainerParent {
+  container-type: inline-size;
+}
+
+/* Container-responsive utilities (Co: prefix) */
+/* These respond to container width, not viewport width */
+
+@container (min-width: 400px) {
+  .Co\:DisplayBlock { display: block; }
+  .Co\:DisplayFlex { display: flex; }
+  .Co\:DisplayGrid { display: grid; }
+  
+  .Co\:FlexDirectionRow { flex-direction: row; }
+  .Co\:FlexDirectionColumn { flex-direction: column; }
+  
+  .Co\:GridTemplateColumns1 { grid-template-columns: repeat(1, 1fr); }
+  .Co\:GridTemplateColumns2 { grid-template-columns: repeat(2, 1fr); }
+  .Co\:GridTemplateColumns3 { grid-template-columns: repeat(3, 1fr); }
+  
+  .Co\:Gap10 { gap: 1rem; }
+  .Co\:Gap15 { gap: 1.5rem; }
+  .Co\:Gap20 { gap: 2rem; }
+  
+  .Co\:Padding10 { padding: 1rem; }
+  .Co\:Padding15 { padding: 1.5rem; }
+  .Co\:Padding20 { padding: 2rem; }
+}
+
+
+/* =========================================
    RESPONSIVE LAYOUT ENGINE
 ========================================= */
 
@@ -554,62 +735,4 @@ Example:
   
   .Xl\:Width25 { width: 25%; }
 }
-
-
-
-V3?
-
-
-Assolutamente sì! Il CSS tra il 2024 e il 2026 ha fatto passi da gigante. Se vuoi che PascalCSS sia davvero una libreria "del futuro", possiamo sfruttare tre nuove specifiche che rendono inutile l'uso di SASS e migliorano drasticamente la gestione del responsive.
-Ecco le novità "bomba" che dovresti integrare:
-1. CSS Custom Media Queries (Media Queries con Variabili)
-Invece di ripetere 768px in tutto il file, oggi puoi definire i breakpoint una volta sola. Questo rende la tua libreria ultra-manutenibile.
-@custom-media --md-viewport (min-width: 768px);
-
-@media (--md-viewport) {
-  .Md\:DisplayFlex { display: flex; }
-}
-
-2. Modern CSS Reset (lightweight)
-Dato che PascalCSS è "small", non usare reset pesanti. Sfrutta la nuova proprietà text-wrap: balance per i titoli e scrollbar-gutter: stable per evitare che la pagina "salti" quando appare la scrollbar.
-h1, h2, h3 {
-  text-wrap: balance; /* Evita che una sola parola rimanga da sola nell'ultima riga */
-}
-
-3. Container Queries (La vera rivoluzione)
-Questa è la funzione che ucciderà definitivamente Tailwind tradizionale. Invece di basarsi sulla larghezza dello schermo, le classi rispondono alla larghezza del loro contenitore.
-Se un componente è dentro una colonna stretta, si comporta come "mobile" anche se lo schermo è "desktop".
-/* Definiamo un contenitore */
-.ContainerParent {
-  container-type: inline-size;
-}
-
-/* Classe che cambia solo se il contenitore è largo */
-@container (min-width: 400px) {
-  .Co\:FlexDirectionRow { flex-direction: row; }
-}
-
-Naming suggestion: Potresti usare il prefisso Co: (Container) per queste classi speciali.
-4. CSS Nesting Nativo
-Dimentica SASS. Ora puoi annidare le classi direttamente nel CSS. Questo è utile se vuoi che PascalCSS gestisca anche stati complessi (come il GroupHover di Tailwind) in modo leggibile.
-.Card {
-  transition: all 0.3s;
-  
-  &:hover {
-    transform: scale(1.05);
-    
-    .Hover\:ColorBlue { color: var(--blue); }
-  }
-}
-
-5. LCH e OKLCH Colors
-Invece dei codici HEX (#ff0000), usa i colori OKLCH. Sono colori percepiti dall'occhio umano in modo più uniforme e permettono di creare palette "generate" matematicamente che sono perfette in Dark Mode.
-:root {
-  --BrandColor: oklch(60% 0.15 250); /* Un blu vibrante che non sgrana mai */
-}
-
-Prossimo Step: Aggiornare il Core
-Vuoi che riscriva una sezione del file PascalCSS includendo queste Container Queries o preferisci concentrarti prima sull'implementazione dei colori OKLCH per avere una palette moderna e accessibile?
-
-
 

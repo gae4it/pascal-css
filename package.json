@@ -1,0 +1,44 @@
+{
+  "name": "pascal-css",
+  "version": "3.0.0",
+  "description": "A modern, lightweight, utility-first CSS library with PascalCase naming, Container Queries, and OKLCH colors",
+  "main": "dist/pascal-css.min.css",
+  "style": "dist/pascal-css.min.css",
+  "files": [
+    "dist/pascal-css.css",
+    "dist/pascal-css.min.css",
+    "dist/pascal-css.css.map"
+  ],
+  "scripts": {
+    "build": "node build.js",
+    "watch": "node build.js --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gae4it/pascal-css.git"
+  },
+  "keywords": [
+    "css",
+    "utility-first",
+    "pascalcase",
+    "responsive",
+    "container-queries",
+    "oklch",
+    "modern-css",
+    "css-framework",
+    "lightweight",
+    "cdn",
+    "static-css"
+  ],
+  "author": "Gae4it",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gae4it/pascal-css/issues"
+  },
+  "homepage": "https://pascalcss.netlify.app/",
+  "devDependencies": {
+    "autoprefixer": "^10.4.17",
+    "cssnano": "^6.0.3",
+    "postcss": "^8.4.33"
+  }
+}
