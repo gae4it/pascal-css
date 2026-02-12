@@ -1,3 +1,8 @@
+# LOCATION
+Tag: https://github.com/gae4it/pascal-css/releases/tag/v3.2.0
+CDN: https://cdn.jsdelivr.net/gh/gae4it/pascal-css@3.2.0/dist/pascal-css.min.css
+URL: https://github.com/gae4it/pascal-css/releases/new
+
 # PascalCSS Versioning & Release Guide
 
 Complete step-by-step guide for updating version numbers and releasing new versions of PascalCSS.

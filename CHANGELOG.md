@@ -5,6 +5,17 @@ All notable changes to PascalCSS will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [3.2.0] - 2026-02-12
+
+### 📦 Release Packaging
+
+### Changed
+- Version bumped to 3.2.0 across package metadata and CDN references
+- Rebuilt distribution artifacts (unminified, minified, source map)
+
+### Documentation
+- Updated README CDN links to v3.2.0
+
 ## [3.1.0] - 2026-02-12
 
 ### 📚 Documentation & Enhancement Release
