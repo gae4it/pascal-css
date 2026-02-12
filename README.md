@@ -27,10 +27,10 @@
 
 ```html
 <!-- Production (minified) -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/gae4it/pascal-css@3.1.0/dist/pascal-css.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/gae4it/pascal-css@3.2.0/dist/pascal-css.min.css">
 
 <!-- Development (unminified with comments) -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/gae4it/pascal-css@3.1.0/dist/pascal-css.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/gae4it/pascal-css@3.2.0/dist/pascal-css.css">
 ```
 
 ### Download

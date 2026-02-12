@@ -1,6 +1,6 @@
 {
   "name": "pascal-css",
-  "version": "3.1.0",
+  "version": "3.2.0",
   "description": "A modern, lightweight, utility-first CSS library with PascalCase naming, Container Queries, and OKLCH colors",
   "main": "dist/pascal-css.min.css",
   "style": "dist/pascal-css.min.css",
