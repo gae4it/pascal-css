@@ -18,7 +18,7 @@ if (!fs.existsSync(distDir)) {
 // Read source CSS
 const css = fs.readFileSync(sourceFile, 'utf8');
 
-console.log('🚀 Building PascalCSS v3.0...\n');
+console.log('🚀 Building PascalCSS v3.1...\n');
 
 // Process CSS with PostCSS
 postcss([

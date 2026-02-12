@@ -5,6 +5,38 @@ All notable changes to PascalCSS will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [3.1.0] - 2026-02-12
+
+### 📚 Documentation & Enhancement Release
+
+### Added
+- **Comprehensive Documentation** - Complete utility reference in README covering all available classes
+- **Extended Color Documentation** - Full OKLCH color palette documentation (9 color families × 6 shades each)
+- **Typography Reference** - Complete font size scale (Fs07-Fs70) with responsive behavior
+- **Spacing Documentation** - All padding/margin variants clearly documented (0-100 scale)
+- **Border Radius Utilities** - Individual corner controls (TL, TR, BL, BR) fully documented
+- **Grid System Reference** - Complete grid utilities including areas, auto-flow, place-items
+- **Container Query Guide** - Clear examples of Co: prefix utilities
+- **Background & Image Utilities** - Complete reference for background-size, position, repeat, object-fit
+
+### Improved
+- **README Structure** - Better organized with clear categorical sections
+- **Category Organization** - Utilities grouped logically (Layout, Flexbox, Grid, Spacing, Typography, Colors, etc.)
+- **Code Examples** - More practical examples throughout documentation
+- **Searchability** - Easier to find specific utility classes
+
+### Documentation Highlights
+- 150+ utility classes documented
+- Full OKLCH color system explained (Fc, Bg, Bc prefixes)
+- Responsive breakpoint system clarified (Sm/Md/Lg/Xl)
+- Container queries usage patterns
+- Complete sizing system (width, height, min/max variants)
+
+### Technical
+- No breaking changes
+- Fully backward compatible with v3.0.0
+- Same performance characteristics (~12KB gzipped)
+
 ## [3.0.0] - 2026-02-10
 
 ### 🚀 Major Release - Modern CSS Edition

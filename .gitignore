@@ -24,3 +24,6 @@ Thumbs.db
 *.tmp
 *.temp
 .cache/
+
+# Prompts
+prompts/
