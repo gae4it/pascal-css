@@ -27,10 +27,10 @@
 
 ```html
 <!-- Production (minified) -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/gae4it/pascal-css@3.0.0/dist/pascal-css.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/gae4it/pascal-css@3.1.0/dist/pascal-css.min.css">
 
 <!-- Development (unminified with comments) -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/gae4it/pascal-css@3.0.0/dist/pascal-css.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/gae4it/pascal-css@3.1.0/dist/pascal-css.css">
 ```
 
 ### Download
@@ -116,58 +116,221 @@ Download from [GitHub Releases](https://github.com/gae4it/pascal-css/releases) a
 
 ---
 
-## 🧩 Core Utilities
+## 🧩 Complete Utility Reference
 
-### Layout
-- **Display:** `DisplayFlex`, `DisplayGrid`, `DisplayBlock`, `DisplayNone`
+### Layout & Display
+
+#### Display Types
+- **Display:** `DisplayBlock`, `DisplayInline`, `DisplayInlineBlock`, `DisplayFlex`, `DisplayGrid`, `DisplayNone`
 - **Position:** `PositionRelative`, `PositionAbsolute`, `PositionFixed`
-- **Visibility:** `HiddenSm`, `HiddenMd`, `VisibleLg`, `VisibleXl`
+- **Positioning:** `Top0`, `Left0`, `Right0`, `Bottom0`
+- **Overflow:** `OverflowHidden`, `OverflowAuto`, `OverflowScroll`
+- **Visibility:** `VisibilityHidden`, `VisibilityVisible`
+- **Responsive Visibility:** `HiddenSm`, `HiddenMd`, `HiddenLg`, `HiddenXl`, `VisibleSm`, `VisibleMd`, `VisibleLg`, `VisibleXl`
 
-### Flexbox
+### Flexbox System
+
+#### Direction & Wrapping
 - **Direction:** `FlexDirectionRow`, `FlexDirectionColumn`
-- **Justify:** `JustifyContentCenter`, `JustifyContentSpaceBetween`, `JustifyContentEnd`
-- **Align:** `AlignItemsCenter`, `AlignItemsStart`, `AlignItemsStretch`
 - **Wrap:** `FlexWrap`, `FlexNoWrap`
-- **Grow/Shrink:** `FlexGrow1`, `FlexShrink0`
 
-### Grid
-- **Columns:** `GridTemplateColumns1`, `GridTemplateColumns2`, `GridTemplateColumns3`, `GridTemplateColumns4`
-- **Gap:** `Gap10`, `Gap15`, `Gap20`, `Gap25`
+#### Justify Content
+- `JustifyContentStart`, `JustifyContentCenter`, `JustifyContentEnd`
+- `JustifyContentSpaceBetween`, `JustifyContentSpaceAround`, `JustifyContentSpaceEvenly`
 
-### Spacing
-**Scale:** 01=0.1rem, 05=0.5rem, 10=1rem, 15=1.5rem, 20=2rem, 25=2.5rem, 30=3rem, 40=4rem, 50=5rem
+#### Align Items
+- `AlignItemsStart`, `AlignItemsCenter`, `AlignItemsEnd`, `AlignItemsStretch`, `AlignItemsBaseline`
 
-- **Padding:** `Padding10`, `PaddingX20`, `PaddingY15`, `PaddingTop10`
-- **Margin:** `Margin20`, `MarginX10`, `MarginBottom15`, `MarginXAuto`
+#### Align Self
+- `AlignSelfAuto`, `AlignSelfStart`, `AlignSelfCenter`, `AlignSelfEnd`, `AlignSelfStretch`, `AlignSelfBaseline`
+
+#### Flex Properties
+- **Grow:** `FlexGrow0`, `FlexGrow1`
+- **Shrink:** `FlexShrink0`, `FlexShrink1`
+- **Basis:** `FlexBasisAuto`, `FlexBasis0`
+
+### Grid System
+
+#### Grid Template Columns
+- `GridTemplateColumns1`, `GridTemplateColumns2`, `GridTemplateColumns3`, `GridTemplateColumns4`, `GridTemplateColumns6`
+
+#### Grid Flow & Areas
+- **Auto Flow:** `GridAutoFlowRow`, `GridAutoFlowColumn`, `GridAutoFlowDense`, `GridAutoFlowRowDense`, `GridAutoFlowColumnDense`
+- **Column/Row:** `GridColumnAuto`, `GridRowAuto`
+- **Areas:** `GridAreaHeader`, `GridAreaMain`, `GridAreaSidebar`, `GridAreaFooter`
+- **Template Areas:** `GridTemplateAreaHeader`, `GridTemplateAreaMain`, `GridTemplateAreaSidebar`, `GridTemplateAreaFooter`
+
+#### Grid Alignment
+- **Place Items:** `GridPlaceItemsStart`, `GridPlaceItemsEnd`, `GridPlaceItemsCenter`, `GridPlaceItemsStretch`
+- **Place Content:** `GridPlaceContentStart`, `GridPlaceContentEnd`, `GridPlaceContentCenter`, `GridPlaceContentStretch`
+- **Justify Self:** `JustifySelfAuto`, `JustifySelfStart`, `JustifySelfEnd`, `JustifySelfCenter`, `JustifySelfStretch`
+
+#### Gap (Flexbox & Grid)
+- `Gap05`, `Gap10`, `Gap15`, `Gap20`, `Gap25`, `Gap30`, `Gap40`, `Gap50` (0.5rem to 5rem)
+
+### Spacing System
+
+**Scale:** 5=0.5rem, 10=1rem, 15=1.5rem, 20=2rem, 25=2.5rem, 30=3rem, 35=3.5rem, 40=4rem, ..., 100=10rem
+
+#### Padding
+- **All Sides:** `Padding0` to `Padding100` (step 5)
+- **Vertical (Y-axis):** `PaddingY0` to `PaddingY100`
+- **Horizontal (X-axis):** `PaddingX0` to `PaddingX100`
+- **Individual Sides:** `PaddingT5` to `PaddingT100`, `PaddingB0` to `PaddingB100`, `PaddingL5` to `PaddingL100`, `PaddingR0` to `PaddingR100`
+
+#### Margin
+- **All Sides:** `Margin0` to `Margin100` (step 5)
+- **Vertical (Y-axis):** `MarginY0` to `MarginY100`
+- **Horizontal (X-axis):** `MarginX0` to `MarginX100`
+- **Individual Sides:** `MarginT0` to `MarginT100`, `MarginB0` to `MarginB100`, `MarginL0` to `MarginL100`, `MarginR0` to `MarginR100`
+- **Auto Margin:** `MarginLeftAuto`, `MarginRightAuto`, `MarginTopAuto`, `MarginBottomAuto`
 
 ### Typography
-- **Size:** `FontSize10`, `FontSize15`, `FontSize20`, `FontSize25`
-- **Weight:** `FontWeight300`, `FontWeight400`, `FontWeight600`, `FontWeight700`
-- **Align:** `TextAlignLeft`, `TextAlignCenter`, `TextAlignRight`
-- **Transform:** `TextTransformUppercase`, `TextTransformCapitalize`
 
-### Colors (Minimal Palette)
-- **Text:** `ColorWhite`, `ColorBlack`, `ColorGray`, `ColorRed`, `ColorBlue`, `ColorGreen`
-- **Background:** `BackgroundColorWhite`, `BackgroundColorGray`, `BackgroundColorBlue`
-- **Border:** `BorderColorBlack`, `BorderColorGray`, `BorderColorBlue`
+#### Font Size (Fs Prefix)
+- **Responsive Scaling:** Mobile, Tablet, Desktop automatically adjusted
+- **Classes:** `Fs07` to `Fs70` (0.7rem to 7rem)
+- **Common Sizes:** `Fs10`, `Fs12`, `Fs14`, `Fs16`, `Fs18`, `Fs20`, `Fs24`, `Fs30`, `Fs40`, `Fs50`, `Fs60`, `Fs70`
+- **Headers:** `h1` to `h5` with responsive sizing built-in
 
-> **Tip:** Extend colors using CSS variables for your project's brand colors
+#### Font Weight
+- `FontWeight300` (Light), `FontWeight400` (Normal), `FontWeight500` (Medium), `FontWeight600` (Semi-bold), `FontWeight700` (Bold)
+
+#### Text Alignment
+- `TextAlignLeft`, `TextAlignCenter`, `TextAlignRight`
+
+#### Text Transform
+- `TextTransformUppercase`, `TextTransformLowercase`, `TextTransformCapitalize`
+
+#### Text Utilities
+- **White Space:** `WhiteSpaceNormal`, `WhiteSpaceNoWrap`, `WhiteSpacePre`
+- **Text Overflow:** `TextOverflowEllipsis` (includes overflow hidden + nowrap)
+
+### Color System (OKLCH)
+
+> PascalCSS uses the modern OKLCH color system with automatic fallbacks for older browsers
+
+#### Text Colors (Fc prefix)
+- **Base:** `FcWhite`, `FcBlack`
+- **Grays:** `FcGray50`, `FcGray100`, `FcGray300`, `FcGray500`, `FcGray700`, `FcGray900`
+- **Colors (50/100/300/500/700/900):** 
+  - Red: `FcRed50` to `FcRed900`
+  - Orange: `FcOrange50` to `FcOrange900`
+  - Yellow: `FcYellow50` to `FcYellow900`
+  - Green: `FcGreen50` to `FcGreen900`
+  - Teal: `FcTeal50` to `FcTeal900`
+  - Cyan: `FcCyan50` to `FcCyan900`
+  - Blue: `FcBlue50` to `FcBlue900`
+  - Purple: `FcPurple50` to `FcPurple900`
+  - Pink: `FcPink50` to `FcPink900`
+- **Semantic:** `FcPrimary`, `FcSuccess`, `FcWarning`, `FcError`, `FcInfo`
+
+#### Background Colors (Bg prefix)
+Same scale as text colors:
+- **Base:** `BgWhite`, `BgBlack`
+- **Grays:** `BgGray50` to `BgGray900`
+- **All Colors:** Same pattern as text colors (`BgRed50`, `BgBlue500`, etc.)
+- **Semantic:** `BgPrimary`, `BgSuccess`, `BgWarning`, `BgError`, `BgInfo`
+
+#### Border Colors (Bc prefix)
+Same scale as text and background colors:
+- **Base:** `BcWhite`, `BcBlack`
+- **Grays:** `BcGray50` to `BcGray900`
+- **All Colors:** Same pattern (`BcRed50`, `BcBlue500`, etc.)
+- **Semantic:** `BcPrimary`, `BcSuccess`, `BcWarning`, `BcError`, `BcInfo`
 
 ### Sizing
-- **Width:** `Width25`, `Width33`, `Width50`, `Width75`, `Width100`
-- **Height:** `Height100`, `MinHeightScreen`
-- **Max Width:** `MaxWidth100`
+
+#### Width
+- **Percentages:** `Width25`, `Width33`, `Width50`, `Width66`, `Width75`, `Width100`
+- **Auto:** `WidthAuto`
+
+#### Height
+- **Percentages:** `Height25`, `Height33`, `Height50`, `Height66`, `Height75`, `Height100`
+- **Auto:** `HeightAuto`
+
+#### Min Width
+- `MinWidth5` to `MinWidth100` (5% increments: 5%, 10%, 15%... 100%)
+
+#### Max Width
+- `MaxWidth5` to `MaxWidth100` (5% increments)
+
+#### Min Height
+- **Percentages:** `MinHeight5` to `MinHeight100` (5% increments)
+- **Viewport:** `MinHeight50vh`, `MinHeight60vh`, `MinHeight70vh`, `MinHeight80vh`, `MinHeight90vh`, `MinHeight100vh`
+
+#### Max Height
+- `MaxHeight5` to `MaxHeight100` (5% increments)
 
 ### Borders
-- **Radius:** `BorderRadius05`, `BorderRadius10`, `BorderRadiusFull`
-- **Width:** `BorderWidth01`, `BorderWidth02`
-- **Style:** `BorderStyleSolid`, `BorderStyleDashed`, `BorderNone`
 
-### Effects
-- **Shadow:** `BoxShadowSmall`, `BoxShadowMedium`, `BoxShadowLarge`
-- **Opacity:** `Opacity01`, `Opacity05`, `Opacity10`
-- **Transform:** `TransformScale110`, `TransformRotate5`
-- **Transition:** `TransitionFast`, `TransitionMedium`, `TransitionSlow`
+#### Border Radius
+- **All Corners:** `BorderRadius05` to `BorderRadius100` (0.5rem to 10rem, step 5)
+- **Full (Circle):** `BorderRadiusFull` (9999px)
+- **Individual Corners:** 
+  - Top-Left: `BorderRadiusTL05` to `BorderRadiusTL100`
+  - Top-Right: `BorderRadiusTR05` to `BorderRadiusTR100`
+  - Bottom-Left: `BorderRadiusBL05` to `BorderRadiusBL100`
+  - Bottom-Right: `BorderRadiusBR05` to `BorderRadiusBR100`
+
+#### Border Style
+- `BorderStyleSolid`, `BorderStyleDashed`, `BorderStyleDotted`
+- `BorderNone`
+
+### Effects & Interactions
+
+#### Box Shadow
+- `BoxShadowSmall`, `BoxShadowMedium`, `BoxShadowLarge`
+
+#### Transitions
+- `TransitionFast` (0.15s), `TransitionMedium` (0.3s), `TransitionSlow` (0.6s)
+
+#### Cursor
+- `CursorPointer`, `CursorDefault`, `CursorMove`
+
+#### User Interaction
+- **User Select:** `UserSelectNone`, `UserSelectText`
+- **Pointer Events:** `PointerEventsNone`, `PointerEventsAuto`
+
+### Background Utilities
+
+#### Background Size
+- `BackgroundSizeCover`, `BackgroundSizeContain`
+
+#### Background Position
+- `BackgroundPositionCenter`, `BackgroundPositionTop`, `BackgroundPositionBottom`
+
+#### Background Repeat
+- `BackgroundRepeatNoRepeat`, `BackgroundRepeatRepeat`
+
+### Image & Object
+
+#### Object Fit
+- `ObjectFitCover`, `ObjectFitContain`, `ObjectFitFill`
+
+#### Responsive Images
+- `ImageResponsive` (max-width: 100%, height: auto, display: block)
+
+### Lists
+
+#### List Style
+- `ListStyleNone`, `ListStyleDisc`, `ListStyleDecimal`
+
+### Outline
+
+- `OutlineNone`
+- `OutlineStyleSolid`
+- `OutlineColorBlue`
+
+### Container Queries
+
+Use `ContainerParent` to enable container queries on child elements, then use `Co:` prefix:
+
+**Available Container Utilities:**
+- Display: `Co:DisplayBlock`, `Co:DisplayFlex`, `Co:DisplayGrid`
+- Flex: `Co:FlexDirectionRow`, `Co:FlexDirectionColumn`
+- Grid: `Co:GridTemplateColumns1`, `Co:GridTemplateColumns2`, `Co:GridTemplateColumns3`
+- Spacing: `Co:Gap10`, `Co:Gap15`, `Co:Gap20`, `Co:Padding10`, `Co:Padding15`, `Co:Padding20`
 
 ---
 
