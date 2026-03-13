@@ -5,6 +5,21 @@ All notable changes to PascalCSS will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [3.3.0] - 2026-03-13
+
+### Added
+- Numeric `ContentWrapper` utilities in haufe-style format: `ContentWrapper640`, `ContentWrapper768`, `ContentWrapper960`, `ContentWrapper1000`, `ContentWrapper1024`, `ContentWrapper1140`, `ContentWrapper1260`, `ContentWrapper1366`, `ContentWrapper1450`, `ContentWrapper1600`, `ContentWrapper1920`
+- Legacy alias `ContentWrapperPDS` mapped to `1450px`
+- Missing utility classes `FlexAuto`, `Flex1`, `Gap03`, `Gap04`
+- Visibility migration aliases `HiddenMobile`, `HiddenMobileTablet`, `HiddenDesktop`
+
+### Changed
+- Version bumped to 3.3.0 across package metadata, source banner, build output and CDN references
+- Naming policy clarified: full-word naming remains the default, while `Margin*` and `Padding*` keep compact directional abbreviations (`T`, `B`, `L`, `R`, `X`, `Y`)
+
+### Documentation
+- Added 3.3.0 release notes and documented the new `ContentWrapper` utilities, visibility aliases and shorthand additions in README
+
 ## [3.2.0] - 2026-02-12
 
 ### 📦 Release Packaging

@@ -2107,17 +2107,13 @@ img.ImageAspectRatio {display:block;width:100%;height:auto;margin:0 auto;}
    RESPONSIVE LAYOUT ENGINE
 ========================================= */
 
-/* Without Sm:/Md:/Lg:/Xl:/Xxl: prefixes, styles target XS (360px to 639px, mobile) */
+/* Without Sm:/Md:/Lg:/Xl: prefixes, styles target XS (360px to 639px, mobile) */
 
 /* --- SMALL (Sm: 640px) --- */
 @media (min-width: 640px) {
   .Sm\:DisplayBlock { display: block; }
-   .Sm\:DisplayInline { display: inline; }
-   .Sm\:DisplayInlineBlock { display: inline-block; }
   .Sm\:DisplayFlex { display: flex; }
-   .Sm\:DisplayInlineFlex { display: inline-flex; }
   .Sm\:DisplayGrid { display: grid; }
-   .Sm\:DisplayInlineGrid { display: inline-grid; }
   .Sm\:DisplayNone { display: none; }
   
   .Sm\:FlexDirectionRow { flex-direction: row; }
@@ -2137,7 +2133,6 @@ img.ImageAspectRatio {display:block;width:100%;height:auto;margin:0 auto;}
   
   .Sm\:Width100 { width: 100%; }
   .Sm\:FontSize15 { font-size: 1.5rem; }
-   .Sm\:Fs15 { font-size: 1.5rem; }
 
    .Sm\:PositionSticky { position: sticky; }
    .Sm\:PositionStatic { position: static; }
@@ -2239,12 +2234,8 @@ img.ImageAspectRatio {display:block;width:100%;height:auto;margin:0 auto;}
 /* --- MEDIUM (Md: 768px) --- */
 @media (min-width: 768px) {
   .Md\:DisplayBlock { display: block; }
-   .Md\:DisplayInline { display: inline; }
-   .Md\:DisplayInlineBlock { display: inline-block; }
   .Md\:DisplayFlex { display: flex; }
-   .Md\:DisplayInlineFlex { display: inline-flex; }
   .Md\:DisplayGrid { display: grid; }
-   .Md\:DisplayInlineGrid { display: inline-grid; }
   .Md\:DisplayNone { display: none; }
   
   .Md\:FlexDirectionRow { flex-direction: row; }
@@ -2262,11 +2253,9 @@ img.ImageAspectRatio {display:block;width:100%;height:auto;margin:0 auto;}
   .Md\:Padding15 { padding: 1.5rem; }
   .Md\:Padding25 { padding: 2.5rem; }
   .Md\:MarginTop20 { margin-top: 2rem; }
-   .Md\:MarginT20 { margin-top: 2rem; }
   
   .Md\:Width50 { width: 50%; }
   .Md\:FontSize20 { font-size: 2rem; }
-   .Md\:Fs20 { font-size: 2rem; }
   .Md\:Gap15 { gap: 1.5rem; }
 
    .Md\:PositionSticky { position: sticky; }
@@ -2368,14 +2357,8 @@ img.ImageAspectRatio {display:block;width:100%;height:auto;margin:0 auto;}
 
 /* --- LARGE (Lg: 1024px) --- */
 @media (min-width: 1024px) {
-   .Lg\:DisplayBlock { display: block; }
-   .Lg\:DisplayInline { display: inline; }
-   .Lg\:DisplayInlineBlock { display: inline-block; }
   .Lg\:DisplayFlex { display: flex; }
-   .Lg\:DisplayInlineFlex { display: inline-flex; }
   .Lg\:DisplayGrid { display: grid; }
-   .Lg\:DisplayInlineGrid { display: inline-grid; }
-   .Lg\:DisplayNone { display: none; }
   
   .Lg\:GridTemplateColumns3 { grid-template-columns: repeat(3, 1fr); }
   .Lg\:GridTemplateColumns4 { grid-template-columns: repeat(4, 1fr); }
@@ -2385,9 +2368,8 @@ img.ImageAspectRatio {display:block;width:100%;height:auto;margin:0 auto;}
   .Lg\:Padding25 { padding: 2.5rem; }
   .Lg\:Margin25 { margin: 2.5rem; }
   
-   .Lg\:Width33 { width: 33.333%; }
+  .Lg\:Width33 { width: 33.33%; }
   .Lg\:FontSize25 { font-size: 2.5rem; }
-   .Lg\:Fs25 { font-size: 2.5rem; }
   .Lg\:Gap20 { gap: 2rem; }
 
    .Lg\:PositionSticky { position: sticky; }
@@ -2489,14 +2471,7 @@ img.ImageAspectRatio {display:block;width:100%;height:auto;margin:0 auto;}
 
 /* --- EXTRA LARGE (Xl: 1280px) --- */
 @media (min-width: 1280px) {
-   .Xl\:DisplayBlock { display: block; }
-   .Xl\:DisplayInline { display: inline; }
-   .Xl\:DisplayInlineBlock { display: inline-block; }
-   .Xl\:DisplayFlex { display: flex; }
-   .Xl\:DisplayInlineFlex { display: inline-flex; }
   .Xl\:DisplayGrid { display: grid; }
-   .Xl\:DisplayInlineGrid { display: inline-grid; }
-   .Xl\:DisplayNone { display: none; }
   .Xl\:GridTemplateColumns4 { grid-template-columns: repeat(4, 1fr); }
   .Xl\:GridTemplateColumns6 { grid-template-columns: repeat(6, 1fr); }
   
@@ -2597,122 +2572,6 @@ img.ImageAspectRatio {display:block;width:100%;height:auto;margin:0 auto;}
    }
 
    .Xl\:FocusVisibleRing:focus-visible {
-      outline: 2px solid var(--color-blue-500);
-      outline-offset: .2rem;
-   }
-}
-
-/* --- 2X LARGE (Xxl: 1536px) --- */
-@media (min-width: 1536px) {
-  .Xxl\:DisplayBlock { display: block; }
-  .Xxl\:DisplayInline { display: inline; }
-  .Xxl\:DisplayInlineBlock { display: inline-block; }
-  .Xxl\:DisplayFlex { display: flex; }
-  .Xxl\:DisplayInlineFlex { display: inline-flex; }
-  .Xxl\:DisplayGrid { display: grid; }
-  .Xxl\:DisplayInlineGrid { display: inline-grid; }
-  .Xxl\:DisplayNone { display: none; }
-
-  .Xxl\:GridTemplateColumns4 { grid-template-columns: repeat(4, 1fr); }
-  .Xxl\:GridTemplateColumns6 { grid-template-columns: repeat(6, 1fr); }
-
-  .Xxl\:MaxWidth1200 { max-width: 1200px; margin-left: auto; margin-right: auto; }
-  .Xxl\:Padding25 { padding: 2.5rem; }
-
-  .Xxl\:Width25 { width: 25%; }
-
-   .Xxl\:PositionSticky { position: sticky; }
-   .Xxl\:PositionStatic { position: static; }
-   .Xxl\:TopAuto { top: auto; }
-   .Xxl\:LeftAuto { left: auto; }
-   .Xxl\:RightAuto { right: auto; }
-   .Xxl\:BottomAuto { bottom: auto; }
-   .Xxl\:Inset0 { top: 0; right: 0; bottom: 0; left: 0; }
-   .Xxl\:InsetX0 { left: 0; right: 0; }
-   .Xxl\:InsetY0 { top: 0; bottom: 0; }
-
-   .Xxl\:OutlineWidth01 { outline-width: .1rem; }
-   .Xxl\:OutlineWidth05 { outline-width: .5rem; }
-   .Xxl\:OutlineWidth10 { outline-width: 1rem; }
-   .Xxl\:OutlineOffset02 { outline-offset: .2rem; }
-   .Xxl\:OutlineOffset05 { outline-offset: .5rem; }
-
-   .Xxl\:ObjectPositionCenter { -o-object-position: center; object-position: center; }
-   .Xxl\:ObjectPositionTop { -o-object-position: top; object-position: top; }
-   .Xxl\:ObjectPositionBottom { -o-object-position: bottom; object-position: bottom; }
-   .Xxl\:ObjectPositionLeft { -o-object-position: left; object-position: left; }
-   .Xxl\:ObjectPositionRight { -o-object-position: right; object-position: right; }
-
-   .Xxl\:AspectRatio21_9 { aspect-ratio: 21 / 9; }
-   .Xxl\:AspectRatio9_16 { aspect-ratio: 9 / 16; }
-   .Xxl\:AspectRatio3_2 { aspect-ratio: 3 / 2; }
-   .Xxl\:AspectRatio2_3 { aspect-ratio: 2 / 3; }
-
-   .Xxl\:TextWrapBalance { text-wrap: balance; }
-   .Xxl\:TextWrapPretty { text-wrap: pretty; }
-   .Xxl\:HyphensNone { -webkit-hyphens: none; hyphens: none; }
-   .Xxl\:HyphensManual { -webkit-hyphens: manual; hyphens: manual; }
-   .Xxl\:HyphensAuto { -webkit-hyphens: auto; hyphens: auto; }
-   .Xxl\:WordBreakNormal { word-break: normal; }
-   .Xxl\:WordBreakBreakAll { word-break: break-all; }
-   .Xxl\:WordBreakKeepAll { word-break: keep-all; }
-   .Xxl\:OverflowWrapNormal { overflow-wrap: normal; }
-   .Xxl\:OverflowWrapBreakWord { overflow-wrap: break-word; }
-   .Xxl\:OverflowWrapAnywhere { overflow-wrap: anywhere; }
-
-   .Xxl\:LineClamp1 {
-      display: -webkit-box;
-      -webkit-line-clamp: 1;
-      line-clamp: 1;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-   }
-
-   .Xxl\:LineClamp2 {
-      display: -webkit-box;
-      -webkit-line-clamp: 2;
-      line-clamp: 2;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-   }
-
-   .Xxl\:LineClamp3 {
-      display: -webkit-box;
-      -webkit-line-clamp: 3;
-      line-clamp: 3;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-   }
-
-   .Xxl\:LineClamp4 {
-      display: -webkit-box;
-      -webkit-line-clamp: 4;
-      line-clamp: 4;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-   }
-
-   .Xxl\:LineClamp5 {
-      display: -webkit-box;
-      -webkit-line-clamp: 5;
-      line-clamp: 5;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-   }
-
-   .Xxl\:ScreenReaderOnly {
-      position: absolute;
-      width: 1px;
-      height: 1px;
-      padding: 0;
-      margin: -1px;
-      overflow: hidden;
-      clip: rect(0, 0, 0, 0);
-      white-space: nowrap;
-      border: 0;
-   }
-
-   .Xxl\:FocusVisibleRing:focus-visible {
       outline: 2px solid var(--color-blue-500);
       outline-offset: .2rem;
    }

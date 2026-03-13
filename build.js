@@ -4,98 +4,129 @@ const postcss = require('postcss');
 const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
 
-// Directories
 const sourceFile = path.join(__dirname, 'pascal-css.css');
 const distDir = path.join(__dirname, 'dist');
 const distFile = path.join(distDir, 'pascal-css.css');
 const minFile = path.join(distDir, 'pascal-css.min.css');
+const isWatchMode = process.argv.includes('--watch');
 
-// Create dist directory if it doesn't exist
 if (!fs.existsSync(distDir)) {
   fs.mkdirSync(distDir, { recursive: true });
 }
 
-// Read source CSS
-const css = fs.readFileSync(sourceFile, 'utf8');
+const browsers = [
+  'last 2 versions',
+  '> 1%',
+  'not dead',
+  'Chrome >= 105',
+  'Safari >= 16',
+  'Firefox >= 110'
+];
 
-console.log('🚀 Building PascalCSS v3.2...\n');
+async function build() {
+  const css = fs.readFileSync(sourceFile, 'utf8');
 
-// Process CSS with PostCSS
-postcss([
-  autoprefixer({
-    overrideBrowserslist: [
-      'last 2 versions',
-      '> 1%',
-      'not dead',
-      'Chrome >= 105',
-      'Safari >= 16',
-      'Firefox >= 110'
-    ]
-  })
-])
-  .process(css, {
+  const unminified = await postcss([
+    autoprefixer({
+      overrideBrowserslist: browsers
+    })
+  ]).process(css, {
     from: sourceFile,
     to: distFile,
     map: { inline: false }
-  })
-  .then(result => {
-    // Write unminified version
-    fs.writeFileSync(distFile, result.css);
-    if (result.map) {
-      fs.writeFileSync(distFile + '.map', result.map.toString());
-    }
-    console.log('✅ Unminified: dist/pascal-css.css');
+  });
 
-    // Get file size
-    const sizeKB = (Buffer.byteLength(result.css, 'utf8') / 1024).toFixed(2);
-    console.log(`   Size: ${sizeKB} KB\n`);
+  fs.writeFileSync(distFile, unminified.css);
+  if (unminified.map) {
+    fs.writeFileSync(`${distFile}.map`, unminified.map.toString());
+  }
 
-    // Process minified version
-    return postcss([
-      autoprefixer({
-        overrideBrowserslist: [
-          'last 2 versions',
-          '> 1%',
-          'not dead',
-          'Chrome >= 105',
-          'Safari >= 16',
-          'Firefox >= 110'
-        ]
-      }),
-      cssnano({
-        preset: ['default', {
-          discardComments: { removeAll: true },
-          normalizeWhitespace: true,
-          colormin: true,
-          minifyFontValues: true,
-          minifySelectors: true
-        }]
-      })
-    ]).process(result.css, {
-      from: distFile,
-      to: minFile
-    });
-  })
-  .then(result => {
-    // Write minified version
-    fs.writeFileSync(minFile, result.css);
-    console.log('✅ Minified: dist/pascal-css.min.css');
+  const sizeKB = (Buffer.byteLength(unminified.css, 'utf8') / 1024).toFixed(2);
 
-    // Get file sizes
-    const minSizeKB = (Buffer.byteLength(result.css, 'utf8') / 1024).toFixed(2);
-    console.log(`   Size: ${minSizeKB} KB`);
+  const minified = await postcss([
+    autoprefixer({
+      overrideBrowserslist: browsers
+    }),
+    cssnano({
+      preset: ['default', {
+        discardComments: { removeAll: true },
+        normalizeWhitespace: true,
+        colormin: true,
+        minifyFontValues: true,
+        minifySelectors: true
+      }]
+    })
+  ]).process(unminified.css, {
+    from: distFile,
+    to: minFile
+  });
 
-    // Estimate gzipped size (rough approximation: ~70% compression)
-    const gzipEstimate = (minSizeKB * 0.3).toFixed(2);
-    console.log(`   Estimated gzipped: ~${gzipEstimate} KB\n`);
+  fs.writeFileSync(minFile, minified.css);
 
+  const minSizeKB = (Buffer.byteLength(minified.css, 'utf8') / 1024).toFixed(2);
+  const gzipEstimate = (Number(minSizeKB) * 0.3).toFixed(2);
+
+  console.log('✅ Unminified: dist/pascal-css.css');
+  console.log(`   Size: ${sizeKB} KB\n`);
+  console.log('✅ Minified: dist/pascal-css.min.css');
+  console.log(`   Size: ${minSizeKB} KB`);
+  console.log(`   Estimated gzipped: ~${gzipEstimate} KB\n`);
+}
+
+async function runBuildCycle() {
+  try {
+    await build();
     console.log('✨ Build complete!\n');
     console.log('📦 Distribution files ready in /dist:');
     console.log('   - pascal-css.css (unminified with comments)');
     console.log('   - pascal-css.min.css (production-ready)');
     console.log('   - pascal-css.css.map (source map)\n');
-  })
-  .catch(error => {
+  } catch (error) {
     console.error('❌ Build failed:', error);
-    process.exit(1);
+    if (!isWatchMode) {
+      process.exit(1);
+    }
+  }
+}
+
+console.log('🚀 Building PascalCSS v3.3...\n');
+
+if (!isWatchMode) {
+  runBuildCycle();
+} else {
+  let running = false;
+  let pending = false;
+
+  const queueBuild = async () => {
+    if (running) {
+      pending = true;
+      return;
+    }
+
+    running = true;
+    await runBuildCycle();
+    running = false;
+
+    if (pending) {
+      pending = false;
+      await queueBuild();
+    }
+  };
+
+  console.log('👀 Watch mode enabled. Listening for changes in pascal-css.css...\n');
+
+  queueBuild();
+
+  fs.watchFile(sourceFile, { interval: 250 }, (curr, prev) => {
+    if (curr.mtimeMs !== prev.mtimeMs) {
+      console.log('🔁 Change detected, rebuilding...');
+      queueBuild();
+    }
   });
+
+  process.on('SIGINT', () => {
+    fs.unwatchFile(sourceFile);
+    console.log('\n🛑 Watch mode stopped.');
+    process.exit(0);
+  });
+}

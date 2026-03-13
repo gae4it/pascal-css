@@ -3,8 +3,8 @@
 **A modern, lightweight, utility-first CSS library with readable PascalCase naming.**
 
 ```html
-<div class="DisplayFlex JustifyContentCenter AlignItemsCenter Padding20 BackgroundColorBlue ColorWhite">
-  <h1 class="FontSize30 FontWeight700">Hello PascalCSS</h1>
+<div class="DisplayFlex JustifyContentCenter AlignItemsCenter Padding20 BgBlue500 FcWhite">
+  <h1 class="Fs30 Fw700">Hello PascalCSS</h1>
 </div>
 ```
 
@@ -15,7 +15,7 @@
 - **🎯 PascalCase Naming** - `DisplayFlex`, `JustifyContentCenter` instead of cryptic abbreviations
 - **📦 Zero Build Required** - Pure CSS, instantly usable via CDN
 - **🎨 Modern CSS** - Container Queries, OKLCH colors, Custom Media
-- **📱 Mobile-First Responsive** - Sm:, Md:, Lg:, Xl: breakpoints (640px / 768px / 1024px / 1280px)
+- **📱 Mobile-First Responsive** - Sm:, Md:, Lg:, Xl:, Xxl: breakpoints (640px / 768px / 1024px / 1280px / 1536px)
 - **⚡ Lightweight** - ~12KB gzipped (full library)
 - **🌐 Browser Support** - Chrome 105+, Safari 16+, Firefox 110+
 
@@ -27,10 +27,10 @@
 
 ```html
 <!-- Production (minified) -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/gae4it/pascal-css@3.2.0/dist/pascal-css.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/gae4it/pascal-css@3.3.0/dist/pascal-css.min.css">
 
 <!-- Development (unminified with comments) -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/gae4it/pascal-css@3.2.0/dist/pascal-css.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/gae4it/pascal-css@3.3.0/dist/pascal-css.css">
 ```
 
 ### Download
@@ -54,19 +54,29 @@ Download from [GitHub Releases](https://github.com/gae4it/pascal-css/releases) a
 
 ---
 
+## 🆕 New In 3.3.0
+
+- Added numeric `ContentWrapper` utilities in haufe-style format: `ContentWrapper640`, `ContentWrapper768`, `ContentWrapper960`, `ContentWrapper1000`, `ContentWrapper1024`, `ContentWrapper1140`, `ContentWrapper1260`, `ContentWrapper1366`, `ContentWrapper1450`, `ContentWrapper1600`, `ContentWrapper1920`
+- Added legacy alias `ContentWrapperPDS` mapped to `1450px`
+- Added missing flex and spacing utilities: `FlexAuto`, `Flex1`, `Gap03`, `Gap04`
+- Added visibility migration aliases: `HiddenMobile`, `HiddenMobileTablet`, `HiddenDesktop`
+- Naming policy confirmed: full-word for utilities, with compact directional abbreviations allowed only for `Margin*` and `Padding*` classes
+
+---
+
 ## 🎨 Quick Examples
 
 ### Responsive Flex Layout
 
 ```html
 <div class="DisplayFlex FlexDirectionColumn Md:FlexDirectionRow Gap20 Padding20">
-  <div class="Width100 Md:Width50 BackgroundColorGray Padding15 BorderRadius10">
-    <h2 class="FontSize20 FontWeight600 MarginBottom10">Card 1</h2>
-    <p class="ColorGray">PascalCase makes classes readable.</p>
+  <div class="Width100 Md:Width50 BgGray100 Padding15 BorderRadius10">
+    <h2 class="Fs20 Fw600 MarginB10">Card 1</h2>
+    <p class="FcGray700">PascalCase makes classes readable.</p>
   </div>
-  <div class="Width100 Md:Width50 BackgroundColorGray Padding15 BorderRadius10">
-    <h2 class="FontSize20 FontWeight600 MarginBottom10">Card 2</h2>
-    <p class="ColorGray">Mobile-first + responsive variants.</p>
+  <div class="Width100 Md:Width50 BgGray100 Padding15 BorderRadius10">
+    <h2 class="Fs20 Fw600 MarginB10">Card 2</h2>
+    <p class="FcGray700">Mobile-first + responsive variants.</p>
   </div>
 </div>
 ```
@@ -76,8 +86,8 @@ Download from [GitHub Releases](https://github.com/gae4it/pascal-css/releases) a
 ```html
 <div class="ContainerParent">
   <div class="DisplayGrid GridTemplateColumns1 Co:GridTemplateColumns2 Gap15">
-    <div class="BackgroundColorBlue ColorWhite Padding10">Adapts to container</div>
-    <div class="BackgroundColorGreen ColorWhite Padding10">Not viewport!</div>
+    <div class="BgBlue500 FcWhite Padding10">Adapts to container</div>
+    <div class="BgGreen500 FcWhite Padding10">Not viewport!</div>
   </div>
 </div>
 ```
@@ -85,10 +95,10 @@ Download from [GitHub Releases](https://github.com/gae4it/pascal-css/releases) a
 ### Centered Hero Section
 
 ```html
-<section class="DisplayFlex JustifyContentCenter AlignItemsCenter MinHeightScreen BackgroundColorBlue">
-  <div class="TextAlignCenter ColorWhite">
-    <h1 class="FontSize48 FontWeight700 MarginBottom20">Welcome</h1>
-    <p class="FontSize20 Opacity75">Built with PascalCSS</p>
+<section class="DisplayFlex JustifyContentCenter AlignItemsCenter MinHeight100vh BgBlue500">
+  <div class="TextAlignCenter FcWhite">
+    <h1 class="Fs50 Fw700 MarginB20">Welcome</h1>
+    <p class="Fs20 Opacity75">Built with PascalCSS</p>
   </div>
 </section>
 ```
@@ -104,6 +114,7 @@ Download from [GitHub Releases](https://github.com/gae4it/pascal-css/releases) a
 | `Md:` | 768px | Tablets, small laptops |
 | `Lg:` | 1024px | Laptops, desktops |
 | `Xl:` | 1280px | Large desktops, 4K displays |
+| `Xxl:` | 1536px | Ultra-wide / large desktop displays |
 
 **Usage:**
 ```html
@@ -121,12 +132,20 @@ Download from [GitHub Releases](https://github.com/gae4it/pascal-css/releases) a
 ### Layout & Display
 
 #### Display Types
-- **Display:** `DisplayBlock`, `DisplayInline`, `DisplayInlineBlock`, `DisplayFlex`, `DisplayGrid`, `DisplayNone`
+- **Display:** `DisplayBlock`, `DisplayInline`, `DisplayInlineBlock`, `DisplayFlex`, `DisplayInlineFlex`, `DisplayGrid`, `DisplayInlineGrid`, `DisplayNone`
 - **Position:** `PositionRelative`, `PositionAbsolute`, `PositionFixed`
 - **Positioning:** `Top0`, `Left0`, `Right0`, `Bottom0`
 - **Overflow:** `OverflowHidden`, `OverflowAuto`, `OverflowScroll`
 - **Visibility:** `VisibilityHidden`, `VisibilityVisible`
-- **Responsive Visibility:** `HiddenSm`, `HiddenMd`, `HiddenLg`, `HiddenXl`, `VisibleSm`, `VisibleMd`, `VisibleLg`, `VisibleXl`
+- **Responsive Visibility:** `HiddenSm`, `HiddenMd`, `HiddenLg`, `HiddenXl`, `HiddenXxl`, `VisibleSm`, `VisibleMd`, `VisibleLg`, `VisibleXl`, `VisibleXxl`
+- **Legacy Visibility Aliases:** `HiddenMobile`, `HiddenMobileTablet`, `HiddenDesktop`
+
+### Content Wrappers
+
+- `ContentWrapper640`, `ContentWrapper768`, `ContentWrapper960`, `ContentWrapper1000`, `ContentWrapper1024`
+- `ContentWrapper1140`, `ContentWrapper1260`, `ContentWrapper1366`, `ContentWrapper1450`, `ContentWrapper1600`, `ContentWrapper1920`
+- `ContentWrapperPDS` alias of `ContentWrapper1450`
+- Shared behavior: `margin: 0 auto`, `padding: 0 10px`, then `padding: 0 30px` from `480px` and up
 
 ### Flexbox System
 
@@ -135,19 +154,20 @@ Download from [GitHub Releases](https://github.com/gae4it/pascal-css/releases) a
 - **Wrap:** `FlexWrap`, `FlexNoWrap`
 
 #### Justify Content
-- `JustifyContentStart`, `JustifyContentCenter`, `JustifyContentEnd`
+- `JustifyContentFlexStart`, `JustifyContentCenter`, `JustifyContentFlexEnd`
 - `JustifyContentSpaceBetween`, `JustifyContentSpaceAround`, `JustifyContentSpaceEvenly`
 
 #### Align Items
-- `AlignItemsStart`, `AlignItemsCenter`, `AlignItemsEnd`, `AlignItemsStretch`, `AlignItemsBaseline`
+- `AlignItemsFlexStart`, `AlignItemsCenter`, `AlignItemsFlexEnd`, `AlignItemsStretch`, `AlignItemsBaseline`
 
 #### Align Self
-- `AlignSelfAuto`, `AlignSelfStart`, `AlignSelfCenter`, `AlignSelfEnd`, `AlignSelfStretch`, `AlignSelfBaseline`
+- `AlignSelfAuto`, `AlignSelfFlexStart`, `AlignSelfCenter`, `AlignSelfFlexEnd`, `AlignSelfStretch`, `AlignSelfBaseline`
 
 #### Flex Properties
 - **Grow:** `FlexGrow0`, `FlexGrow1`
 - **Shrink:** `FlexShrink0`, `FlexShrink1`
 - **Basis:** `FlexBasisAuto`, `FlexBasis0`
+- **Shorthand:** `FlexAuto`, `Flex1`
 
 ### Grid System
 
@@ -156,17 +176,16 @@ Download from [GitHub Releases](https://github.com/gae4it/pascal-css/releases) a
 
 #### Grid Flow & Areas
 - **Auto Flow:** `GridAutoFlowRow`, `GridAutoFlowColumn`, `GridAutoFlowDense`, `GridAutoFlowRowDense`, `GridAutoFlowColumnDense`
-- **Column/Row:** `GridColumnAuto`, `GridRowAuto`
-- **Areas:** `GridAreaHeader`, `GridAreaMain`, `GridAreaSidebar`, `GridAreaFooter`
-- **Template Areas:** `GridTemplateAreaHeader`, `GridTemplateAreaMain`, `GridTemplateAreaSidebar`, `GridTemplateAreaFooter`
+- **Auto Columns/Rows:** `GridAutoColumnsMin`, `GridAutoColumnsMax`, `GridAutoColumnsFr`, `GridAutoRowsMin`, `GridAutoRowsMax`, `GridAutoRowsFr`
+- **Column/Row Start-End:** `GridColumnStart1`...`GridColumnStart12`, `GridColumnEnd1`...`GridColumnEnd12`, `GridRowStart1`...`GridRowStart6`, `GridRowEnd1`...`GridRowEnd6`
 
 #### Grid Alignment
-- **Place Items:** `GridPlaceItemsStart`, `GridPlaceItemsEnd`, `GridPlaceItemsCenter`, `GridPlaceItemsStretch`
-- **Place Content:** `GridPlaceContentStart`, `GridPlaceContentEnd`, `GridPlaceContentCenter`, `GridPlaceContentStretch`
-- **Justify Self:** `JustifySelfAuto`, `JustifySelfStart`, `JustifySelfEnd`, `JustifySelfCenter`, `JustifySelfStretch`
+- **Place Items:** `PlaceItemsStart`, `PlaceItemsEnd`, `PlaceItemsCenter`, `PlaceItemsStretch`
+- **Place Content:** `PlaceContentStart`, `PlaceContentEnd`, `PlaceContentCenter`, `PlaceContentStretch`, `PlaceContentBetween`, `PlaceContentAround`, `PlaceContentEvenly`
+- **Justify Self:** `JustifySelfAuto`, `JustifySelfFlexStart`, `JustifySelfFlexEnd`, `JustifySelfCenter`, `JustifySelfStretch`
 
 #### Gap (Flexbox & Grid)
-- `Gap05`, `Gap10`, `Gap15`, `Gap20`, `Gap25`, `Gap30`, `Gap40`, `Gap50` (0.5rem to 5rem)
+- `Gap03`, `Gap04`, `Gap05`, `Gap10`, `Gap15`, `Gap20`, `Gap25`, `Gap30`, `Gap40`, `Gap50`
 
 ### Spacing System
 
@@ -178,12 +197,16 @@ Download from [GitHub Releases](https://github.com/gae4it/pascal-css/releases) a
 - **Horizontal (X-axis):** `PaddingX0` to `PaddingX100`
 - **Individual Sides:** `PaddingT5` to `PaddingT100`, `PaddingB0` to `PaddingB100`, `PaddingL5` to `PaddingL100`, `PaddingR0` to `PaddingR100`
 
+Directional abbreviations are intentional for spacing utilities only: `T`, `B`, `L`, `R`, `X`, `Y`.
+
 #### Margin
 - **All Sides:** `Margin0` to `Margin100` (step 5)
 - **Vertical (Y-axis):** `MarginY0` to `MarginY100`
 - **Horizontal (X-axis):** `MarginX0` to `MarginX100`
 - **Individual Sides:** `MarginT0` to `MarginT100`, `MarginB0` to `MarginB100`, `MarginL0` to `MarginL100`, `MarginR0` to `MarginR100`
 - **Auto Margin:** `MarginLeftAuto`, `MarginRightAuto`, `MarginTopAuto`, `MarginBottomAuto`
+
+Directional abbreviations are intentional for spacing utilities only: `T`, `B`, `L`, `R`, `X`, `Y`.
 
 ### Typography
 
@@ -194,7 +217,7 @@ Download from [GitHub Releases](https://github.com/gae4it/pascal-css/releases) a
 - **Headers:** `h1` to `h5` with responsive sizing built-in
 
 #### Font Weight
-- `FontWeight300` (Light), `FontWeight400` (Normal), `FontWeight500` (Medium), `FontWeight600` (Semi-bold), `FontWeight700` (Bold)
+- `Fw300` (Light), `Fw400` (Normal), `Fw500` (Medium), `Fw600` (Semi-bold), `Fw700` (Bold)
 
 #### Text Alignment
 - `TextAlignLeft`, `TextAlignCenter`, `TextAlignRight`
