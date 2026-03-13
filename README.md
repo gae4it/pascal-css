@@ -14,9 +14,9 @@
 
 - **🎯 PascalCase Naming** - `DisplayFlex`, `JustifyContentCenter` instead of cryptic abbreviations
 - **📦 Zero Build Required** - Pure CSS, instantly usable via CDN
-- **🎨 Modern CSS** - Container Queries, OKLCH colors, Custom Media
+- **🎨 Modern CSS** - OKLCH colors, Custom Media, responsive typography
 - **📱 Mobile-First Responsive** - Sm:, Md:, Lg:, Xl:, Xxl: breakpoints (640px / 768px / 1024px / 1280px / 1536px)
-- **⚡ Lightweight** - ~12KB gzipped (full library)
+- **⚡ Single-file Distribution** - 264.13KB minified / ~46.28KB gzipped
 - **🌐 Browser Support** - Chrome 105+, Safari 16+, Firefox 110+
 
 ---
@@ -26,11 +26,8 @@
 ### CDN (Recommended)
 
 ```html
-<!-- Production (minified) -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/gae4it/pascal-css@3.3.0/dist/pascal-css.min.css">
-
-<!-- Development (unminified with comments) -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/gae4it/pascal-css@3.3.0/dist/pascal-css.css">
+<!-- Production (minified, ~46KB gzipped) -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/gae4it/pascal-css@4.0.0/pascal-css.css">
 ```
 
 ### Download
@@ -38,7 +35,7 @@
 Download from [GitHub Releases](https://github.com/gae4it/pascal-css/releases) and include in your project:
 
 ```html
-<link rel="stylesheet" href="./pascal-css.min.css">
+<link rel="stylesheet" href="./pascal-css.css">
 ```
 
 ---
@@ -54,12 +51,12 @@ Download from [GitHub Releases](https://github.com/gae4it/pascal-css/releases) a
 
 ---
 
-## 🆕 New In 3.3.0
+## 🆕 New In 4.0.0
 
-- Added numeric `ContentWrapper` utilities in haufe-style format: `ContentWrapper640`, `ContentWrapper768`, `ContentWrapper960`, `ContentWrapper1000`, `ContentWrapper1024`, `ContentWrapper1140`, `ContentWrapper1260`, `ContentWrapper1366`, `ContentWrapper1450`, `ContentWrapper1600`, `ContentWrapper1920`
-- Added legacy alias `ContentWrapperPDS` mapped to `1450px`
-- Added missing flex and spacing utilities: `FlexAuto`, `Flex1`, `Gap03`, `Gap04`
-- Added visibility migration aliases: `HiddenMobile`, `HiddenMobileTablet`, `HiddenDesktop`
+- Full Responsive Layout Engine with `Sm:`, `Md:`, `Lg:`, `Xl:`, `Xxl:` prefixes across 5700+ responsive classes
+- Font size scale `Fs07` to `Fs100` with automatic mobile, tablet and desktop adjustments
+- Added `@custom-media --xxl` for `1536px`
+- Removed Container Queries and the `Co:` prefix
 - Naming policy confirmed: full-word for utilities, with compact directional abbreviations allowed only for `Margin*` and `Padding*` classes
 
 ---
@@ -81,15 +78,17 @@ Download from [GitHub Releases](https://github.com/gae4it/pascal-css/releases) a
 </div>
 ```
 
-### Grid with Container Queries
+### Responsive Grid Layout
 
 ```html
-<div class="ContainerParent">
-  <div class="DisplayGrid GridTemplateColumns1 Co:GridTemplateColumns2 Gap15">
-    <div class="BgBlue500 FcWhite Padding10">Adapts to container</div>
-    <div class="BgGreen500 FcWhite Padding10">Not viewport!</div>
-  </div>
-</div>
+<div class="DisplayGrid GridTemplateColumns1 Md:GridTemplateColumns2 Xl:GridTemplateColumns3 Gap15">
+  <div class="BgBlue500 FcWhite Padding10">Single column on mobile</div>
+  <div class="BgGreen500 FcWhite Padding10">Two columns on tablet</div>
+  <div class="BgGray700 FcWhite Padding10">Three columns on desktop</div>
+  <div class="BgGray100 Padding10">Responsive without container queries</div>
+  <div class="BgBlue100 Padding10">Viewport-based layout engine</div>
+  <div class="BgGreen100 Padding10">Consistent breakpoints</div>
+ </div>
 ```
 
 ### Centered Hero Section
@@ -212,8 +211,8 @@ Directional abbreviations are intentional for spacing utilities only: `T`, `B`, 
 
 #### Font Size (Fs Prefix)
 - **Responsive Scaling:** Mobile, Tablet, Desktop automatically adjusted
-- **Classes:** `Fs07` to `Fs70` (0.7rem to 7rem)
-- **Common Sizes:** `Fs10`, `Fs12`, `Fs14`, `Fs16`, `Fs18`, `Fs20`, `Fs24`, `Fs30`, `Fs40`, `Fs50`, `Fs60`, `Fs70`
+- **Classes:** `Fs07` to `Fs100` (0.7rem to 10rem on desktop scale)
+- **Common Sizes:** `Fs10`, `Fs12`, `Fs14`, `Fs16`, `Fs18`, `Fs20`, `Fs24`, `Fs30`, `Fs40`, `Fs50`, `Fs60`, `Fs70`, `Fs80`, `Fs90`, `Fs100`
 - **Headers:** `h1` to `h5` with responsive sizing built-in
 
 #### Font Weight
@@ -345,28 +344,26 @@ Same scale as text and background colors:
 - `OutlineStyleSolid`
 - `OutlineColorBlue`
 
-### Container Queries
+### Full Responsive Layout Engine
 
-Use `ContainerParent` to enable container queries on child elements, then use `Co:` prefix:
+Use viewport breakpoints directly in class names with `Sm:`, `Md:`, `Lg:`, `Xl:` and `Xxl:` prefixes.
 
-**Available Container Utilities:**
-- Display: `Co:DisplayBlock`, `Co:DisplayFlex`, `Co:DisplayGrid`
-- Flex: `Co:FlexDirectionRow`, `Co:FlexDirectionColumn`
-- Grid: `Co:GridTemplateColumns1`, `Co:GridTemplateColumns2`, `Co:GridTemplateColumns3`
-- Spacing: `Co:Gap10`, `Co:Gap15`, `Co:Gap20`, `Co:Padding10`, `Co:Padding15`, `Co:Padding20`
+**Responsive Utility Coverage:**
+- Display: `Md:DisplayBlock`, `Lg:DisplayFlex`, `Xl:DisplayGrid`
+- Flex: `Sm:FlexDirectionRow`, `Lg:FlexDirectionColumn`
+- Grid: `Md:GridTemplateColumns2`, `Lg:GridTemplateColumns3`, `Xxl:GridTemplateColumns4`
+- Spacing: `Md:Gap10`, `Lg:Gap20`, `Xl:Padding20`, `Xxl:Padding30`
 
 ---
 
-## 🔥 Modern CSS Features (v3.0)
+## 🔥 Modern CSS Features (v4.0.0)
 
-### Container Queries
-Use the `Co:` prefix for container-responsive utilities:
+### Full Responsive Layout Engine
+Use breakpoint prefixes for viewport-responsive utilities:
 
 ```html
-<div class="ContainerParent"> <!-- Enable container queries -->
-  <div class="DisplayFlex Co:FlexDirectionRow"> <!-- Responds to container width -->
-    <!-- Content adapts based on container, not viewport -->
-  </div>
+<div class="DisplayFlex FlexDirectionColumn Md:FlexDirectionRow Xxl:Gap30">
+  <!-- Content adapts across mobile, tablet, desktop and ultra-wide screens -->
 </div>
 ```
 
@@ -388,9 +385,9 @@ Fallbacks to RGB for older browsers included automatically.
 
 | Version | Size |
 |---------|------|
-| Unminified | ~60KB |
-| Minified | ~35KB |
-| Gzipped | ~12KB |
+| Source (`pascalcss-draft-4.0.0.css`) | 350.06 KB |
+| Minified (`pascal-css.css`) | 264.13 KB |
+| Gzipped | ~46.28 KB |
 
 ---
 
@@ -399,14 +396,14 @@ Fallbacks to RGB for older browsers included automatically.
 ### vs. Tailwind CSS
 - ✅ **No build required** (Tailwind needs PostCSS + config)
 - ✅ **Readable names** (`DisplayFlex` vs `flex`)
-- ✅ **Container Queries native** (Tailwind needs plugin)
-- ✅ **Smaller** (12KB vs 10-50KB after purge)
+- ✅ **Large responsive surface** (5700+ responsive classes out of the box)
+- ✅ **Single-file delivery** with no purge or config step
 
 ### vs. Bootstrap
 - ✅ **Utility-first** (not component-focused)
 - ✅ **No JavaScript** (Bootstrap needs JS for components)
-- ✅ **Modern CSS** (Container Queries, OKLCH)
-- ✅ **Lighter** (12KB vs 60KB)
+- ✅ **Modern CSS** (OKLCH, Custom Media, responsive typography)
+- ✅ **Release artifact ready to ship** as a single CSS file
 
 ### Who is PascalCSS for?
 - Rapid prototyping & MVPs
@@ -418,7 +415,7 @@ Fallbacks to RGB for older browsers included automatically.
 
 ## 🛠️ Development
 
-### Build from Source
+### Build Pipeline
 
 ```bash
 # Clone repository
@@ -428,14 +425,14 @@ cd pascal-css
 # Install dependencies
 npm install
 
-# Build minified version
+# Legacy dist build
 npm run build
 ```
 
-Output files in `dist/`:
-- `pascal-css.css` - Unminified with comments
-- `pascal-css.min.css` - Minified for production
-- `pascal-css.css.map` - Source map
+`build.js` keeps the PostCSS-based `dist/` pipeline for local development.
+
+Release packaging for v4.0.0 is distributed from the repository root:
+- `pascal-css.css` - minified production bundle (264.13 KB / ~46.28 KB gzipped)
 
 ---
 

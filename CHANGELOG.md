@@ -5,6 +5,19 @@ All notable changes to PascalCSS will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [4.0.0] - 2026-03-13
+
+### Added
+- Full Responsive Layout Engine (Sm/Md/Lg/Xl/Xxl: prefix, 5700+ responsive classes)
+- Font size scale Fs07-Fs100 with 3 breakpoints (mobile/tablet/desktop)
+- @custom-media --xxl (1536px)
+
+### Removed
+- Container Queries (Co: prefix)
+
+### Packaging
+- Source file: 350.06 KB | Minified: 264.13 KB | Gzipped: ~46.28 KB
+
 ## [3.3.0] - 2026-03-13
 
 ### Added

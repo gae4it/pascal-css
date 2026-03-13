@@ -4,10 +4,11 @@ const postcss = require('postcss');
 const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
 
-const sourceFile = path.join(__dirname, 'pascal-css.css');
+const sourceFile = path.join(__dirname, '.future-features', 'pascalcss-draft-4.0.0.css');
 const distDir = path.join(__dirname, 'dist');
 const distFile = path.join(distDir, 'pascal-css.css');
 const minFile = path.join(distDir, 'pascal-css.min.css');
+const rootMinFile = path.join(__dirname, 'pascal-css.css');
 const isWatchMode = process.argv.includes('--watch');
 
 if (!fs.existsSync(distDir)) {
@@ -62,13 +63,14 @@ async function build() {
   });
 
   fs.writeFileSync(minFile, minified.css);
+  fs.writeFileSync(rootMinFile, minified.css);
 
   const minSizeKB = (Buffer.byteLength(minified.css, 'utf8') / 1024).toFixed(2);
   const gzipEstimate = (Number(minSizeKB) * 0.3).toFixed(2);
 
   console.log('✅ Unminified: dist/pascal-css.css');
   console.log(`   Size: ${sizeKB} KB\n`);
-  console.log('✅ Minified: dist/pascal-css.min.css');
+  console.log('✅ Minified: dist/pascal-css.min.css  +  pascal-css.css (root)');
   console.log(`   Size: ${minSizeKB} KB`);
   console.log(`   Estimated gzipped: ~${gzipEstimate} KB\n`);
 }
@@ -89,7 +91,7 @@ async function runBuildCycle() {
   }
 }
 
-console.log('🚀 Building PascalCSS v3.3...\n');
+console.log('🚀 Building PascalCSS v4.0.0...\n');
 
 if (!isWatchMode) {
   runBuildCycle();

@@ -1,0 +1,255 @@
+/* =========================================
+   CONTAINER QUERIES
+   
+   HOW TO USE:
+   1. Add .ContainerParent to the wrapper element
+   2. Add Co: classes to the children inside it
+   3. Co: classes activate when the PARENT is wide enough
+   
+   BREAKPOINTS:
+   @container (min-width: 400px)  → small container  (Co: prefix)
+   @container (min-width: 600px)  → medium container (CoMd: prefix)
+   @container (min-width: 900px)  → large container  (CoLg: prefix)
+========================================= */
+
+/* ─── CONTAINER PARENT SETUP ─────────────────────────────────── */
+
+.ContainerParent {
+    container-type: inline-size;
+    /* optional name — useful when nesting multiple containers */
+    /* container-name: myContainer; */
+}
+
+
+/* ─── SMALL CONTAINER  ≥ 400px ────���───────────────────────────── */
+@container (min-width: 400px) {
+
+    /* DISPLAY */
+    .Co\:DisplayNone         { display: none; }
+    .Co\:DisplayBlock        { display: block; }
+    .Co\:DisplayFlex         { display: flex; }
+    .Co\:DisplayGrid         { display: grid; }
+    .Co\:DisplayInline       { display: inline; }
+    .Co\:DisplayInlineBlock  { display: inline-block; }
+    .Co\:DisplayInlineFlex   { display: inline-flex; }
+
+    /* FLEX DIRECTION */
+    .Co\:FlexDirectionRow            { flex-direction: row; }
+    .Co\:FlexDirectionRowReverse     { flex-direction: row-reverse; }
+    .Co\:FlexDirectionColumn         { flex-direction: column; }
+    .Co\:FlexDirectionColumnReverse  { flex-direction: column-reverse; }
+
+    /* FLEX WRAP */
+    .Co\:FlexWrap        { flex-wrap: wrap; }
+    .Co\:FlexNoWrap      { flex-wrap: nowrap; }
+    .Co\:FlexWrapReverse { flex-wrap: wrap-reverse; }
+
+    /* JUSTIFY CONTENT */
+    .Co\:JustifyStart    { justify-content: flex-start; }
+    .Co\:JustifyEnd      { justify-content: flex-end; }
+    .Co\:JustifyCenter   { justify-content: center; }
+    .Co\:JustifyBetween  { justify-content: space-between; }
+    .Co\:JustifyAround   { justify-content: space-around; }
+    .Co\:JustifyEvenly   { justify-content: space-evenly; }
+
+    /* ALIGN ITEMS */
+    .Co\:AlignStart      { align-items: flex-start; }
+    .Co\:AlignEnd        { align-items: flex-end; }
+    .Co\:AlignCenter     { align-items: center; }
+    .Co\:AlignStretch    { align-items: stretch; }
+    .Co\:AlignBaseline   { align-items: baseline; }
+
+    /* GRID COLUMNS */
+    .Co\:GridCols1 { grid-template-columns: repeat(1, 1fr); }
+    .Co\:GridCols2 { grid-template-columns: repeat(2, 1fr); }
+    .Co\:GridCols3 { grid-template-columns: repeat(3, 1fr); }
+    .Co\:GridCols4 { grid-template-columns: repeat(4, 1fr); }
+    .Co\:GridCols5 { grid-template-columns: repeat(5, 1fr); }
+    .Co\:GridCols6 { grid-template-columns: repeat(6, 1fr); }
+
+    /* GAP */
+    .Co\:Gap00  { gap: 0; }
+    .Co\:Gap05  { gap: 0.5rem; }
+    .Co\:Gap10  { gap: 1rem; }
+    .Co\:Gap15  { gap: 1.5rem; }
+    .Co\:Gap20  { gap: 2rem; }
+    .Co\:Gap25  { gap: 2.5rem; }
+    .Co\:Gap30  { gap: 3rem; }
+
+    /* WIDTH */
+    .Co\:WFull  { width: 100%; }
+    .Co\:WAuto  { width: auto; }
+    .Co\:W50    { width: 50%; }
+    .Co\:W33    { width: 33.333%; }
+    .Co\:W25    { width: 25%; }
+
+    /* PADDING */
+    .Co\:P00  { padding: 0; }
+    .Co\:P05  { padding: 0.5rem; }
+    .Co\:P10  { padding: 1rem; }
+    .Co\:P15  { padding: 1.5rem; }
+    .Co\:P20  { padding: 2rem; }
+    .Co\:P25  { padding: 2.5rem; }
+    .Co\:P30  { padding: 3rem; }
+
+    /* TEXT ALIGN */
+    .Co\:TextLeft    { text-align: left; }
+    .Co\:TextCenter  { text-align: center; }
+    .Co\:TextRight   { text-align: right; }
+}
+
+
+/* ─── MEDIUM CONTAINER  ≥ 600px ───────────────────────────────── */
+@container (min-width: 600px) {
+
+    /* DISPLAY */
+    .CoMd\:DisplayNone         { display: none; }
+    .CoMd\:DisplayBlock        { display: block; }
+    .CoMd\:DisplayFlex         { display: flex; }
+    .CoMd\:DisplayGrid         { display: grid; }
+    .CoMd\:DisplayInline       { display: inline; }
+    .CoMd\:DisplayInlineBlock  { display: inline-block; }
+    .CoMd\:DisplayInlineFlex   { display: inline-flex; }
+
+    /* FLEX DIRECTION */
+    .CoMd\:FlexDirectionRow            { flex-direction: row; }
+    .CoMd\:FlexDirectionRowReverse     { flex-direction: row-reverse; }
+    .CoMd\:FlexDirectionColumn         { flex-direction: column; }
+    .CoMd\:FlexDirectionColumnReverse  { flex-direction: column-reverse; }
+
+    /* FLEX WRAP */
+    .CoMd\:FlexWrap        { flex-wrap: wrap; }
+    .CoMd\:FlexNoWrap      { flex-wrap: nowrap; }
+    .CoMd\:FlexWrapReverse { flex-wrap: wrap-reverse; }
+
+    /* JUSTIFY CONTENT */
+    .CoMd\:JustifyStart    { justify-content: flex-start; }
+    .CoMd\:JustifyEnd      { justify-content: flex-end; }
+    .CoMd\:JustifyCenter   { justify-content: center; }
+    .CoMd\:JustifyBetween  { justify-content: space-between; }
+    .CoMd\:JustifyAround   { justify-content: space-around; }
+    .CoMd\:JustifyEvenly   { justify-content: space-evenly; }
+
+    /* ALIGN ITEMS */
+    .CoMd\:AlignStart      { align-items: flex-start; }
+    .CoMd\:AlignEnd        { align-items: flex-end; }
+    .CoMd\:AlignCenter     { align-items: center; }
+    .CoMd\:AlignStretch    { align-items: stretch; }
+    .CoMd\:AlignBaseline   { align-items: baseline; }
+
+    /* GRID COLUMNS */
+    .CoMd\:GridCols1 { grid-template-columns: repeat(1, 1fr); }
+    .CoMd\:GridCols2 { grid-template-columns: repeat(2, 1fr); }
+    .CoMd\:GridCols3 { grid-template-columns: repeat(3, 1fr); }
+    .CoMd\:GridCols4 { grid-template-columns: repeat(4, 1fr); }
+    .CoMd\:GridCols5 { grid-template-columns: repeat(5, 1fr); }
+    .CoMd\:GridCols6 { grid-template-columns: repeat(6, 1fr); }
+
+    /* GAP */
+    .CoMd\:Gap00  { gap: 0; }
+    .CoMd\:Gap05  { gap: 0.5rem; }
+    .CoMd\:Gap10  { gap: 1rem; }
+    .CoMd\:Gap15  { gap: 1.5rem; }
+    .CoMd\:Gap20  { gap: 2rem; }
+    .CoMd\:Gap25  { gap: 2.5rem; }
+    .CoMd\:Gap30  { gap: 3rem; }
+
+    /* WIDTH */
+    .CoMd\:WFull  { width: 100%; }
+    .CoMd\:WAuto  { width: auto; }
+    .CoMd\:W50    { width: 50%; }
+    .CoMd\:W33    { width: 33.333%; }
+    .CoMd\:W25    { width: 25%; }
+
+    /* PADDING */
+    .CoMd\:P00  { padding: 0; }
+    .CoMd\:P05  { padding: 0.5rem; }
+    .CoMd\:P10  { padding: 1rem; }
+    .CoMd\:P15  { padding: 1.5rem; }
+    .CoMd\:P20  { padding: 2rem; }
+    .CoMd\:P25  { padding: 2.5rem; }
+    .CoMd\:P30  { padding: 3rem; }
+
+    /* TEXT ALIGN */
+    .CoMd\:TextLeft    { text-align: left; }
+    .CoMd\:TextCenter  { text-align: center; }
+    .CoMd\:TextRight   { text-align: right; }
+}
+
+
+/* ─── LARGE CONTAINER  ≥ 900px ────────────────────────────────── */
+@container (min-width: 900px) {
+
+    /* DISPLAY */
+    .CoLg\:DisplayNone         { display: none; }
+    .CoLg\:DisplayBlock        { display: block; }
+    .CoLg\:DisplayFlex         { display: flex; }
+    .CoLg\:DisplayGrid         { display: grid; }
+    .CoLg\:DisplayInline       { display: inline; }
+    .CoLg\:DisplayInlineBlock  { display: inline-block; }
+    .CoLg\:DisplayInlineFlex   { display: inline-flex; }
+
+    /* FLEX DIRECTION */
+    .CoLg\:FlexDirectionRow            { flex-direction: row; }
+    .CoLg\:FlexDirectionRowReverse     { flex-direction: row-reverse; }
+    .CoLg\:FlexDirectionColumn         { flex-direction: column; }
+    .CoLg\:FlexDirectionColumnReverse  { flex-direction: column-reverse; }
+
+    /* FLEX WRAP */
+    .CoLg\:FlexWrap        { flex-wrap: wrap; }
+    .CoLg\:FlexNoWrap      { flex-wrap: nowrap; }
+    .CoLg\:FlexWrapReverse { flex-wrap: wrap-reverse; }
+
+    /* JUSTIFY CONTENT */
+    .CoLg\:JustifyStart    { justify-content: flex-start; }
+    .CoLg\:JustifyEnd      { justify-content: flex-end; }
+    .CoLg\:JustifyCenter   { justify-content: center; }
+    .CoLg\:JustifyBetween  { justify-content: space-between; }
+    .CoLg\:JustifyAround   { justify-content: space-around; }
+    .CoLg\:JustifyEvenly   { justify-content: space-evenly; }
+
+    /* ALIGN ITEMS */
+    .CoLg\:AlignStart      { align-items: flex-start; }
+    .CoLg\:AlignEnd        { align-items: flex-end; }
+    .CoLg\:AlignCenter     { align-items: center; }
+    .CoLg\:AlignStretch    { align-items: stretch; }
+    .CoLg\:AlignBaseline   { align-items: baseline; }
+
+    /* GRID COLUMNS */
+    .CoLg\:GridCols1 { grid-template-columns: repeat(1, 1fr); }
+    .CoLg\:GridCols2 { grid-template-columns: repeat(2, 1fr); }
+    .CoLg\:GridCols3 { grid-template-columns: repeat(3, 1fr); }
+    .CoLg\:GridCols4 { grid-template-columns: repeat(4, 1fr); }
+    .CoLg\:GridCols5 { grid-template-columns: repeat(5, 1fr); }
+    .CoLg\:GridCols6 { grid-template-columns: repeat(6, 1fr); }
+
+    /* GAP */
+    .CoLg\:Gap00  { gap: 0; }
+    .CoLg\:Gap05  { gap: 0.5rem; }
+    .CoLg\:Gap10  { gap: 1rem; }
+    .CoLg\:Gap15  { gap: 1.5rem; }
+    .CoLg\:Gap20  { gap: 2rem; }
+    .CoLg\:Gap25  { gap: 2.5rem; }
+    .CoLg\:Gap30  { gap: 3rem; }
+
+    /* WIDTH */
+    .CoLg\:WFull  { width: 100%; }
+    .CoLg\:WAuto  { width: auto; }
+    .CoLg\:W50    { width: 50%; }
+    .CoLg\:W33    { width: 33.333%; }
+    .CoLg\:W25    { width: 25%; }
+
+    /* PADDING */
+    .CoLg\:P00  { padding: 0; }
+    .CoLg\:P05  { padding: 0.5rem; }
+    .CoLg\:P10  { padding: 1rem; }
+    .CoLg\:P15  { padding: 1.5rem; }
+    .CoLg\:P20  { padding: 2rem; }
+    .CoLg\:P25  { padding: 2.5rem; }
+    .CoLg\:P30  { padding: 3rem; }
+
+    /* TEXT ALIGN */
+    .CoLg\:TextLeft    { text-align: left; }
+    .CoLg\:TextCenter  { text-align: center; }
+    .CoLg\:TextRight   { text-align: right; }
+}
