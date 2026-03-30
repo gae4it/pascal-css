@@ -2298,6 +2298,7 @@ e.g. .Fs10 = 1rem, .Fs100 = 10rem
 
 .TextWrapBalance { text-wrap: balance; }
 .TextWrapPretty { text-wrap: pretty; }
+.TextWrapStable { text-wrap: stable; }
 
 .HyphensNone { -webkit-hyphens: none; hyphens: none; }
 .HyphensManual { -webkit-hyphens: manual; hyphens: manual; }
