@@ -2223,13 +2223,13 @@ e.g. .Fs10 = 1rem, .Fs100 = 10rem
    ASPECT RATIO
 ========================================= */
 
-.AspectRatio1_1 { aspect-ratio: 1 / 1; }
-.AspectRatio16_9 { aspect-ratio: 16 / 9; }
-.AspectRatio4_3 { aspect-ratio: 4 / 3; }
-.AspectRatio21_9 { aspect-ratio: 21 / 9; }
-.AspectRatio9_16 { aspect-ratio: 9 / 16; }
-.AspectRatio3_2 { aspect-ratio: 3 / 2; }
-.AspectRatio2_3 { aspect-ratio: 2 / 3; }
+.AspectRatio1-1 { aspect-ratio: 1 / 1; }
+.AspectRatio16-9 { aspect-ratio: 16 / 9; }
+.AspectRatio4-3 { aspect-ratio: 4 / 3; }
+.AspectRatio21-9 { aspect-ratio: 21 / 9; }
+.AspectRatio9-16 { aspect-ratio: 9 / 16; }
+.AspectRatio3-2 { aspect-ratio: 3 / 2; }
+.AspectRatio2-3 { aspect-ratio: 2 / 3; }
 
 
 /* =========================================
