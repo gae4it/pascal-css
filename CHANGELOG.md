@@ -5,7 +5,19 @@ All notable changes to PascalCSS will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Added
+- `.TextWrapStable` class for improved text wrapping options
+
+### Fixed
+- Aspect ratio class names updated to use hyphens for consistency
+
+---
+
 ## [4.0.0] - 2026-03-13
+
+**CDN:** `https://cdn.jsdelivr.net/gh/gae4it/pascal-css@v4.0.0/dist/pascal-css.min.css`
 
 ### Added
 - Full Responsive Layout Engine (Sm/Md/Lg/Xl/Xxl: prefix, 5700+ responsive classes)
@@ -18,10 +30,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Packaging
 - Source file: 350.06 KB | Minified: 264.13 KB | Gzipped: ~46.28 KB
 
-## [3.3.0] - 2026-03-13
+## [3.3.0] - 2026-03-13 _(no git tag — changes absorbed into v4.0.0)_
 
 ### Added
-- Numeric `ContentWrapper` utilities in haufe-style format: `ContentWrapper640`, `ContentWrapper768`, `ContentWrapper960`, `ContentWrapper1000`, `ContentWrapper1024`, `ContentWrapper1140`, `ContentWrapper1260`, `ContentWrapper1366`, `ContentWrapper1450`, `ContentWrapper1600`, `ContentWrapper1920`
+- Numeric `ContentWrapper` utilities in origin-style format: `ContentWrapper640`, `ContentWrapper768`, `ContentWrapper960`, `ContentWrapper1000`, `ContentWrapper1024`, `ContentWrapper1140`, `ContentWrapper1260`, `ContentWrapper1366`, `ContentWrapper1450`, `ContentWrapper1600`, `ContentWrapper1920`
 - Legacy alias `ContentWrapperPDS` mapped to `1450px`
 - Missing utility classes `FlexAuto`, `Flex1`, `Gap03`, `Gap04`
 - Visibility migration aliases `HiddenMobile`, `HiddenMobileTablet`, `HiddenDesktop`
@@ -75,6 +87,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - No breaking changes
 - Fully backward compatible with v3.0.0
 - Same performance characteristics (~12KB gzipped)
+
+## [3.0.1] - 2026-02-12
+
+### Documentation
+- Added CHANGELOG.md with full version history
 
 ## [3.0.0] - 2026-02-10
 
@@ -160,27 +177,3 @@ PascalCSS v3.0 is a complete modernization with cutting-edge CSS features for 20
 **Minor (x.X.0)**: New utilities, features, backward-compatible additions
 
 **Patch (x.x.X)**: Bug fixes, documentation updates, performance improvements
-
----
-
-## Unreleased
-
-### Planned for v3.1
-- npm package publication
-- Dark mode utilities (DarkModeOnly, LightModeOnly)
-- Extended color palette (secondary colors)
-- Animation utilities (keyframe-based)
-- Print utilities
-- Accessibility utilities (ScreenReaderOnly, FocusVisible)
-
-### Planned for v3.2
-- RTL support utilities
-- Additional container query breakpoints
-- Subset builds (layout-only, core-only)
-- Performance optimizations
-
-### Planned for v4.0
-- CSS Houdini exploration
-- View Transitions API utilities
-- Scroll-driven animations
-- Subgrid utilities
