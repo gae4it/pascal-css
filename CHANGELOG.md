@@ -7,11 +7,26 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-### Added
-- `.TextWrapStable` class for improved text wrapping options
+---
 
-### Fixed
-- Aspect ratio class names updated to use hyphens for consistency
+## [4.1.0] - 2026-07-23
+
+**CDN:** `https://cdn.jsdelivr.net/gh/gae4it/pascal-css@v4.1.0/dist/pascal-css.min.css`
+
+### Added
+- `Fw800`, `HyphensSafe`, `WidthMaxContent`, `HeightMaxContent`
+- `TextWrapWrap`, `TextWrapStable`
+- `ObjectFitScaleDown` base class (in addition to responsive variants)
+- `LineHeight01`–`LineHeight30` (unitless ratio; number = ratio × 10)
+- `LineHeight05Rem`–`LineHeight50Rem` (fixed rem variants)
+- `FlexOrder4`, `FlexOrder5` with legacy aliases `Order0`–`Order5`, `OrderFirst`, `OrderLast`
+- `BorderRadius35`, `BorderRadius40`
+- `MaxWidth65`, `MaxHeight65`
+- `ZIndex-1`, `ZIndex-2`, `ZIndex999`, `ZIndex9999`, `ZIndexAuto` in base layer
+
+### Changed
+- `LineHeightXX` now uses unitless ratio by default; fixed rem values moved to `LineHeightXXRem`
+- Corner border-radius classes renamed for clarity: `BorderTL` → `BorderTopLeftRadius`, `BorderTR` → `BorderTopRightRadius`, `BorderBL` → `BorderBottomLeftRadius`, `BorderBR` → `BorderBottomRightRadius`
 
 ---
 

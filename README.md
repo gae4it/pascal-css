@@ -27,7 +27,7 @@
 
 ```html
 <!-- Production (minified, ~46KB gzipped) -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/gae4it/pascal-css@4.0.0/pascal-css.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/gae4it/pascal-css@v4.1.0/dist/pascal-css.min.css">
 ```
 
 ### Download

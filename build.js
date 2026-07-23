@@ -4,7 +4,7 @@ const postcss = require('postcss');
 const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
 
-const sourceFile = path.join(__dirname, '.future-features', 'pascalcss-draft-4.0.0.css');
+const sourceFile = path.join(__dirname, '.future-features', 'pascalcss-draft-4.1.0.css');
 const distDir = path.join(__dirname, 'dist');
 const distFile = path.join(distDir, 'pascal-css.css');
 const minFile = path.join(distDir, 'pascal-css.min.css');
@@ -91,7 +91,7 @@ async function runBuildCycle() {
   }
 }
 
-console.log('🚀 Building PascalCSS v4.0.0...\n');
+console.log('🚀 Building PascalCSS v4.1.0...\n');
 
 if (!isWatchMode) {
   runBuildCycle();

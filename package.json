@@ -1,6 +1,6 @@
 {
   "name": "pascal-css",
-  "version": "4.0.0",
+  "version": "4.1.0",
   "description": "A modern, lightweight, utility-first CSS library with PascalCase naming, a full responsive layout engine, and OKLCH colors",
   "main": "pascal-css.css",
   "style": "pascal-css.css",

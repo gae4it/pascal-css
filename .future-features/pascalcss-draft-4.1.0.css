@@ -1,4 +1,4 @@
-/* =========================================
+﻿/* =========================================
    PascalCSS v4.1.0 - Modern CSS Edition
    Utility-first CSS Library
 
@@ -1515,7 +1515,7 @@ e.g. .Fs10 = 1rem, .Fs100 = 10rem
 .Width95 { width: 95%; }
 .Width100 { width: 100%; }
 .WidthAuto { width: auto; }
-.WidthMaxContent { width: -moz-max-content; width: max-content; }
+.WidthMaxContent { width: max-content; }
 .Width100vw { width: 100vw; }
 
 /* Size shorthand (width = height, for square elements: icons, avatars, badges) */
@@ -1568,7 +1568,7 @@ e.g. .Fs10 = 1rem, .Fs100 = 10rem
 .Height100dvh { height: 100dvh; }
 .Height100svh { height: 100svh; }
 .HeightAuto { height: auto; }
-.HeightMaxContent { height: -moz-max-content; height: max-content; }
+.HeightMaxContent { height: max-content; }
 
 /* Min-Width */
 .MinWidth0 { min-width: 0%; }
@@ -8401,5 +8401,4 @@ img.ImageAspectRatio {display:block;width:100%;height:auto;margin:0 auto;}
     outline-offset: .2rem;
   }
 }
-
 /*# sourceMappingURL=pascal-css.css.map */
