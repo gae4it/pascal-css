@@ -68,7 +68,7 @@ Use conventional prefixes when possible:
 
 ## Releases
 
-Maintainers follow [.docs/VERSIONING_GUIDE.md](.docs/VERSIONING_GUIDE.md):
+Maintainers follow [README-EXTENDED.md](README-EXTENDED.md) for releases and repository layout.
 
 1. Bump `package.json` version and source header
 2. Update README CDN links and CHANGELOG

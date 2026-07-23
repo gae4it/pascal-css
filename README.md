@@ -491,6 +491,8 @@ npm run watch
 
 Source file: `.future-features/pascalcss-draft-4.1.0.css`
 
+Maintainer docs: [README-EXTENDED.md](README-EXTENDED.md)
+
 ### Health Check
 
 Before a release (or after dependency changes), run:

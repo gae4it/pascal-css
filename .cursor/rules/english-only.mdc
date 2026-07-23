@@ -1,0 +1,50 @@
+---
+description: All project content must be written in English
+alwaysApply: true
+---
+
+# English only
+
+This repository is English-only. Write **all** project-facing text in English — no exceptions.
+
+## Applies to
+
+- Documentation (`README.md`, `CHANGELOG.md`, `CONTRIBUTING.md`, comments in markdown)
+- Source code comments and docstrings
+- CSS comments in drafts/build files
+- Commit messages and PR descriptions
+- Error messages, CLI output, and log strings
+- Variable names, function names, and user-facing strings in scripts
+- GitHub Issues, Releases, and workflow descriptions
+
+## Rules
+
+1. Do not add Italian (or any other language) in repo files, even in brief notes or examples.
+2. When editing existing non-English text, translate it to English.
+3. Chat with the maintainer may be in another language; **files committed to the repo must still be English**.
+
+## Examples
+
+```markdown
+<!-- ❌ BAD -->
+`cd` non serve se sei già nella root del repo.
+
+<!-- ✅ GOOD -->
+No `cd` is needed if you are already in the repository root.
+```
+
+```css
+/* ❌ BAD */
+/* Spaziatura verticale per le card */
+
+/* ✅ GOOD */
+/* Vertical spacing for cards */
+```
+
+```javascript
+// ❌ BAD
+console.error('Build fallito');
+
+// ✅ GOOD
+console.error('Build failed');
+```
