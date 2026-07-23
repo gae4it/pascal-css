@@ -51,6 +51,15 @@ npm install
 npm run build
 ```
 
+### Health Check (before release)
+
+```bash
+npm run health          # diagnose repo + smoke test build
+npm run health:strict   # fail on warnings too
+```
+
+Reports version alignment, dist sync, CSS integrity, git/tag state, and outdated dependencies. Does **not** run `npm update`. Full details: [README.md — Health Check](../README.md#health-check).
+
 **Output:**
 - `dist/pascal-css.css` - Unminified with comments (development)
 - `dist/pascal-css.min.css` - Minified for production

@@ -1,5 +1,9 @@
 # PascalCSS
 
+[![Release](https://img.shields.io/github/v/release/gae4it/pascal-css)](https://github.com/gae4it/pascal-css/releases)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![CDN jsDelivr](https://img.shields.io/jsdelivr/gh/hm/gae4it/pascal-css)](https://www.jsdelivr.com/package/gh/gae4it/pascal-css)
+
 **A modern, lightweight, utility-first CSS library with readable PascalCase naming.**
 
 ```html
@@ -7,6 +11,8 @@
   <h1 class="Fs30 Fw700">Hello PascalCSS</h1>
 </div>
 ```
+
+**Documentation:** [pascalcss.netlify.app](https://pascalcss.netlify.app/)
 
 ---
 
@@ -16,7 +22,8 @@
 - **📦 Zero Build Required** - Pure CSS, instantly usable via CDN
 - **🎨 Modern CSS** - OKLCH colors, Custom Media, responsive typography
 - **📱 Mobile-First Responsive** - Sm:, Md:, Lg:, Xl:, Xxl: breakpoints (640px / 768px / 1024px / 1280px / 1536px)
-- **⚡ Single-file Distribution** - 264.13KB minified / ~46.28KB gzipped
+- **❗ Important Modifier** - Optional `DisplayFlex!` / `Md:Padding20!` via `pascal-css.important.min.css`
+- **⚡ Single-file Distribution** — 268 KB minified / ~80 KB gzipped (default build)
 - **🌐 Browser Support** - Chrome 105+, Safari 16+, Firefox 110+
 
 ---
@@ -26,8 +33,8 @@
 ### CDN (Recommended)
 
 ```html
-<!-- Production (minified, ~46KB gzipped) -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/gae4it/pascal-css@v4.1.0/dist/pascal-css.min.css">
+<!-- Production (minified, ~80 KB gzipped) -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/gae4it/pascal-css@v4.2.0/dist/pascal-css.min.css">
 ```
 
 ### Download
@@ -51,13 +58,12 @@ Download from [GitHub Releases](https://github.com/gae4it/pascal-css/releases) a
 
 ---
 
-## 🆕 New In 4.0.0
+## 🆕 New In 4.2.0
 
-- Full Responsive Layout Engine with `Sm:`, `Md:`, `Lg:`, `Xl:`, `Xxl:` prefixes across 5700+ responsive classes
-- Font size scale `Fs07` to `Fs100` with automatic mobile, tablet and desktop adjustments
-- Added `@custom-media --xxl` for `1536px`
-- Removed Container Queries and the `Co:` prefix
-- Naming policy confirmed: full-word for utilities, with compact directional abbreviations allowed only for `Margin*` and `Padding*` classes
+- **Important modifier (`!`)** — `DisplayFlex!`, `Md:Padding20!` via optional `pascal-css.important.min.css`
+- **Health check** — `npm run health` for pre-release diagnostics
+- **CI** — automated health check on push/PR
+- See [CHANGELOG.md](CHANGELOG.md) for v4.1.0 utility additions (LineHeight scale, FlexOrder 4–5, border-radius renames, etc.)
 
 ---
 
@@ -123,6 +129,48 @@ Download from [GitHub Releases](https://github.com/gae4it/pascal-css/releases) a
 <!-- Stacked on mobile, side-by-side on desktop -->
 <div class="FlexDirectionColumn Lg:FlexDirectionRow">...</div>
 ```
+
+---
+
+## ❗ Important Modifier (`!`)
+
+Append `!` to any utility to force `!important` — same idea as Tailwind’s `!flex`, with a PascalCSS suffix:
+
+```html
+<!-- Wins over inline styles / higher-specificity rules -->
+<div class="DisplayFlex!" style="display: block">Forced flex</div>
+
+<!-- Responsive + important -->
+<div class="DisplayNone Md:DisplayFlex!">Flex from tablet up, forced</div>
+
+<!-- Mix normal and important utilities -->
+<div class="Padding20! Margin10 BgBlue500">Padding wins conflicts</div>
+```
+
+| HTML class | CSS selector |
+|------------|--------------|
+| `DisplayFlex!` | `.DisplayFlex\!` |
+| `Md:Padding20!` | `.Md\:Padding20\!` |
+
+**Optional stylesheet** — the default CDN file stays lean. Load the important build only when you need `!` variants:
+
+```html
+<!-- Default (no ! variants) -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/gae4it/pascal-css@v4.2.0/dist/pascal-css.min.css">
+
+<!-- OR: base + all !important variants (~630 KB min / ~189 KB gzipped est.) -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/gae4it/pascal-css@v4.2.0/dist/pascal-css.important.min.css">
+```
+
+Build flags (maintainers):
+
+```bash
+npm run build                          # full important artifact (default)
+npm run build:important:subset         # high-impact categories only
+npm run build:important:opt-in         # only rules marked /* @important */
+```
+
+**Notes:** In CSS the `!` must be escaped (`\!`). HTML does not need escaping. Some older parsers/tools may struggle with `!` in class names; prefer the default build when you do not need this feature.
 
 ---
 
@@ -216,7 +264,12 @@ Directional abbreviations are intentional for spacing utilities only: `T`, `B`, 
 - **Headers:** `h1` to `h5` with responsive sizing built-in
 
 #### Font Weight
-- `Fw300` (Light), `Fw400` (Normal), `Fw500` (Medium), `Fw600` (Semi-bold), `Fw700` (Bold)
+- `Fw300` (Light), `Fw400` (Normal), `Fw500` (Medium), `Fw600` (Semi-bold), `Fw700` (Bold), `Fw800` (Extra-bold)
+
+#### Line Height
+- **Ratio (unitless):** `LineHeight01`–`LineHeight30` (number ÷ 10 = ratio, e.g. `LineHeight15` = 1.5)
+- **Fixed rem:** `LineHeight05Rem`–`LineHeight50Rem`
+- **Semantic:** `LineHeightNone`, `LineHeightTight`, `LineHeightSnug`, `LineHeightNormal`, `LineHeightRelaxed`, `LineHeightLoose`
 
 #### Text Alignment
 - `TextAlignLeft`, `TextAlignCenter`, `TextAlignRight`
@@ -289,11 +342,7 @@ Same scale as text and background colors:
 #### Border Radius
 - **All Corners:** `BorderRadius05` to `BorderRadius100` (0.5rem to 10rem, step 5)
 - **Full (Circle):** `BorderRadiusFull` (9999px)
-- **Individual Corners:** 
-  - Top-Left: `BorderRadiusTL05` to `BorderRadiusTL100`
-  - Top-Right: `BorderRadiusTR05` to `BorderRadiusTR100`
-  - Bottom-Left: `BorderRadiusBL05` to `BorderRadiusBL100`
-  - Bottom-Right: `BorderRadiusBR05` to `BorderRadiusBR100`
+- **Individual corners:** `BorderTopLeftRadius`, `BorderTopRightRadius`, `BorderBottomLeftRadius`, `BorderBottomRightRadius` (with scale `05`–`30`, `Full`)
 
 #### Border Style
 - `BorderStyleSolid`, `BorderStyleDashed`, `BorderStyleDotted`
@@ -381,13 +430,15 @@ Fallbacks to RGB for older browsers included automatically.
 
 ---
 
-## 📦 File Sizes
+## 📦 File Sizes (v4.2.0)
 
-| Version | Size |
-|---------|------|
-| Source (`pascalcss-draft-4.0.0.css`) | 350.06 KB |
-| Minified (`pascal-css.css`) | 264.13 KB |
-| Gzipped | ~46.28 KB |
+| Artifact | Size |
+|----------|------|
+| Source (`.future-features/pascalcss-draft-4.1.0.css`) | ~355 KB |
+| `dist/pascal-css.min.css` (default CDN) | ~268 KB |
+| Gzipped (default) | ~80 KB |
+| `dist/pascal-css.important.min.css` (optional `!` variants) | ~630 KB |
+| Gzipped (important build) | ~189 KB |
 
 ---
 
@@ -425,33 +476,83 @@ cd pascal-css
 # Install dependencies
 npm install
 
-# Legacy dist build
+# Build dist/ from source
 npm run build
+
+# Watch source and rebuild on change
+npm run watch
 ```
 
-`build.js` keeps the PostCSS-based `dist/` pipeline for local development.
+`build.js` reads the version from `package.json` and runs the PostCSS pipeline (`autoprefixer` + `cssnano`) to generate:
 
-Release packaging for v4.0.0 is distributed from the repository root:
-- `pascal-css.css` - minified production bundle (264.13 KB / ~46.28 KB gzipped)
+- `dist/pascal-css.css` — unminified (with comments)
+- `dist/pascal-css.min.css` — production minified
+- `pascal-css.css` — root copy of the minified bundle
+
+Source file: `.future-features/pascalcss-draft-4.1.0.css`
+
+### Health Check
+
+Before a release (or after dependency changes), run:
+
+```bash
+npm run health
+```
+
+Strict mode — warnings also fail the check:
+
+```bash
+npm run health:strict
+```
+
+The script (`health-check.js`) is **read-only**: it diagnoses the repo and runs a build smoke test. It does **not** modify files or update packages.
+
+| Area | What it checks |
+|------|----------------|
+| **Version** | `package.json`, source header, and `dist/` all match the same version |
+| **Files** | Source, dist, root min bundle, README, CHANGELOG, release workflow exist |
+| **CSS integrity** | No corrupt rules (`order: ;`), `LineHeight01`–`LineHeight30` present, stale class names (`LineHeightRatio*`, `BorderTL*`) |
+| **Build sync** | `dist/pascal-css.css` is up to date; root `pascal-css.css` matches `dist/pascal-css.min.css` |
+| **Docs** | README CDN link and CHANGELOG section for the current version |
+| **Git** | Clean tree, version tag exists, branch synced with remote |
+| **Dependencies** | Reports outdated packages via `npm outdated` (report only) |
+| **Smoke test** | Runs `npm run build` and verifies it succeeds |
+
+**Exit codes:** `0` = passed (warnings allowed), `1` = errors (or warnings in strict mode).
+
+### Dependencies & Updates
+
+`npm run health` runs `npm outdated` to **report** outdated devDependencies. It does **not** run `npm update` or change `node_modules`.
+
+| Command | What it does |
+|---------|----------------|
+| `npm outdated` | Shows Current / Wanted / Latest (report only) |
+| `npm update` | Updates within semver ranges in `package.json` (e.g. `^6.0.3` → latest 6.x) |
+| `npm install pkg@latest` | Manual major upgrade — test with `npm run build` + `npm run health` |
+
+**Recommended maintenance cadence:**
+
+1. `npm run health` before each release
+2. `npm update` once or twice a year if warnings appear
+3. `npx update-browserslist-db@latest` if the build warns about stale browser data
+4. Major bumps (e.g. `cssnano` 6 → 8) only in a dedicated maintenance session — not required for normal releases
+
+**Note:** Staying on `cssnano` 6.x is fine. `npm outdated` may show `8.x` as Latest, but that is a major jump outside the `^6` range and is optional.
 
 ---
 
 ## 🤝 Contributing
 
-Contributions welcome! Please:
+See [CONTRIBUTING.md](CONTRIBUTING.md) for setup, naming rules, and the pull request checklist.
 
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/new-utility`)
-3. Make your changes to `pascal-css.css`
-4. Build and test (`npm run build`)
-5. Commit with descriptive message
-6. Open a Pull Request
+Security reports: [SECURITY.md](SECURITY.md)
 
-**Guidelines:**
-- Follow PascalCase naming convention
-- Add responsive variants (Sm:, Md:, Lg:, Xl:) for layout utilities
-- Update CHANGELOG.md with your changes
-- Keep file size minimal
+Quick flow:
+
+1. Fork → feature branch
+2. Edit `.future-features/pascalcss-draft-4.1.0.css`
+3. `npm run build` → `npm run health`
+4. Update `CHANGELOG.md` → open a PR
 
 ---
 
@@ -468,6 +569,8 @@ Copyright (c) 2026 Gae4it
 - **Documentation:** [pascalcss.netlify.app](https://pascalcss.netlify.app/)
 - **GitHub:** [github.com/gae4it/pascal-css](https://github.com/gae4it/pascal-css)
 - **Issues:** [Report bugs or request features](https://github.com/gae4it/pascal-css/issues)
+- **Contributing:** [CONTRIBUTING.md](CONTRIBUTING.md)
+- **Security:** [SECURITY.md](SECURITY.md)
 - **Changelog:** [CHANGELOG.md](CHANGELOG.md)
 
 ---

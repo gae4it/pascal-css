@@ -9,6 +9,25 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [4.2.0] - 2026-07-24
+
+**CDN:** `https://cdn.jsdelivr.net/gh/gae4it/pascal-css@v4.2.0/dist/pascal-css.min.css`
+
+### Added
+- **Important modifier (`!`)** — append `!` to any utility (`DisplayFlex!`, `Md:Padding20!`) to emit `!important`
+- Optional distribution artifacts: `dist/pascal-css.important.css` and `dist/pascal-css.important.min.css` (base CSS + all `!` variants)
+- Build-time generator [`scripts/generate-important.js`](scripts/generate-important.js) with modes `full` (default), `subset`, and `opt-in`
+- npm scripts: `build:important:subset`, `build:important:opt-in`
+- `health-check.js` with `npm run health` and `npm run health:strict`
+- GitHub Actions CI workflow (health check on push/PR)
+- [CONTRIBUTING.md](CONTRIBUTING.md) and [SECURITY.md](SECURITY.md)
+
+### Notes
+- Default `pascal-css.css` / CDN min file size unchanged in role — load the `.important` artifact only when needed
+- In CSS selectors the bang is escaped: `.DisplayFlex\!`, `.Md\:DisplayFlex\!`
+
+---
+
 ## [4.1.0] - 2026-07-23
 
 **CDN:** `https://cdn.jsdelivr.net/gh/gae4it/pascal-css@v4.1.0/dist/pascal-css.min.css`

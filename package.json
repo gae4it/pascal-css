@@ -1,6 +1,6 @@
 {
   "name": "pascal-css",
-  "version": "4.1.0",
+  "version": "4.2.0",
   "description": "A modern, lightweight, utility-first CSS library with PascalCase naming, a full responsive layout engine, and OKLCH colors",
   "main": "pascal-css.css",
   "style": "pascal-css.css",
@@ -11,7 +11,11 @@
   ],
   "scripts": {
     "build": "node build.js",
-    "watch": "node build.js --watch"
+    "build:important:subset": "node build.js --important-mode=subset",
+    "build:important:opt-in": "node build.js --important-mode=opt-in",
+    "watch": "node build.js --watch",
+    "health": "node health-check.js",
+    "health:strict": "node health-check.js --strict"
   },
   "repository": {
     "type": "git",

@@ -23,6 +23,9 @@ jobs:
       
       - name: Build CSS
         run: npm run build
+
+      - name: Health check
+        run: npm run health:strict
       
       - name: Get version from tag
         id: get_version
@@ -46,6 +49,9 @@ jobs:
             
             <!-- Unminified (development) -->
             <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/gae4it/pascal-css@${{ github.ref_name }}/dist/pascal-css.css">
+            
+            <!-- Optional: base + !important variants (DisplayFlex!) -->
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/gae4it/pascal-css@${{ github.ref_name }}/dist/pascal-css.important.min.css">
             ```
             
             ### What's Changed
@@ -85,3 +91,23 @@ jobs:
           asset_path: ./dist/pascal-css.css.map
           asset_name: pascal-css.css.map
           asset_content_type: application/json
+
+      - name: Upload Important CSS
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./dist/pascal-css.important.css
+          asset_name: pascal-css.important.css
+          asset_content_type: text/css
+
+      - name: Upload Important Minified CSS
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./dist/pascal-css.important.min.css
+          asset_name: pascal-css.important.min.css
+          asset_content_type: text/css

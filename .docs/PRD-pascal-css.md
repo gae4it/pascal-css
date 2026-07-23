@@ -615,8 +615,12 @@ Example:
 2. **No abbreviations:** Use full words (`Padding` not `P`, `Margin` not `M`)
 3. **Values as suffixes:** `Padding10`, `FontSize20`
 4. **Responsive prefix with colon:** `Md:DisplayFlex` (escaped in CSS: `Md\:DisplayFlex`)
-5. **Container prefix:** `Co:FlexDirectionRow`
+5. **Container prefix:** `Co:FlexDirectionRow` _(removed in v4.0 — historical)_
 6. **Exceptions:** X/Y for axis (`PaddingX10`), numeric scales (`Gap01`, `Margin25`)
+7. **Important suffix:** `DisplayFlex!` (escaped in CSS: `.DisplayFlex\!`)
+8. **Responsive + important:** `Md:DisplayFlex!` (escaped: `.Md\:DisplayFlex\!`)
+
+Important variants ship in an **optional** artifact (`dist/pascal-css.important.css`) so the default CDN file stays lean.
 
 ### B. Design Principles
 

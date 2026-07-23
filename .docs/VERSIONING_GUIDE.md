@@ -91,7 +91,18 @@ Expected output:
 ## Step 4: Verify Build Output
 
 ```bash
-# Check that all dist files were generated
+# Automated health check (recommended)
+npm run health
+
+# Strict mode — fail on warnings too
+npm run health:strict
+```
+
+The health check verifies version alignment, dist files, CSS integrity, docs, git state, outdated dependencies (report only), and runs a build smoke test. See [README.md — Health Check](../README.md#health-check) for full details.
+
+Manual checks (optional):
+
+```bash
 ls dist/
 
 # Expected files:
@@ -99,6 +110,21 @@ ls dist/
 # - pascal-css.min.css
 # - pascal-css.css.map
 ```
+
+### Dependency maintenance (optional)
+
+`npm run health` reports outdated packages but does **not** update them.
+
+```bash
+# Safe updates within package.json semver ranges (^)
+npm update
+
+# Rebuild and verify
+npm run build
+npm run health
+```
+
+Do not bump major versions (e.g. `cssnano` 6 → 8) unless you plan a dedicated test of the minified output.
 
 ---
 

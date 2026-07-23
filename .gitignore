@@ -1,9 +1,8 @@
 # Dependencies
 node_modules/
-package-lock.json
 
 # Build outputs (tracked in git for CDN)
-# dist/ - We actually want to commit this for jsDelivr
+# dist/ - committed for jsDelivr
 
 # Logs
 npm-debug.log*
